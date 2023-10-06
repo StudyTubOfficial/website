@@ -1,8 +1,8 @@
 import React from "react";
-
-function Header() {
+import "./header.css";
+export default function Navbar() {
   return (
-    <header class="site_header site_header_2">
+    <header class="site_header site_header_1">
       <div class="container">
         <div class="row align-items-center">
           <div class="col col-lg-3 col-5">
@@ -222,14 +222,7 @@ function Header() {
                   <i class="far fa-bars"></i>
                 </button>
               </li>
-              <li>
-                {/* <a class="btn border_dark" href="login.html">
-                  <span>
-                    <small>Login</small>
-                    <small>Login</small>
-                  </span>
-                </a> */}
-              </li>
+              <li></li>
               <li>
                 <a class="btn btn_dark" href="signup.html">
                   <span>
@@ -244,5 +237,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

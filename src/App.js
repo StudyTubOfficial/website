@@ -1,10 +1,12 @@
 import "./App.css";
-import Header from "./components/Header";
+import Jumbotron from "./components/Header/Jumbotron";
+import Navbar from "./components/Header/Navbar.js";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <div className="page_wrapper">
+      <Navbar />
+      <Jumbotron />
     </div>
   );
 }
