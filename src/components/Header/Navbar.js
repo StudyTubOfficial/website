@@ -226,7 +226,7 @@ export default function Navbar() {
               <li>
                 <a class="btn btn_dark" href="signup.html">
                   <span>
-                    <small>Worker 🚀</small> <small>Worker 🚀</small>
+                    <small>Worker 🚀</small> <small>Lets go 🚀</small>
                   </span>
                 </a>
               </li>

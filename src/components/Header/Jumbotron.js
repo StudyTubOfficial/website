@@ -55,7 +55,7 @@ export default function Jumbotron() {
                       <li>
                         <span>
                           <img
-                            src="assets/images/meta/student_thumbnail_1.png"
+                            src="https://avatars.githubusercontent.com/u/62615392?v=4"
                             alt="Collab – Online Learning Platform"
                           />
                         </span>
@@ -63,7 +63,7 @@ export default function Jumbotron() {
                       <li>
                         <span>
                           <img
-                            src="assets/images/meta/student_thumbnail_2.png"
+                            src="https://avatars.githubusercontent.com/u/25149022?v=4"
                             alt="Collab – Online Learning Platform"
                           />
                         </span>
@@ -71,7 +71,7 @@ export default function Jumbotron() {
                       <li>
                         <span>
                           <img
-                            src="assets/images/meta/student_thumbnail_3.png"
+                            src="https://avatars.githubusercontent.com/u/66218496?v=4"
                             alt="Collab – Online Learning Platform"
                           />
                         </span>
@@ -79,7 +79,7 @@ export default function Jumbotron() {
                       <li>
                         <span>
                           <img
-                            src="assets/images/meta/student_thumbnail_4.png"
+                            src="https://avatars.githubusercontent.com/u/63730038?v=4"
                             alt="Collab – Online Learning Platform"
                           />
                         </span>
@@ -87,7 +87,7 @@ export default function Jumbotron() {
                       <li>
                         <span>
                           <img
-                            src="assets/images/meta/student_thumbnail_5.png"
+                            src="https://avatars.githubusercontent.com/u/88227246?v=4"
                             alt="Collab – Online Learning Platform"
                           />
                         </span>
