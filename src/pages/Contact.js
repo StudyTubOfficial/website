@@ -4,11 +4,18 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Multi_Header/Header";
 
 export default function Contact() {
+  const conatctData = {
+    page_title: "Contact uss",
+    page_description:
+      "Egestas sed tempus urna et pharetra. Leo integer malesuada nunc vel. Libero id faucibus nisl tincidunt eget nullam non nisi.Faucibus turpis in eu mi bibendum neque egestas",
+    text_1: "Get Started",
+    text_2: "Now",
+  };
   return (
     <div class="page_wrapper">
       <Navbar />
       <main class="page_content">
-        <Header />
+        <Header headerData={conatctData} />
         <section class="contact_section section_space_lg">
           <div class="container">
             <div class="row">

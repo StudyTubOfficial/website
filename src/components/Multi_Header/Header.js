@@ -1,6 +1,7 @@
 import React from "react";
+import Dark_button from "../Buttons/Dark_button/Dark_button";
 
-export default function Header() {
+export default function Header({ headerData }) {
   return (
     <section class="page_banner">
       <div class="container">
@@ -21,25 +22,16 @@ export default function Header() {
                 </li>
                 <li>About Us</li>
               </ul>
-              <h1 class="page_title">About Collab</h1>
+              <h1 class="page_title">{headerData.page_title || ""}</h1>
               <p class="page_description">
-                Egestas sed tempus urna et pharetra. Leo integer malesuada nunc
-                vel. Libero id faucibus nisl tincidunt eget nullam non nisi.
-                Faucibus turpis in eu mi bibendum neque egestas
+                {headerData.page_description || ""}
               </p>
               <form action="#">
                 <div class="form_item mb-0">
-                  <input
-                    type="search"
-                    name="search"
-                    placeholder="What do you want to learn ?"
-                  />{" "}
-                  <button type="submit" class="btn btn_dark">
-                    <span>
-                      <small>Search</small>
-                      <small>Search</small>
-                    </span>
-                  </button>
+                  <Dark_button
+                    text_1={headerData.text_1 || ""}
+                    text_2={headerData.text_2 || ""}
+                  />
                 </div>
               </form>
             </div>

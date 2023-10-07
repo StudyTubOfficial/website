@@ -5,11 +5,18 @@ import Footer from "../components/Footer/Footer";
 import Team from "../components/Team/Team";
 
 export default function About() {
+  const headerData = {
+    page_title: "About uss",
+    page_description:
+      "Egestas sed tempus urna et pharetra. Leo integer malesuada nunc vel. Libero id faucibus nisl tincidunt eget nullam non nisi.Faucibus turpis in eu mi bibendum neque egestas",
+    text_1: "Get Started",
+    text_2: "Now",
+  };
   return (
     <div class="page_wrapper">
       <Navbar />
       <main class="page_content">
-        <Header />
+        <Header headerData={headerData} />
         <section class="courses_info_section section_space_lg pb-0">
           <div class="container">
             <div class="row align-items-center">
