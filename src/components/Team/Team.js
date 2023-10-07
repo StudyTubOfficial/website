@@ -1,99 +1,72 @@
 import React from "react";
 
 export default function Team() {
+  const teamData = [
+    {
+      name: "Nishikanta Ray",
+      image: "https://avatars.githubusercontent.com/u/62615392?v=4",
+      designation: "Fullstack developer ",
+      company: "LetsFlo",
+      github: "https://github.com/NishikantaRay",
+    },
+    {
+      name: "Sumeet Naik",
+      image: "https://avatars.githubusercontent.com/u/25149022?v=4",
+      designation: "Fullstack developer",
+      company: "McKinley Rice",
+      github: "https://github.com/sumeetweb",
+    },
+    {
+      name: "Anirudh Panda",
+      image: "https://avatars.githubusercontent.com/u/66218496?v=4",
+      designation: "Fullstack developer",
+      company: "Inagiffy",
+      github: "https://github.com/AnirudhPanda",
+    },
+  ];
   return (
-    <section class="expect_from_course ">
-      <div class="container">
-        <div class="row">
-          <div class="col col-lg-6">
-            <div class="section_heading">
-              <h2 class="heading_text">What to Expect from a Collab Course</h2>
+    <section className="expect_from_course ">
+      <div className="container">
+        <div className="row">
+          <div className="col col-lg-6">
+            <div className="section_heading">
+              <h2 className="heading_text">
+                What to Expect from a Collab Course
+              </h2>
             </div>
           </div>
         </div>
-        <section class="mentor_section ">
-          <div class="container">
-            <div class="row">
-              <div class="col col-lg-4 col-md-6">
-                <div class="mentor_item">
-                  <div class="mentor_image">
-                    <a href="mentor_details.html">
-                      <img
-                        src="https://avatars.githubusercontent.com/u/62615392?v=4"
-                        alt="Collab – Online Learning Platform"
-                      />
-                    </a>
+        <section className="mentor_section ">
+          <div className="container">
+            <div className="row">
+              {teamData.map((item, index) => {
+                return (
+                  <div className="col col-lg-4 col-md-6">
+                    <div className="mentor_item">
+                      <div className="mentor_image">
+                        <a href={item.github}>
+                          <img
+                            src={item.image}
+                            alt="Collab – Online Learning Platform"
+                          />
+                        </a>
+                      </div>
+                      <div className="mentor_content">
+                        <h3 className="mentor_name">
+                          <a href="mentor_details.html">{item.name}</a>
+                        </h3>
+                        <p className="mentor_designation">{item.designation}</p>
+                        <ul className="meta_info_list unordered_list_center mb-0">
+                          <li>
+                            <i className="fas fa-thumbtack"></i>{" "}
+                            <span>{item.company}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                  <div class="mentor_content">
-                    <h3 class="mentor_name">
-                      <a href="mentor_details.html">Alex Edwards</a>
-                    </h3>
-                    <p class="mentor_designation">Fullstack developer</p>
-                    <ul class="meta_info_list unordered_list_center mb-0">
-                      <li>
-                        <i class="fas fa-clock"></i> <span>120 Hours</span>
-                      </li>
-                      <li>
-                        <i class="fas fa-star"></i>{" "}
-                        <span>4.9 (22 reviews)</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-4 col-md-6">
-                <div class="mentor_item">
-                  <div class="mentor_image">
-                    <a href="mentor_details.html">
-                      <img
-                        src="https://avatars.githubusercontent.com/u/25149022?v=4"
-                        alt="Collab – Online Learning Platform"
-                      />
-                    </a>
-                  </div>
-                  <div class="mentor_content">
-                    <h3 class="mentor_name">
-                      <a href="mentor_details.html">Wendy Chandler</a>
-                    </h3>
-                    <p class="mentor_designation">Java Developer</p>
-                    <ul class="meta_info_list unordered_list_center mb-0">
-                      <li>
-                        <i class="fas fa-clock"></i> <span>100 Hours</span>
-                      </li>
-                      <li>
-                        <i class="fas fa-star"></i> <span>5 (10 reviews)</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col col-lg-4 col-md-6">
-                <div class="mentor_item">
-                  <div class="mentor_image">
-                    <a href="mentor_details.html">
-                      <img
-                        src="https://avatars.githubusercontent.com/u/66218496?v=4"
-                        alt="Collab – Online Learning Platform"
-                      />
-                    </a>
-                  </div>
-                  <div class="mentor_content">
-                    <h3 class="mentor_name">
-                      <a href="mentor_details.html">James Grant</a>
-                    </h3>
-                    <p class="mentor_designation">Fullstack developer</p>
-                    <ul class="meta_info_list unordered_list_center mb-0">
-                      <li>
-                        <i class="fas fa-clock"></i> <span>120 Hours</span>
-                      </li>
-                      <li>
-                        <i class="fas fa-star"></i>{" "}
-                        <span>4.9 (22 reviews)</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </section>
