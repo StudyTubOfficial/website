@@ -1,6 +1,7 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
+import Anch_button from "../Buttons/Anch_button/Anch_button";
 export default function Navbar() {
   return (
     <header class="site_header site_header_1">
@@ -134,11 +135,12 @@ export default function Navbar() {
               </li>
               <li></li>
               <li>
-                <a class="btn btn_dark" href="signup.html">
-                  <span>
-                    <small>Worker 🚀</small> <small>Lets go 🚀</small>
-                  </span>
-                </a>
+                <Anch_button
+                  clas="btn btn_dark"
+                  href=""
+                  text1="Worker 🚀"
+                  text2="Lets go 🚀"
+                />
               </li>
             </ul>
           </div>

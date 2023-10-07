@@ -1,5 +1,6 @@
 import React from "react";
 import "./header.css";
+import Anch_button from "../Buttons/Anch_button/Anch_button";
 export default function Jumbotron() {
   return (
     <main class="page_content">
@@ -10,19 +11,21 @@ export default function Jumbotron() {
               <div class="col col-lg-7 d-n">
                 <h1 class="banner_small_title">Learning Excellence</h1>
                 <h2 class="banner_big_title">
-                Your BTECH Companion in the Digital Age
+                  Your BTECH Companion in the Digital Age
                 </h2>
                 <p class="banner_description">
-                Simplify your BTECH studies with StudyTub. Access high-quality notes anytime, anywhere, on any device. Boost your academic journey today!
+                  Simplify your BTECH studies with StudyTub. Access high-quality
+                  notes anytime, anywhere, on any device. Boost your academic
+                  journey today!
                 </p>
                 <ul class="banner_btns_group unordered_list ">
                   <li>
-                    <a class="btn btn_primary" href="course.html">
-                      <span>
-                        <small>Explore Courses</small>{" "}
-                        <small>Explore Courses</small>
-                      </span>
-                    </a>
+                    <Anch_button
+                      clas="btn btn_primary"
+                      href=""
+                      text1="Explore Courses"
+                      text2="Explore Courses"
+                    />
                   </li>
                   <li>
                     <a
