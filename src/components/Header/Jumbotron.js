@@ -10,13 +10,10 @@ export default function Jumbotron() {
               <div class="col col-lg-7 d-n">
                 <h1 class="banner_small_title">Learning Excellence</h1>
                 <h2 class="banner_big_title">
-                  The Best Free Online Courses of All Time
+                Your BTECH Companion in the Digital Age
                 </h2>
                 <p class="banner_description">
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  fugiat nulla pariatur
+                Simplify your BTECH studies with StudyTub. Access high-quality notes anytime, anywhere, on any device. Boost your academic journey today!
                 </p>
                 <ul class="banner_btns_group unordered_list ">
                   <li>
@@ -50,7 +47,7 @@ export default function Jumbotron() {
                     />
                   </div>
                   <div class="satisfied_student">
-                    <h3 class="wrap_title">1100+ Satisfied Student</h3>
+                    <h3 class="wrap_title">1100+ Satisfied Students</h3>
                     <ul class="students_thumbnail unordered_list_center">
                       <li>
                         <span>
