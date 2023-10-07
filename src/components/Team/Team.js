@@ -19,7 +19,7 @@ export default function Team() {
                   <div class="mentor_image">
                     <a href="mentor_details.html">
                       <img
-                        src="assets/images/mentor/mentor_image_4.jpg"
+                        src="https://avatars.githubusercontent.com/u/62615392?v=4"
                         alt="Collab – Online Learning Platform"
                       />
                     </a>
@@ -46,7 +46,7 @@ export default function Team() {
                   <div class="mentor_image">
                     <a href="mentor_details.html">
                       <img
-                        src="assets/images/mentor/mentor_image_5.jpg"
+                        src="https://avatars.githubusercontent.com/u/25149022?v=4"
                         alt="Collab – Online Learning Platform"
                       />
                     </a>
@@ -72,7 +72,7 @@ export default function Team() {
                   <div class="mentor_image">
                     <a href="mentor_details.html">
                       <img
-                        src="assets/images/mentor/mentor_image_6.jpg"
+                        src="https://avatars.githubusercontent.com/u/66218496?v=4"
                         alt="Collab – Online Learning Platform"
                       />
                     </a>

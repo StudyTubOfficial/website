@@ -1,19 +1,12 @@
 import "./App.css";
-import Analytics from "./components/Analytics/Analytics";
-import Jumbotron from "./components/Header/Jumbotron";
-import Navbar from "./components/Header/Navbar.js";
-import Team from "./components/Team/Team";
-import Course from "./components/course/Course";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="page_wrapper">
-      <Navbar />
-      <Jumbotron />
-      <Analytics />
-      <Course />
-      <Team />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 }
 
