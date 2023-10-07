@@ -109,9 +109,9 @@ export default function Navbar() {
                   </li>
 
                   <li>
-                    <a class="nav-link" href="contact.html">
+                    <Link class="nav-link" to="/contact">
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
