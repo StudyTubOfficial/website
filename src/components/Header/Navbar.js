@@ -1,5 +1,6 @@
 import React from "react";
 import "./header.css";
+import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <header class="site_header site_header_1">
@@ -7,14 +8,14 @@ export default function Navbar() {
         <div class="row align-items-center">
           <div class="col col-lg-3 col-5">
             <div class="site_logo">
-              <a class="site_link" href="index.html">
+              <Link class="site_link" to="/">
                 <img
                   src="assets/images/logo/logo.png"
                   alt="Collab - Online Learning Platform"
                   style={{ height: "70px" }}
                 />
                 <span>StudyTub</span>
-              </a>
+              </Link>
             </div>
           </div>
           <div class="col col-lg-6 col-2">
@@ -24,87 +25,15 @@ export default function Navbar() {
                 id="main_menu_dropdown"
               >
                 <ul class="main_menu_list unordered_list_center">
-                  <li class="dropdown active">
-                    <a
-                      class="nav-link"
-                      href="#"
-                      id="home_submenu"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
+                  <li>
+                    <Link class="nav-link" to="/">
                       Home
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="home_submenu">
-                      <li class="active">
-                        <a href="index_1.html">Home V.1</a>
-                      </li>
-                      <li>
-                        <a href="index_2.html">Home V.2</a>
-                      </li>
-                    </ul>
+                    </Link>
                   </li>
-                  <li class="dropdown">
-                    <a
-                      class="nav-link"
-                      href="#"
-                      id="service_submenu"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Courses
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="service_submenu">
-                      <li class="dropdown">
-                        <a
-                          class="nav-link"
-                          href="#"
-                          id="courses_layout_submenu"
-                          role="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          Courses Layout
-                        </a>
-                        <ul
-                          class="dropdown-menu"
-                          aria-labelledby="courses_layout_submenu"
-                        >
-                          <li>
-                            <a href="course.html">Courses Grid</a>
-                          </li>
-                          <li>
-                            <a href="course_list.html">Courses List</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="dropdown">
-                        <a
-                          class="nav-link"
-                          href="#"
-                          id="courses_details_submenu"
-                          role="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          Courses Details
-                        </a>
-                        <ul
-                          class="dropdown-menu"
-                          aria-labelledby="courses_details_submenu"
-                        >
-                          <li>
-                            <a href="course_details.html">Course Details V.1</a>
-                          </li>
-                          <li>
-                            <a href="course_details_2.html">
-                              Course Details V.2
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
+                  <li>
+                    <Link class="nav-link" to="/about">
+                      About Us
+                    </Link>
                   </li>
                   <li class="dropdown">
                     <a
@@ -178,26 +107,7 @@ export default function Navbar() {
                       </li>
                     </ul>
                   </li>
-                  <li class="dropdown">
-                    <a
-                      class="nav-link"
-                      href="#"
-                      id="blog_submenu"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Blog
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="blog_submenu">
-                      <li>
-                        <a href="blog.html">Our Blogs</a>
-                      </li>
-                      <li>
-                        <a href="blog_details.html">Blog Details</a>
-                      </li>
-                    </ul>
-                  </li>
+
                   <li>
                     <a class="nav-link" href="contact.html">
                       Contact
