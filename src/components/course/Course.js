@@ -1,5 +1,6 @@
 import React from "react";
 import Anch_button from "../Buttons/Anch_button/Anch_button";
+import CourseCards from "../Cards/CourseCards/CourseCards";
 
 export default function Course() {
   const serviceData1 = [
@@ -74,22 +75,7 @@ export default function Course() {
               {serviceData1.map((item, index) => {
                 return (
                   <div class="col col-md-6">
-                    <a href={item.href}>
-                      <div class="service_item" data-magnetic>
-                        <div class="item_icon">
-                          <img
-                            src={item.img}
-                            alt="Collab – Online Learning Platform"
-                          />
-                        </div>
-                        <div class="item_content">
-                          <h3 class="item_title">{item.title}</h3>
-                          <p class="mb-0" style={{ color: "black" }}>
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    </a>
+                    <CourseCards item={item} />
                   </div>
                 );
               })}
@@ -109,22 +95,7 @@ export default function Course() {
               {serviceData2.map((item, index) => {
                 return (
                   <div class="col col-md-6">
-                    <a href={item.href}>
-                      <div class="service_item" data-magnetic>
-                        <div class="item_icon">
-                          <img
-                            src={item.img}
-                            alt="Collab – Online Learning Platform"
-                          />
-                        </div>
-                        <div class="item_content">
-                          <h3 class="item_title">{item.title}</h3>
-                          <p class="mb-0" style={{ color: "black" }}>
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    </a>
+                    <CourseCards item={item} />
                   </div>
                 );
               })}

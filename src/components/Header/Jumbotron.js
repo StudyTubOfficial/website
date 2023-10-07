@@ -2,6 +2,23 @@ import React from "react";
 import "./header.css";
 import Anch_button from "../Buttons/Anch_button/Anch_button";
 export default function Jumbotron() {
+  const SatisfiedData = [
+    {
+      img: "https://avatars.githubusercontent.com/u/62615392?v=4",
+    },
+    {
+      img: "https://avatars.githubusercontent.com/u/25149022?v=4",
+    },
+    {
+      img: "https://avatars.githubusercontent.com/u/66218496?v=4",
+    },
+    {
+      img: "https://avatars.githubusercontent.com/u/63730038?v=4",
+    },
+    {
+      img: "https://avatars.githubusercontent.com/u/88227246?v=4",
+    },
+  ];
   return (
     <main class="page_content">
       <section class="hero_banner style_1">
@@ -52,46 +69,15 @@ export default function Jumbotron() {
                   <div class="satisfied_student">
                     <h3 class="wrap_title">1100+ Satisfied Students</h3>
                     <ul class="students_thumbnail unordered_list_center">
-                      <li>
-                        <span>
-                          <img
-                            src="https://avatars.githubusercontent.com/u/62615392?v=4"
-                            alt="Collab – Online Learning Platform"
-                          />
-                        </span>
-                      </li>
-                      <li>
-                        <span>
-                          <img
-                            src="https://avatars.githubusercontent.com/u/25149022?v=4"
-                            alt="Collab – Online Learning Platform"
-                          />
-                        </span>
-                      </li>
-                      <li>
-                        <span>
-                          <img
-                            src="https://avatars.githubusercontent.com/u/66218496?v=4"
-                            alt="Collab – Online Learning Platform"
-                          />
-                        </span>
-                      </li>
-                      <li>
-                        <span>
-                          <img
-                            src="https://avatars.githubusercontent.com/u/63730038?v=4"
-                            alt="Collab – Online Learning Platform"
-                          />
-                        </span>
-                      </li>
-                      <li>
-                        <span>
-                          <img
-                            src="https://avatars.githubusercontent.com/u/88227246?v=4"
-                            alt="Collab – Online Learning Platform"
-                          />
-                        </span>
-                      </li>
+                      {SatisfiedData.map((item, index) => {
+                        return (
+                          <li>
+                            <span>
+                              <img src={item.img} alt="" />
+                            </span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                   <div
