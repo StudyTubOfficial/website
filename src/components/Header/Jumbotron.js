@@ -40,8 +40,8 @@ export default function Jumbotron() {
                     <Anch_button
                       clas="btn btn_primary"
                       href=""
-                      text1="Explore Courses"
-                      text2="Explore Courses"
+                      text1="Browse Notes"
+                      text2="Read Notes"
                     />
                   </li>
                   <li>

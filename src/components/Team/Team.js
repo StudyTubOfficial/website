@@ -19,7 +19,7 @@ export default function Team() {
     {
       name: "Anirudh Panda",
       image: "https://avatars.githubusercontent.com/u/66218496?v=4",
-      designation: "Fullstack developer",
+      designation: "Tech & Content",
       company: "Inagiffy",
       github: "https://github.com/AnirudhPanda",
     },
@@ -31,7 +31,7 @@ export default function Team() {
           <div className="col col-lg-6">
             <div className="section_heading">
               <h2 className="heading_text">
-                What to Expect from a Collab Course
+              Meet the Dream Team Behind the Scenes!
               </h2>
             </div>
           </div>

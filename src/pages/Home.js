@@ -6,6 +6,7 @@ import Course from "../components/course/Course";
 import Team from "../components/Team/Team";
 import Footer from "../components/Footer/Footer";
 import ProductHunt from "../components/Buttons/ProductHunt/ProductHunt";
+import ProductHuntHeading from "../components/ProductHuntHead/ProductHuntHeading";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Analytics />
       <Course />
       <Team />
+      <ProductHuntHeading />
       <ProductHunt />
       <Footer />
     </div>

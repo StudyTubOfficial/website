@@ -7,60 +7,60 @@ export default function Course() {
     {
       href: "",
       img: "assets/images/service/1st.svg",
-      title: "Knowledge",
+      title: "1st Semester",
       description:
-        "Duis aute irure dolor in repreh in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+        "Where the BTECH journey begins! Dive into the fun world of fundamentals.",
     },
     {
       href: "",
       img: "assets/images/service/2nd.svg",
-      title: "Unlimited access",
+      title: "2nd Semester",
       description:
-        "Libero nunc consequat interd varius sit amet mattis vulpute enim liquet sagittis",
+        "Level up your knowledge and discover the secrets of your second semester",
     },
     {
       href: "",
-      img: "assets/images/service/3rd.svg",
+      img: "assets/images/service/5th.svg",
       title: "Practical Skills",
       description:
-        "Vulputate enim nulla aliquet porttitor lacus luctus accums. Cras sed felis eget velit",
+        "Ready to rock the fifth semester? Let's unravel the mysteries together!",
     },
     {
       href: "",
-      img: "assets/images/service/4th.svg",
-      title: "A certificate",
+      img: "assets/images/service/6th.svg",
+      title: "6th Semester",
       description:
-        "Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt",
+        "Gear up for the sixth semester thrill ride and ace your engineering journey.",
     },
   ];
   const serviceData2 = [
     {
       href: "",
-      img: "assets/images/service/5th.svg",
-      title: "Knowledge",
+      img: "assets/images/service/3rd.svg",
+      title: "3rd Semester",
       description:
-        "Duis aute irure dolor in repreh in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+        "Things are heating up! Explore advanced topics and conquer the third semester.",
     },
     {
       href: "",
-      img: "assets/images/service/6th.svg",
-      title: "Unlimited access",
+      img: "assets/images/service/4th.svg",
+      title: "4th Semester",
       description:
-        "Libero nunc consequat interd varius sit amet mattis vulpute enim liquet sagittis",
+        "Halfway there! Uncover the excitement of your fourth semester adventures.",
     },
     {
       href: "",
       img: "assets/images/service/7th.svg",
-      title: "Practical Skills",
+      title: "7th Semester",
       description:
-        "Vulputate enim nulla aliquet porttitor lacus luctus accums. Cras sed felis eget velit",
+        "It's the 'Lucky Number Seven' - where dreams take flight!",
     },
     {
       href: "",
       img: "assets/images/service/8th.svg",
-      title: "A certificate",
+      title: "8th Semester",
       description:
-        "Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt",
+        "The final frontier! Prepare to graduate with flying colors in the eighth semester.",
     },
   ];
   return (
@@ -69,7 +69,7 @@ export default function Course() {
         <div class="row">
           <div class="col col-lg-6">
             <div class="section_heading">
-              <h2 class="heading_text">What to Expect from a Collab Course</h2>
+              <h2 class="heading_text">What's in Store at StudyTub?</h2>
             </div>
             <div class="row">
               {serviceData1.map((item, index) => {
@@ -86,8 +86,8 @@ export default function Course() {
               <Anch_button
                 clas="btn border_dark"
                 href=""
-                text1="Explore Courses"
-                text2="Explore Courses"
+                text1="Browse Notes"
+                text2="Read Notes"
               />
             </div>
             <br />
