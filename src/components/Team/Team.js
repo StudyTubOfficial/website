@@ -1,4 +1,5 @@
 import React from "react";
+import Heading from "../Heading/Heading";
 
 export default function Team() {
   const teamData = [
@@ -27,47 +28,37 @@ export default function Team() {
   return (
     <section className="expect_from_course ">
       <div className="container">
-        <div className="row">
-          <div className="col col-lg-6">
-            <div className="section_heading">
-              <h2 className="heading_text">
-              Meet the Dream Team Behind the Scenes!
-              </h2>
-            </div>
-          </div>
-        </div>
         <section className="mentor_section ">
-          <div className="container">
-            <div className="row">
-              {teamData.map((item, index) => {
-                return (
-                  <div className="col col-lg-4 col-md-6">
-                    <div className="mentor_item">
-                      <div className="mentor_image">
-                        <a href={item.github}>
-                          <img
-                            src={item.image}
-                            alt="Collab – Online Learning Platform"
-                          />
-                        </a>
-                      </div>
-                      <div className="mentor_content">
-                        <h3 className="mentor_name">
-                          <a href="mentor_details.html">{item.name}</a>
-                        </h3>
-                        <p className="mentor_designation">{item.designation}</p>
-                        <ul className="meta_info_list unordered_list_center mb-0">
-                          <li>
-                            <i className="fas fa-thumbtack"></i>{" "}
-                            <span>{item.company}</span>
-                          </li>
-                        </ul>
-                      </div>
+          <Heading text={"Meet the Dream Team Behind the Scenes!"} clss2={6} />
+          <div className="row">
+            {teamData?.map((item) => {
+              return (
+                <div className="col col-lg-4 col-md-6" key={item}>
+                  <div className="mentor_item">
+                    <div className="mentor_image">
+                      <a href={item?.github}>
+                        <img
+                          src={item?.image}
+                          alt="Collab – Online Learning Platform"
+                        />
+                      </a>
+                    </div>
+                    <div className="mentor_content">
+                      <h3 className="mentor_name">
+                        <a href="mentor_details.html">{item?.name}</a>
+                      </h3>
+                      <p className="mentor_designation">{item?.designation}</p>
+                      <ul className="meta_info_list unordered_list_center mb-0">
+                        <li>
+                          <i className="fas fa-thumbtack"></i>{" "}
+                          <span>{item?.company}</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
         </section>
       </div>

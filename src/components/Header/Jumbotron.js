@@ -71,7 +71,7 @@ export default function Jumbotron() {
                     <ul class="students_thumbnail unordered_list_center">
                       {SatisfiedData.map((item, index) => {
                         return (
-                          <li>
+                          <li key={item}>
                             <span>
                               <img src={item.img} alt="" />
                             </span>
