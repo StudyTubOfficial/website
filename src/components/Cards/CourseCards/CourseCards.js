@@ -1,5 +1,15 @@
 import React from "react";
 
+/**
+ * Renders a course card component.
+ *
+ * @param {Object} item - The course item to be displayed.
+ * @param {string} item.href - The URL of the course.
+ * @param {string} item.img - The image source of the course.
+ * @param {string} item.title - The title of the course.
+ * @param {string} item.description - The description of the course.
+ * @returns {JSX.Element} - The course card component.
+ */
 const CourseCards = ({ item }) => (
   <a href={item.href}>
     <div className="service_item" data-magnetic>

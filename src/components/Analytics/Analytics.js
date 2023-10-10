@@ -1,5 +1,10 @@
 import React from "react";
 import "./analytics.css";
+import AnalyticsData from "../Cards/AnalyticsCards/AnalyticsData";
+/**
+ * Renders a section with analytics data.
+ * @returns {JSX.Element} JSX element containing the section with analytics data.
+ */
 export default function Analytics() {
   const analyticsData = [
     {
@@ -28,23 +33,11 @@ export default function Analytics() {
     },
   ];
   return (
-    <section class="counter_section bg_light section_space_md">
-      <div class="container">
-        <div class="row">
-          {analyticsData.map((item, index) => {
-            return (
-              <div class="col col-lg-3 col-md-6">
-                <div class="counter_item">
-                  <h3 class="counter_value">
-                    <span class="counter_value_text">
-                      {item.value1}
-                      <span>{item.value2}</span>
-                    </span>
-                  </h3>
-                  <p class="mb-0">{item.title}</p>
-                </div>
-              </div>
-            );
+    <section className="counter_section bg_light section_space_md">
+      <div className="container">
+        <div className="row">
+          {analyticsData?.map((item) => {
+            return <AnalyticsData item={item} key={item} />;
           })}
         </div>
       </div>

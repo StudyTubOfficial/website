@@ -1,5 +1,9 @@
 import React from "react";
 import "./product_hunt.css";
+/**
+ * Renders a ProductHunt component with a link to StudyTub's Product Hunt page.
+ * @returns {JSX.Element} ProductHunt component.
+ */
 export default function ProductHunt() {
   return (
     <div>

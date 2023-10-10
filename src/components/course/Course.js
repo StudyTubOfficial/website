@@ -72,8 +72,8 @@ export default function Course() {
               <h2 className="heading_text">What's in Store at StudyTub?</h2>
             </div>
             <div className="row">
-              {serviceData1.map((item, index) => (
-                <div className="col col-md-6" key={index}>
+              {serviceData1.map((item) => (
+                <div className="col col-md-6" key={item}>
                   <CourseCards item={item} />
                 </div>
               ))}
@@ -90,8 +90,8 @@ export default function Course() {
             </div>
             <br />
             <div className="row pt-2">
-              {serviceData2.map((item, index) => (
-                <div className="col col-md-6" key={index}>
+              {serviceData2.map((item) => (
+                <div className="col col-md-6" key={item}>
                   <CourseCards item={item} />
                 </div>
               ))}
