@@ -45,66 +45,72 @@ export default function Navbar() {
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      Pages
+                      Study Materials
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="pages_submenu">
                       <li>
-                        <a href="about.html">About</a>
-                      </li>
-                      <li class="dropdown">
                         <a
-                          class="nav-link"
-                          href="#"
-                          id="mentors_submenu"
-                          role="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
+                          href="https://notes.studytub.workers.dev/0:/First%20Year/"
+                          target="_blank"
                         >
-                          Our Mentors
+                          First Semester
                         </a>
-                        <ul
-                          class="dropdown-menu"
-                          aria-labelledby="mentors_submenu"
-                        >
-                          <li>
-                            <a href="mentor.html">Mentors</a>
-                          </li>
-                          <li>
-                            <a href="mentor_details.html">Mentors Details</a>
-                          </li>
-                        </ul>
                       </li>
                       <li>
-                        <a href="faq.html">F.A.Q.</a>
-                      </li>
-                      <li class="dropdown">
                         <a
-                          class="nav-link"
-                          href="#"
-                          id="events_submenu"
-                          role="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
+                          href="https://notes.studytub.workers.dev/0:/First%20Year/"
+                          target="_blank"
                         >
-                          Our Events
+                          Second Semester
                         </a>
-                        <ul
-                          class="dropdown-menu"
-                          aria-labelledby="events_submenu"
+                      </li>
+                      <li>
+                        <a
+                          href="https://notes.studytub.workers.dev/0:/3rd%20Sem/"
+                          target="_blank"
                         >
-                          <li>
-                            <a href="event.html">Events</a>
-                          </li>
-                          <li>
-                            <a href="event_details.html">Event Details</a>
-                          </li>
-                        </ul>
+                          Third Semester
+                        </a>
                       </li>
                       <li>
-                        <a href="pricing.html">Pricing</a>
+                        <a
+                          href="https://notes.studytub.workers.dev/0:/4th%20sem/"
+                          target="_blank"
+                        >
+                          Fourth Semester
+                        </a>
                       </li>
                       <li>
-                        <a href="error.html">404 Error</a>
+                        <a
+                          href="https://notes.studytub.workers.dev/0:/5th%20sem/"
+                          target="_blank"
+                        >
+                          Fifth Semester
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://notes.studytub.workers.dev/0:/6th%20sem/"
+                          target="_blank"
+                        >
+                          Sixth Semester
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://notes.studytub.workers.dev/0:/7th%20Sem/"
+                          target="_blank"
+                        >
+                          Seventh Semester
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://notes.studytub.workers.dev/0:/8th%20Sem/"
+                          target="_blank"
+                        >
+                          Eighth Semester
+                        </a>
                       </li>
                     </ul>
                   </li>
@@ -137,7 +143,8 @@ export default function Navbar() {
               <li>
                 <Anch_button
                   clas="btn btn_dark"
-                  href=""
+                  href="https://notes.studytub.workers.dev/0:/"
+                  target="_blank"
                   text1="Worker 🚀"
                   text2="Lets go 🚀"
                 />
