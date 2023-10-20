@@ -4,28 +4,28 @@ import CourseCards from "../Cards/CourseCards/CourseCards";
 
 const serviceData1 = [
   {
-    href: "",
+    href: "https://notes.studytub.workers.dev/0:/First%20Year/",
     img: "assets/images/service/1st.svg",
     title: "1st Semester",
     description:
       "Where the BTECH journey begins! Dive into the fun world of fundamentals.",
   },
   {
-    href: "",
+    href: "https://notes.studytub.workers.dev/0:/First%20Year/",
     img: "assets/images/service/2nd.svg",
     title: "2nd Semester",
     description:
       "Level up your knowledge and discover the secrets of your second semester",
   },
   {
-    href: "",
+    href: "https://notes.studytub.workers.dev/0:/5th%20sem/",
     img: "assets/images/service/5th.svg",
     title: "Practical Skills",
     description:
       "Ready to rock the fifth semester? Let's unravel the mysteries together!",
   },
   {
-    href: "",
+    href: "https://notes.studytub.workers.dev/0:/6th%20sem/",
     img: "assets/images/service/6th.svg",
     title: "6th Semester",
     description:
@@ -34,27 +34,27 @@ const serviceData1 = [
 ];
 const serviceData2 = [
   {
-    href: "",
+    href: "https://notes.studytub.workers.dev/0:/3rd%20Sem/",
     img: "assets/images/service/3rd.svg",
     title: "3rd Semester",
     description:
       "Things are heating up! Explore advanced topics and conquer the third semester.",
   },
   {
-    href: "",
+    href: "https://notes.studytub.workers.dev/0:/4th%20sem/",
     img: "assets/images/service/4th.svg",
     title: "4th Semester",
     description:
       "Halfway there! Uncover the excitement of your fourth semester adventures.",
   },
   {
-    href: "",
+    href: "https://notes.studytub.workers.dev/0:/7th%20Sem/",
     img: "assets/images/service/7th.svg",
     title: "7th Semester",
     description: "It's the 'Lucky Number Seven' - where dreams take flight!",
   },
   {
-    href: "",
+    href: "https://notes.studytub.workers.dev/0:/8th%20Sem/",
     img: "assets/images/service/8th.svg",
     title: "8th Semester",
     description:

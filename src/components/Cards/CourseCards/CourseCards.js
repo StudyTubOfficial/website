@@ -11,7 +11,7 @@ import React from "react";
  * @returns {JSX.Element} - The course card component.
  */
 const CourseCards = ({ item }) => (
-  <a href={item.href}>
+  <a href={item.href} target="_blank">
     <div className="service_item" data-magnetic>
       <div className="item_icon">
         <img src={item.img} alt="Collab – Online Learning Platform" />
