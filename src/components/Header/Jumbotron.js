@@ -39,7 +39,7 @@ export default function Jumbotron() {
                   <li>
                     <Anch_button
                       clas="btn btn_primary"
-                      href=""
+                      href="https://notes.studytub.workers.dev/0:/"
                       text1="Browse Notes"
                       text2="Read Notes"
                     />
