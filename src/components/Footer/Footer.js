@@ -20,8 +20,9 @@ export default function Footer() {
                     </a>
                   </div>
                   <p>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat
+                    StudyTub: Streamline BTECH studies. Quality notes,
+                    accessible anywhere. Elevate your academic journey today.
+                    Boost success!
                   </p>
                   <ul class="social_links unordered_list">
                     <li>
