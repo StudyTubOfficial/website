@@ -54,17 +54,18 @@ export default function Contact() {
                     </div>
                     <div class="item_content">
                       <h3 class="item_title">Reach Us</h3>
-                      <p class="mb-0">31 Sunset Road, Gales Ferry,</p>
-                      <p class="mb-0">6335 United States</p>
+                      <p class="mb-0">Bhubaneswar,Odisha</p>
+                      <p class="mb-0">India</p>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div class="col col-lg-7">
                 <div class="gmap_canvas">
                   <iframe
                     id="gmap_canvas_iframe"
-                    src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119743.52297962956!2d85.82045315!3d20.300884149999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d2d5170aa5%3A0xfc580e2b68b33fa8!2sBhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1697908955915!5m2!1sen!2sin"
                   ></iframe>
                 </div>
               </div>
