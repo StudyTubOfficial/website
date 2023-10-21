@@ -7,7 +7,7 @@ export default function Contact() {
   const conatctData = {
     page_title: "Contact uss",
     page_description:
-      "Egestas sed tempus urna et pharetra. Leo integer malesuada nunc vel. Libero id faucibus nisl tincidunt eget nullam non nisi.Faucibus turpis in eu mi bibendum neque egestas",
+      "Questions or feedback? Get in touch with us for prompt assistance. We're here to help you. Looking forward to hearing from you!",
     text_1: "Get Started",
     text_2: "Now",
   };
@@ -24,8 +24,9 @@ export default function Contact() {
                   <div class="section_heading">
                     <h2 class="heading_text">Contact Us</h2>
                     <p class="heading_description mb-0">
-                      Viverra maecenas accumsan lacus vel facilisis volutpat.
-                      Faucibus purus in massa tempor nec feugiat nisl
+                      Feel free to contact us at our email address for any
+                      inquiries or assistance you may need. We look forward to
+                      hearing from you!
                     </p>
                   </div>
                   <div class="iconbox_item contact_info_iconbox">
