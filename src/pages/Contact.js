@@ -44,8 +44,8 @@ export default function Contact() {
                     </div>
                     <div class="item_content">
                       <h3 class="item_title">Email Address</h3>
-                      <p class="mb-0">info-collab@example.com</p>
-                      <p class="mb-0">collab-support@exapmple.com</p>
+                      <p class="mb-0">studytub@nishikanta.tech</p>
+                      <p class="mb-0">support@nishikanta.tech</p>
                     </div>
                   </div>
                   <div class="iconbox_item contact_info_iconbox">
