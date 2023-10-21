@@ -3,29 +3,29 @@ import React from "react";
 export default function Faq() {
   const faqData = [
     {
-      question: "What do Collab courses include?",
+      question: "What subjects are covered on StudyTub?",
       answer:
-        "Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim ut sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit amet risus nullam eget felis eget nunc.",
+        "StudyTub offers a wide range of subjects, including engineering, computer science, mathematics, and more. We aim to support BTECH students with a diverse collection of notes.",
     },
     {
-      question: "Do I have to start my course at a certain time?",
+      question: "How much does StudyTub cost?",
       answer:
-        "Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim ut sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit amet risus nullam eget felis eget nunc.",
+        "StudyTub offers both free and premium plans. While you can access almost all the resources for free, our premium plans provide additional features and resources at a minimal cost.",
     },
     {
-      question: "How do I take a Collab course?",
+      question: "Are the notes on StudyTub regularly updated?",
       answer:
-        "Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim ut sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit amet risus nullam eget felis eget nunc.",
+        "Yes, we are committed to keeping our content up-to-date. Our notes and resources are continuously reviewed and updated to ensure that students have access to the most current information.",
     },
     {
-      question: "Do I receive anything after I complete a course?",
+      question: "Can I contribute my own notes to StudyTub?",
       answer:
-        "Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim ut sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit amet risus nullam eget felis eget nunc.",
+        "Absolutely! We encourage students to contribute their own notes and share their knowledge with the StudyTub community. You can easily upload your notes to help fellow learners.",
     },
     {
-      question: "Where can I go for help?",
+      question: "Is there a community or discussion forum on StudyTub?",
       answer:
-        "Dictum non consectetur a erat. Odio morbi quis commodo odio aenean. Blandit libero volutpat sed cras ornare arcu. Tempus urna et pharetra pharetra. Enim ut sem viverra aliquet. Nisl vel pretium lectus quam id. Augue eget arcu dictum varius duis at consectetur. Egestas dui id ornare arcu. Nec ullamcorper sit amet risus nullam eget felis eget nunc.",
+        "Yes, StudyTub has an active community and discussion forum where you can connect with other students, ask questions, and engage in discussions related to your studies. It's a valuable resource for collaborative learning and support.",
     },
   ];
   return (
@@ -35,7 +35,7 @@ export default function Faq() {
           <div class="row justify-content-center">
             <div class="col col-lg-7">
               <h2 class="heading_text mb-0">
-                Popular Questions to Ask Before Choosing a Course
+              Ready to 'note'ify your studies with StudyTub?
               </h2>
             </div>
           </div>
