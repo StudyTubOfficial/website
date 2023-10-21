@@ -198,41 +198,31 @@ export default function Footer() {
                   <h3 class="footer_widget_title">Latest Posts</h3>
                   <ul class="blog_small_group unordered_list_block">
                     <li>
-                      <a class="blog_small" href="blog_details.html">
-                        <span class="item_image">
-                          <img
-                            src="assets/images/blog/blog_small_img_1.jpg"
-                            alt="Collab – Online Learning Platform"
-                          />{" "}
-                        </span>
-                        <span class="item_content">
-                          <span class="item_author">
-                            <i class="fas fa-user-alt"></i> by Corabelle Durrad
-                          </span>{" "}
-                          <strong class="item_title">
-                            See How Michaele Built a New Life and Career
-                          </strong>{" "}
-                          <small class="item_post_date">October 12, 2023</small>
-                        </span>
+                      <a
+                        class="blog_small"
+                        href="https://www.linkedin.com/company/study-tub"
+                      >
+                        <iframe
+                          src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6989999194182750208"
+                          height="118"
+                          frameborder="0"
+                          allowfullscreen=""
+                          title="Embedded post"
+                        ></iframe>
                       </a>
                     </li>
                     <li>
-                      <a class="blog_small" href="blog_details.html">
-                        <span class="item_image">
-                          <img
-                            src="assets/images/blog/blog_small_img_2.jpg"
-                            alt="Collab – Online Learning Platform"
-                          />{" "}
-                        </span>
-                        <span class="item_content">
-                          <span class="item_author">
-                            <i class="fas fa-user-alt"></i> by Corabelle Durrad
-                          </span>{" "}
-                          <strong class="item_title">
-                            See How Michaele Built a New Life and Career
-                          </strong>{" "}
-                          <small class="item_post_date">October 12, 2023</small>
-                        </span>
+                      <a
+                        class="blog_small"
+                        href="https://www.linkedin.com/company/study-tub"
+                      >
+                        <iframe
+                          src="https://www.linkedin.com/embed/feed/update/urn:li:share:6996521505324961792"
+                          height="118"
+                          frameborder="0"
+                          allowfullscreen=""
+                          title="Embedded post"
+                        ></iframe>
                       </a>
                     </li>
                   </ul>
