@@ -10,7 +10,7 @@ export default function Analytics() {
     {
       id: 1,
       title: "users trust StudyTub for their educational journey",
-      value1: "500",
+      value1: "1400",
       value2: "+",
     },
     {
@@ -28,8 +28,8 @@ export default function Analytics() {
     {
       id: 4,
       title: "impressive rating from our valued community!",
-      value1: "40",
-      value2: "+",
+      // value1: "⭐⭐⭐⭐",
+      value2: "4.8",
     },
   ];
   return (

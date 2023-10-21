@@ -51,7 +51,7 @@ export default function About() {
               <div class="col col-lg-6">
                 <div class="image_widget">
                   <img
-                    src="assets/images/about/about_image_2.jpg"
+                    src="assets/images/about/about.png"
                     alt="Collab – Online Learning Platform"
                   />
                 </div>
@@ -61,33 +61,39 @@ export default function About() {
                   <div class="section_heading">
                     <h2 class="heading_text">Join Our Community!</h2>
                     <p class="heading_description mb-0">
-                    Are you looking to connect with like-minded individuals and enhance your educational journey and win exciting prizes and certificates?
+                      Are you looking to connect with like-minded individuals
+                      and enhance your educational journey and win exciting
+                      prizes and certificates?
                     </p>
                   </div>
                   <ul class="info_list unordered_list_block">
                     <li>
                       <i class="fas fa-square"></i>{" "}
                       <span>
-                      Share notes, gain insights, and collaborate with peers who share your passion for learning.
+                        Share notes, gain insights, and collaborate with peers
+                        who share your passion for learning.
                       </span>
                     </li>
                     <li>
                       <i class="fas fa-square"></i>{" "}
                       <span>
-                      Contribute to the community by providing the latest notes and resources.
+                        Contribute to the community by providing the latest
+                        notes and resources.
                       </span>
                     </li>
                     <li>
                       <i class="fas fa-square"></i>{" "}
                       <span>
-                      Get a chance to win exciting goodies and certificates as one of the top 3 contributors.
+                        Get a chance to win exciting goodies and certificates as
+                        one of the top 3 contributors.
                       </span>
                     </li>
                   </ul>
                   <div class="btn_wrap pb-0">
                     <a class="btn btn_dark" href="https://t.me/noteshare1">
                       <span>
-                        <small>Join Our Community!</small> <small>OG Community</small>
+                        <small>Join Our Community!</small>{" "}
+                        <small>OG Community</small>
                       </span>
                     </a>
                   </div>
@@ -102,13 +108,11 @@ export default function About() {
               <div class="row align-items-center justify-content-lg-between">
                 <div class="col col-lg-6">
                   <h2 class="heading_text mb-0">
-                  What Makes StudyTub Stand Out?
+                    What Makes StudyTub Stand Out?
                   </h2>
                 </div>
                 <div class="col col-lg-4">
-                  <p class="heading_description mb-0 text-lg-end">
-                    
-                  </p>
+                  <p class="heading_description mb-0 text-lg-end"></p>
                 </div>
               </div>
             </div>

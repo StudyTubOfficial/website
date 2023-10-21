@@ -83,7 +83,7 @@ export default function Course() {
             <div className="btn_wrap pt-0 d-none d-lg-flex justify-content-end">
               <AnchButton
                 clas="btn border_dark"
-                href=""
+                href="https://notes.studytub.workers.dev/0:/"
                 text1="Browse Notes"
                 text2="Read Notes"
               />
