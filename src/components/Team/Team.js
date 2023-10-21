@@ -29,7 +29,7 @@ export default function Team() {
     <section className="expect_from_course ">
       <div className="container">
         <section className="mentor_section ">
-          <Heading text={"Meet the Dream Team Behind the Scenes!"} clss2={6} />
+          <Heading text={"Meet the Librarians!!"} clss2={6} />
           <div className="row">
             {teamData?.map((item) => {
               return (

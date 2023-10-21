@@ -8,40 +8,36 @@ import Analytics from "../components/Analytics/Analytics";
 import AboutUscards from "../components/Cards/AboutusCards/AboutUscards";
 export default function About() {
   const headerData = {
-    page_title: "About uss",
+    page_title: "Our Story",
     page_description:
-      "Egestas sed tempus urna et pharetra. Leo integer malesuada nunc vel. Libero id faucibus nisl tincidunt eget nullam non nisi.Faucibus turpis in eu mi bibendum neque egestas",
+      " At StudyTub, we started in 2021 to empower BTECH students with high-quality study materials and make their education more accessible. Our core values remain the same: quality, simplicity, and innovation.",
     text_1: "Get Started",
     text_2: "Now",
   };
   const serviceData1 = [
     {
       icon: "fas fa-book-open",
-      heading1: "Allocate the time ",
-      sub: "for study",
+      heading1: "We Add Sparkle to Study ",
       details:
-        "Etiam sit amet nisl purus in mollis nunc sed. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat",
+        "Learning doesn't have to be dull, and StudyTub knows it! We make education exciting, like adding glitter to your study routine.",
     },
     {
       icon: "fas fa-code-branch",
-      heading1: "Alternative learning",
-      sub: "formats",
+      heading1: "Premium Study Materials",
       details:
-        "Posuere ac ut consequat semper viverra nam libero justo. Semper feugiat nibh sed pulvinar proin gravida hendrerit",
+        "Your academic journey should be as smooth as butter. We provide high-quality notes, making your learning path a star-studded experience.",
     },
     {
       icon: "fas fa-comment-smile",
-      heading1: "Mentors with over 5 ",
-      sub: "years of experience",
+      heading1: "Rewards for Stars",
       details:
-        "Nunc sed velit dignissim sodales ut eu sem. Id faucibus nisl tincidunt eget. Nunc non blandit massa enim",
+        "As if excellent notes aren't enough, we also have special rewards for our top contributors. Shine bright like a star and win exciting goodies!",
     },
     {
       icon: "fas fa-user-graduate",
-      heading1: "Follow the Training ",
-      sub: "Program",
+      heading1: "Outsmarting Copycats",
       details:
-        "Tincidunt vitae semper quis lectus nulla at. Eget lorem dolor sed viverra ipsum nunc. Tellus at urna condimentum",
+        "We don't just beat the competition; we outsmart them. Even when someone tries to copy our product, we've got the winning formula!",
     },
   ];
   return (
@@ -63,38 +59,35 @@ export default function About() {
               <div class="col col-lg-6">
                 <div class="content_wrap ps-lg-3">
                   <div class="section_heading">
-                    <h2 class="heading_text">
-                      Supporting Student Learning in Your Course
-                    </h2>
+                    <h2 class="heading_text">Join Our Community!</h2>
                     <p class="heading_description mb-0">
-                      Rutrum tellus pellentesque eu tincidunt. Venenatis cras
-                      sed felis eget velit aliquet sagittis id consectetur. Sit
-                      amet porttitor eget dolor morbi
+                    Are you looking to connect with like-minded individuals and enhance your educational journey and win exciting prizes and certificates?
                     </p>
                   </div>
                   <ul class="info_list unordered_list_block">
                     <li>
                       <i class="fas fa-square"></i>{" "}
                       <span>
-                        Learn in-demand skills with over 183,000 video courses
+                      Share notes, gain insights, and collaborate with peers who share your passion for learning.
                       </span>
                     </li>
                     <li>
                       <i class="fas fa-square"></i>{" "}
-                      <span>Choose courses taught by real-world experts</span>
+                      <span>
+                      Contribute to the community by providing the latest notes and resources.
+                      </span>
                     </li>
                     <li>
                       <i class="fas fa-square"></i>{" "}
                       <span>
-                        Learn at your own pace, with lifetime access on mobile
-                        and desktop
+                      Get a chance to win exciting goodies and certificates as one of the top 3 contributors.
                       </span>
                     </li>
                   </ul>
                   <div class="btn_wrap pb-0">
-                    <a class="btn btn_dark" href="mentor.html">
+                    <a class="btn btn_dark" href="https://t.me/noteshare1">
                       <span>
-                        <small>Our Mentors</small> <small>Our Mentors</small>
+                        <small>Join Our Community!</small> <small>OG Community</small>
                       </span>
                     </a>
                   </div>
@@ -109,13 +102,12 @@ export default function About() {
               <div class="row align-items-center justify-content-lg-between">
                 <div class="col col-lg-6">
                   <h2 class="heading_text mb-0">
-                    What to Expect from a Сollab Course
+                  What Makes StudyTub Stand Out?
                   </h2>
                 </div>
                 <div class="col col-lg-4">
                   <p class="heading_description mb-0 text-lg-end">
-                    Lobortis mattis aliquam faucibus purus in. Ultricies integer
-                    quis auctor elit sed
+                    
                   </p>
                 </div>
               </div>

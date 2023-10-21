@@ -9,13 +9,13 @@ export default function Analytics() {
   const analyticsData = [
     {
       id: 1,
-      title: "Hours of hands-on learning in our courses",
+      title: "users trust StudyTub for their educational journey",
       value1: "500",
       value2: "+",
     },
     {
       id: 2,
-      title: "Students Passed Our Competitions and Got a Job",
+      title: "students have joyfully downloaded our notes!",
       value1: "1500",
       value2: "+",
     },
@@ -27,7 +27,7 @@ export default function Analytics() {
     },
     {
       id: 4,
-      title: "We teach people from 4 continents and over 40 countries",
+      title: "impressive rating from our valued community!",
       value1: "40",
       value2: "+",
     },
