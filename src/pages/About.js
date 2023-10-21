@@ -6,6 +6,10 @@ import Team from "../components/Team/Team";
 import Faq from "../components/Faq/Faq";
 import Analytics from "../components/Analytics/Analytics";
 import AboutUscards from "../components/Cards/AboutusCards/AboutUscards";
+/**
+ * Renders the About page component.
+ * @returns {JSX.Element} The About page component.
+ */
 export default function About() {
   const headerData = {
     page_title: "Our Story",
@@ -41,56 +45,56 @@ export default function About() {
     },
   ];
   return (
-    <div class="page_wrapper">
+    <div className="page_wrapper">
       <Navbar />
-      <main class="page_content">
+      <main className="page_content">
         <Header headerData={headerData} />
-        <section class="courses_info_section section_space_lg pb-0">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col col-lg-6">
-                <div class="image_widget">
+        <section className="courses_info_section section_space_lg pb-0">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col col-lg-6">
+                <div className="image_widget">
                   <img
                     src="assets/images/about/about.png"
                     alt="Collab – Online Learning Platform"
                   />
                 </div>
               </div>
-              <div class="col col-lg-6">
-                <div class="content_wrap ps-lg-3">
-                  <div class="section_heading">
-                    <h2 class="heading_text">Join Our Community!</h2>
-                    <p class="heading_description mb-0">
+              <div className="col col-lg-6">
+                <div className="content_wrap ps-lg-3">
+                  <div className="section_heading">
+                    <h2 className="heading_text">Join Our Community!</h2>
+                    <p className="heading_description mb-0">
                       Are you looking to connect with like-minded individuals
                       and enhance your educational journey and win exciting
                       prizes and certificates?
                     </p>
                   </div>
-                  <ul class="info_list unordered_list_block">
+                  <ul className="info_list unordered_list_block">
                     <li>
-                      <i class="fas fa-square"></i>{" "}
+                      <i className="fas fa-square"></i>{" "}
                       <span>
                         Share notes, gain insights, and collaborate with peers
                         who share your passion for learning.
                       </span>
                     </li>
                     <li>
-                      <i class="fas fa-square"></i>{" "}
+                      <i className="fas fa-square"></i>{" "}
                       <span>
                         Contribute to the community by providing the latest
                         notes and resources.
                       </span>
                     </li>
                     <li>
-                      <i class="fas fa-square"></i>{" "}
+                      <i className="fas fa-square"></i>{" "}
                       <span>
                         Get a chance to win exciting goodies and certificates as
                         one of the top 3 contributors.
                       </span>
                     </li>
                   </ul>
-                  <div class="btn_wrap pb-0">
-                    <a class="btn btn_dark" href="https://t.me/noteshare1">
+                  <div className="btn_wrap pb-0">
+                    <a className="btn btn_dark" href="https://t.me/noteshare1">
                       <span>
                         <small>Join Our Community!</small>{" "}
                         <small>OG Community</small>
@@ -102,21 +106,21 @@ export default function About() {
             </div>
           </div>
         </section>
-        <section class="policy_section section_space_lg">
-          <div class="container position-relative">
-            <div class="section_heading">
-              <div class="row align-items-center justify-content-lg-between">
-                <div class="col col-lg-6">
-                  <h2 class="heading_text mb-0">
+        <section className="policy_section section_space_lg">
+          <div className="container position-relative">
+            <div className="section_heading">
+              <div className="row align-items-center justify-content-lg-between">
+                <div className="col col-lg-6">
+                  <h2 className="heading_text mb-0">
                     What Makes StudyTub Stand Out?
                   </h2>
                 </div>
-                <div class="col col-lg-4">
-                  <p class="heading_description mb-0 text-lg-end"></p>
+                <div className="col col-lg-4">
+                  <p className="heading_description mb-0 text-lg-end"></p>
                 </div>
               </div>
             </div>
-            <div class="row">
+            <div className="row">
               {serviceData1.map((item) => (
                 <AboutUscards
                   heading1={item.heading1}

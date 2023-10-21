@@ -3,15 +3,15 @@ import React from "react";
 export default function Footer() {
   return (
     <>
-      <div class="pt-5 mt-5"></div>
-      <footer class="site_footer">
-        <div class="footer_widget_area">
-          <div class="container">
-            <div class="row">
-              <div class="col col-lg-3 col-md-6 col-sm-6">
-                <div class="footer_widget">
-                  <div class="site_logo">
-                    <a class="site_link" href="index.html">
+      <div className="pt-5 mt-5"></div>
+      <footer className="site_footer">
+        <div className="footer_widget_area">
+          <div className="container">
+            <div className="row">
+              <div className="col col-lg-3 col-md-6 col-sm-6">
+                <div className="footer_widget">
+                  <div className="site_logo">
+                    <a className="site_link" href="index.html">
                       <img
                         src="assets/images/logo/logo.png"
                         alt="Collab - Online Learning Platform"
@@ -24,168 +24,168 @@ export default function Footer() {
                     accessible anywhere. Elevate your academic journey today.
                     Boost success!
                   </p>
-                  <ul class="social_links unordered_list">
+                  <ul className="social_links unordered_list">
                     <li>
                       <a href="#!">
-                        <i class="fab fa-facebook-f"></i>
+                        <i className="fab fa-facebook-f"></i>
                       </a>
                     </li>
                     <li>
                       <a href="#!">
-                        <i class="fab fa-youtube"></i>
+                        <i className="fab fa-youtube"></i>
                       </a>
                     </li>
                     <li>
                       <a href="#!">
-                        <i class="fab fa-twitter"></i>
+                        <i className="fab fa-twitter"></i>
                       </a>
                     </li>
                     <li>
                       <a href="#!">
-                        <i class="fab fa-linkedin-in"></i>
+                        <i className="fab fa-linkedin-in"></i>
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div class="col col-lg-6">
-                <div class="row">
-                  <div class="col col-md-4 col-sm-4">
-                    <div class="footer_widget">
-                      <h3 class="footer_widget_title">Links</h3>
-                      <ul class="page_list unordered_list_block">
+              <div className="col col-lg-6">
+                <div className="row">
+                  <div className="col col-md-4 col-sm-4">
+                    <div className="footer_widget">
+                      <h3 className="footer_widget_title">Links</h3>
+                      <ul className="page_list unordered_list_block">
                         <li>
                           <a href="about.html">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">About</span>
+                            <span className="item_text">About</span>
                           </a>
                         </li>
                         <li>
                           <a href="course.html">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Courses</span>
+                            <span className="item_text">Courses</span>
                           </a>
                         </li>
                         <li>
                           <a href="mentor.html">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Mentors</span>
+                            <span className="item_text">Mentors</span>
                           </a>
                         </li>
                         <li>
                           <a href="pricing.html">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Prices</span>
+                            <span className="item_text">Prices</span>
                           </a>
                         </li>
                         <li>
                           <a href="event.html">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Events</span>
+                            <span className="item_text">Events</span>
                           </a>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="col col-md-4 col-sm-4">
-                    <div class="footer_widget">
-                      <h3 class="footer_widget_title">Class</h3>
-                      <ul class="page_list unordered_list_block">
+                  <div className="col col-md-4 col-sm-4">
+                    <div className="footer_widget">
+                      <h3 className="footer_widget_title">Class</h3>
+                      <ul className="page_list unordered_list_block">
                         <li>
                           <a href="#!">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Programming</span>
+                            <span className="item_text">Programming</span>
                           </a>
                         </li>
                         <li>
                           <a href="#!">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Art & Design</span>
+                            <span className="item_text">Art & Design</span>
                           </a>
                         </li>
                         <li>
                           <a href="#!">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Business</span>
+                            <span className="item_text">Business</span>
                           </a>
                         </li>
                         <li>
                           <a href="#!">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Engineering</span>
+                            <span className="item_text">Engineering</span>
                           </a>
                         </li>
                         <li>
                           <a href="#!">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Photography</span>
+                            <span className="item_text">Photography</span>
                           </a>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div class="col col-md-4 col-sm-4">
-                    <div class="footer_widget">
-                      <h3 class="footer_widget_title">Support</h3>
-                      <ul class="page_list unordered_list_block">
+                  <div className="col col-md-4 col-sm-4">
+                    <div className="footer_widget">
+                      <h3 className="footer_widget_title">Support</h3>
+                      <ul className="page_list unordered_list_block">
                         <li>
                           <a href="contact.html">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Help Center</span>
+                            <span className="item_text">Help Center</span>
                           </a>
                         </li>
                         <li>
                           <a href="faq.html">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">FAQ</span>
+                            <span className="item_text">FAQ</span>
                           </a>
                         </li>
                         <li>
                           <a href="contact.html">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Contacts</span>
+                            <span className="item_text">Contacts</span>
                           </a>
                         </li>
                         <li>
                           <a href="#!">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Security</span>
+                            <span className="item_text">Security</span>
                           </a>
                         </li>
                         <li>
                           <a href="#!">
-                            <span class="item_icon">
-                              <i class="fas fa-caret-right"></i>
+                            <span className="item_icon">
+                              <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span class="item_text">Private Police</span>
+                            <span className="item_text">Private Police</span>
                           </a>
                         </li>
                       </ul>
@@ -193,13 +193,13 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-              <div class="col col-lg-3 col-md-6 col-sm-6">
-                <div class="footer_widget">
-                  <h3 class="footer_widget_title">Latest Posts</h3>
-                  <ul class="blog_small_group unordered_list_block">
+              <div className="col col-lg-3 col-md-6 col-sm-6">
+                <div className="footer_widget">
+                  <h3 className="footer_widget_title">Latest Posts</h3>
+                  <ul className="blog_small_group unordered_list_block">
                     <li>
                       <a
-                        class="blog_small"
+                        className="blog_small"
                         href="https://www.linkedin.com/company/study-tub"
                       >
                         <iframe
@@ -213,7 +213,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a
-                        class="blog_small"
+                        className="blog_small"
                         href="https://www.linkedin.com/company/study-tub"
                       >
                         <iframe
@@ -231,9 +231,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div class="copyright_widget">
-          <div class="container">
-            <p class="copyright_text text-center mb-0">
+        <div className="copyright_widget">
+          <div className="container">
+            <p className="copyright_text text-center mb-0">
               Copyright © 2023 || <b>Study Tub</b> . All rights reserved “For
               the students, by the students.”
             </p>

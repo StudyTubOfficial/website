@@ -9,6 +9,7 @@ export default function Team() {
       designation: "Fullstack developer ",
       company: "LetsFlo",
       github: "https://github.com/NishikantaRay",
+      linkedin: "https://www.linkedin.com/in/nishikantaray1/",
     },
     {
       name: "Sumeet Naik",
@@ -16,6 +17,7 @@ export default function Team() {
       designation: "Fullstack developer",
       company: "McKinley Rice",
       github: "https://github.com/sumeetweb",
+      linkedin: "https://www.linkedin.com/in/sumeetnaik19/",
     },
     {
       name: "Anirudh Panda",
@@ -23,6 +25,7 @@ export default function Team() {
       designation: "Tech & Content",
       company: "Inagiffy",
       github: "https://github.com/AnirudhPanda",
+      linkedin: "https://www.linkedin.com/in/anirudhpanda/",
     },
   ];
   return (
@@ -45,7 +48,7 @@ export default function Team() {
                     </div>
                     <div className="mentor_content">
                       <h3 className="mentor_name">
-                        <a href="mentor_details.html">{item?.name}</a>
+                        <a href={item?.linkedin}>{item?.name}</a>
                       </h3>
                       <p className="mentor_designation">{item?.designation}</p>
                       <ul className="meta_info_list unordered_list_center mb-0">

@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import Anch_button from "../Buttons/Anch_button/Anch_button";
 export default function Navbar() {
   return (
-    <header class="site_header site_header_1">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col col-lg-3 col-5">
-            <div class="site_logo">
-              <Link class="site_link" to="/">
+    <header className="site_header site_header_1">
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col col-lg-3 col-5">
+            <div className="site_logo">
+              <Link className="site_link" to="/">
                 <img
                   src="assets/images/logo/logo.png"
                   alt="Collab - Online Learning Platform"
@@ -19,26 +19,26 @@ export default function Navbar() {
               </Link>
             </div>
           </div>
-          <div class="col col-lg-6 col-2">
-            <nav class="main_menu navbar navbar-expand-lg">
+          <div className="col col-lg-6 col-2">
+            <nav className="main_menu navbar navbar-expand-lg">
               <div
-                class="main_menu_inner collapse navbar-collapse justify-content-center"
+                className="main_menu_inner collapse navbar-collapse justify-content-center"
                 id="main_menu_dropdown"
               >
-                <ul class="main_menu_list unordered_list_center">
+                <ul className="main_menu_list unordered_list_center">
                   <li>
-                    <Link class="nav-link" to="/">
+                    <Link className="nav-link" to="/">
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link class="nav-link" to="/about">
+                    <Link className="nav-link" to="/about">
                       About Us
                     </Link>
                   </li>
-                  <li class="dropdown">
+                  <li className="dropdown">
                     <a
-                      class="nav-link"
+                      className="nav-link"
                       href="#"
                       id="pages_submenu"
                       role="button"
@@ -47,7 +47,10 @@ export default function Navbar() {
                     >
                       Study Materials
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="pages_submenu">
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="pages_submenu"
+                    >
                       <li>
                         <a
                           href="https://notes.studytub.workers.dev/0:/First%20Year/"
@@ -116,7 +119,7 @@ export default function Navbar() {
                   </li>
 
                   <li>
-                    <Link class="nav-link" to="/contact">
+                    <Link className="nav-link" to="/contact">
                       Contact
                     </Link>
                   </li>
@@ -124,11 +127,11 @@ export default function Navbar() {
               </div>
             </nav>
           </div>
-          <div class="col col-lg-3 col-5">
-            <ul class="header_btns_group unordered_list_end">
+          <div className="col col-lg-3 col-5">
+            <ul className="header_btns_group unordered_list_end">
               <li>
                 <button
-                  class="mobile_menu_btn"
+                  className="mobile_menu_btn"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#main_menu_dropdown"
@@ -136,7 +139,7 @@ export default function Navbar() {
                   aria-expanded="false"
                   aria-label="Toggle navigation"
                 >
-                  <i class="far fa-bars"></i>
+                  <i className="far fa-bars"></i>
                 </button>
               </li>
               <li></li>

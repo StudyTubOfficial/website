@@ -20,22 +20,22 @@ export default function Jumbotron() {
     },
   ];
   return (
-    <main class="page_content">
-      <section class="hero_banner style_1">
-        <div class="container">
-          <div class="content_wrap">
-            <div class="row">
-              <div class="col col-lg-7 d-n">
-                <h1 class="banner_small_title">Learning Excellence</h1>
-                <h2 class="banner_big_title">
+    <main className="page_content">
+      <section className="hero_banner style_1">
+        <div className="container">
+          <div className="content_wrap">
+            <div className="row">
+              <div className="col col-lg-7 d-n">
+                <h1 className="banner_small_title">Learning Excellence</h1>
+                <h2 className="banner_big_title">
                   Your BTECH Companion in the Digital Age
                 </h2>
-                <p class="banner_description">
+                <p className="banner_description">
                   Simplify your BTECH studies with StudyTub. Access high-quality
                   notes anytime, anywhere, on any device. Boost your academic
                   journey today!
                 </p>
-                <ul class="banner_btns_group unordered_list ">
+                <ul className="banner_btns_group unordered_list ">
                   <li>
                     <Anch_button
                       clas="btn btn_primary"
@@ -46,29 +46,29 @@ export default function Jumbotron() {
                   </li>
                   <li>
                     <a
-                      class="video_play_btn text-white popup_video "
+                      className="video_play_btn text-white popup_video "
                       href="https://www.youtube.com/watch?v=7e90gBu4pas"
                     >
-                      <span class="icon" data-magnetic>
-                        <i class="fas fa-play"></i>
+                      <span className="icon" data-magnetic>
+                        <i className="fas fa-play"></i>
                       </span>{" "}
-                      <span class="text">Watch video</span>
+                      <span className="text">Watch video</span>
                     </a>
                   </li>
                 </ul>
               </div>
               <div className="col col-lg-1"></div>
-              <div class="col col-lg-4 ">
-                <div class="banner_image_1 decoration_wrap d-n-b">
-                  <div class="image_wrap ">
+              <div className="col col-lg-4 ">
+                <div className="banner_image_1 decoration_wrap d-n-b">
+                  <div className="image_wrap ">
                     <img
                       src="assets/images/banner/hero_banner_img_1.jpg"
                       alt="Collab – Online Learning Platform"
                     />
                   </div>
-                  <div class="satisfied_student">
-                    <h3 class="wrap_title">1100+ Satisfied Students</h3>
-                    <ul class="students_thumbnail unordered_list_center">
+                  <div className="satisfied_student">
+                    <h3 className="wrap_title">1100+ Satisfied Students</h3>
+                    <ul className="students_thumbnail unordered_list_center">
                       {SatisfiedData.map((item, index) => {
                         return (
                           <li key={item}>
@@ -81,7 +81,7 @@ export default function Jumbotron() {
                     </ul>
                   </div>
                   <div
-                    class="deco_item shape_img_1"
+                    className="deco_item shape_img_1"
                     data-parallax='{"y" : -130, "smoothness": 6}'
                   >
                     <img
@@ -90,7 +90,7 @@ export default function Jumbotron() {
                     />
                   </div>
                   <div
-                    class="deco_item shape_img_2"
+                    className="deco_item shape_img_2"
                     data-parallax='{"y" : 160, "smoothness": 6}'
                   >
                     <img

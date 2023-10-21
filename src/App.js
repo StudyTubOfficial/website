@@ -1,4 +1,3 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -11,9 +10,9 @@ import Contact from "./pages/Contact";
 function App() {
   return (
     <>
-      <div class="backtotop">
-        <a href="#" class="scroll">
-          <i class="far fa-arrow-up"></i>
+      <div className="backtotop">
+        <a href="#" className="scroll">
+          <i className="far fa-arrow-up"></i>
         </a>
       </div>
       <Routes>
