@@ -1,5 +1,6 @@
 import React from "react";
-
+import "./footer.css";
+import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <>
@@ -8,7 +9,7 @@ export default function Footer() {
         <div className="footer_widget_area">
           <div className="container">
             <div className="row">
-              <div className="col col-lg-3 col-md-6 col-sm-6">
+              <div className="col col-lg-4 col-md-6 col-sm-6">
                 <div className="footer_widget">
                   <div className="site_logo">
                     <a className="site_link" href="index.html">
@@ -26,44 +27,44 @@ export default function Footer() {
                   </p>
                   <ul className="social_links unordered_list">
                     <li>
-                      <a href="#!">
-                        <i className="fab fa-facebook-f"></i>
+                      <a href="https://github.com/StudyTubOfficial">
+                        <i className="fab fa-github"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#!">
+                      <a href="https://youtu.be/kzwfyEfJEW4?si=y11E80WV1KL2rwDC">
                         <i className="fab fa-youtube"></i>
                       </a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a href="#!">
                         <i className="fab fa-twitter"></i>
                       </a>
-                    </li>
+                    </li> */}
                     <li>
-                      <a href="#!">
+                      <a href="https://www.linkedin.com/company/study-tub/">
                         <i className="fab fa-linkedin-in"></i>
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div className="col col-lg-6">
+              <div className="col col-lg-4">
                 <div className="row">
-                  <div className="col col-md-4 col-sm-4">
+                  <div className="col-6 col-md-6 col-sm-4">
                     <div className="footer_widget">
                       <h3 className="footer_widget_title">Links</h3>
                       <ul className="page_list unordered_list_block">
                         <li>
-                          <a href="about.html">
+                          <Link to="/about">
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
                             <span className="item_text">About</span>
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a href="course.html">
+                          <a href="https://notes.studytub.workers.dev/0:/">
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
@@ -73,21 +74,21 @@ export default function Footer() {
                         <li>
                           {/* attach the team section in the below a href */}
 
-                          <a href=""> 
+                          <Link to="/team">
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
                             <span className="item_text">Team</span>
-                          </a>
+                          </Link>
                         </li>
-                         <li>
+                        <li>
                           <a href="https://t.me/noteshare1">
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
                             <span className="item_text">Community</span>
                           </a>
-                        </li> 
+                        </li>
                         {/* <li>
                           <a href="event.html">
                             <span className="item_icon">
@@ -99,67 +100,13 @@ export default function Footer() {
                       </ul>
                     </div>
                   </div>
-                  {/* <div className="col col-md-4 col-sm-4">
-                    <div className="footer_widget">
-                      <h3 className="footer_widget_title">Class</h3>
-                      <ul className="page_list unordered_list_block">
-                        <li>
-                          <a href="#!">
-                            <span className="item_icon">
-                              <i className="fas fa-caret-right"></i>
-                            </span>{" "}
-                            <span className="item_text">Programming</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span className="item_icon">
-                              <i className="fas fa-caret-right"></i>
-                            </span>{" "}
-                            <span className="item_text">Art & Design</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span className="item_icon">
-                              <i className="fas fa-caret-right"></i>
-                            </span>{" "}
-                            <span className="item_text">Business</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span className="item_icon">
-                              <i className="fas fa-caret-right"></i>
-                            </span>{" "}
-                            <span className="item_text">Engineering</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#!">
-                            <span className="item_icon">
-                              <i className="fas fa-caret-right"></i>
-                            </span>{" "}
-                            <span className="item_text">Photography</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div> */}
-                  <div className="col col-md-4 col-sm-4">
+
+                  <div className="col-6 col-md-6 col-sm-4">
                     <div className="footer_widget">
                       <h3 className="footer_widget_title">Support</h3>
                       <ul className="page_list unordered_list_block">
-                        {/* <li>
-                          <a href="contact.html">
-                            <span className="item_icon">
-                              <i className="fas fa-caret-right"></i>
-                            </span>{" "}
-                            <span className="item_text">Help Center</span>
-                          </a>
-                        </li> */}
                         <li>
-                          <a href="faq.html">
+                          <a href="/faq">
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
@@ -167,35 +114,19 @@ export default function Footer() {
                           </a>
                         </li>
                         <li>
-                          <a href="contact.html">
+                          <Link to="/contact">
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
                             <span className="item_text">Contact Us</span>
-                          </a>
+                          </Link>
                         </li>
-                        {/* <li>
-                          <a href="#!">
-                            <span className="item_icon">
-                              <i className="fas fa-caret-right"></i>
-                            </span>{" "}
-                            <span className="item_text">Security</span>
-                          </a>
-                        </li> */}
-                        {/* <li>
-                          <a href="#!">
-                            <span className="item_icon">
-                              <i className="fas fa-caret-right"></i>
-                            </span>{" "}
-                            <span className="item_text">Private Police</span>
-                          </a>
-                        </li> */}
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="col col-lg-3 col-md-6 col-sm-6">
+              <div className="col col-lg-4 col-md-6 col-sm-6">
                 <div className="footer_widget">
                   <h3 className="footer_widget_title">Latest Posts</h3>
                   <ul className="blog_small_group unordered_list_block">
@@ -207,6 +138,7 @@ export default function Footer() {
                         <iframe
                           src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6989999194182750208"
                           height="118"
+                          width={400}
                           frameborder="0"
                           allowfullscreen=""
                           title="Embedded post"
@@ -221,6 +153,7 @@ export default function Footer() {
                         <iframe
                           src="https://www.linkedin.com/embed/feed/update/urn:li:share:6996521505324961792"
                           height="118"
+                          width={400}
                           frameborder="0"
                           allowfullscreen=""
                           title="Embedded post"

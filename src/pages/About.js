@@ -17,6 +17,7 @@ export default function About() {
       " At StudyTub, we started in 2019 to empower BTECH students with high-quality study materials and make their education more accessible. Our core values remain the same: quality, simplicity, and innovation.",
     text_1: "Get Started",
     text_2: "Now",
+    details: "About Us",
   };
   const serviceData1 = [
     {

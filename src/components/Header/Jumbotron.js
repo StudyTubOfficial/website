@@ -47,7 +47,7 @@ export default function Jumbotron() {
                   <li>
                     <a
                       className="video_play_btn text-white popup_video "
-                      href="https://www.youtube.com/watch?v=7e90gBu4pas"
+                      href="https://youtu.be/kzwfyEfJEW4?si=y11E80WV1KL2rwDC"
                     >
                       <span className="icon" data-magnetic>
                         <i className="fas fa-play"></i>

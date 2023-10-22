@@ -20,7 +20,7 @@ export default function Header({ headerData }) {
                 <li>
                   <a href="#!">Pages</a>
                 </li>
-                <li>About Us</li>
+                <li>{headerData.details}</li>
               </ul>
               <h1 className="page_title">{headerData.page_title || ""}</h1>
               <p className="page_description">

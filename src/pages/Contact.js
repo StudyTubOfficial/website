@@ -9,11 +9,12 @@ import Header from "../components/Multi_Header/Header";
  */
 export default function Contact() {
   const conatctData = {
-    page_title: "Contact uss",
+    page_title: "Contact Us",
     page_description:
       "Questions or feedback? Get in touch with us for prompt assistance. We're here to help you. Looking forward to hearing from you!",
     text_1: "Get Started",
     text_2: "Now",
+    details: "Contact Us",
   };
   return (
     <div className="page_wrapper">
