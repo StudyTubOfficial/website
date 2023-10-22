@@ -67,37 +67,39 @@ export default function Footer() {
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span className="item_text">Courses</span>
+                            <span className="item_text">Notes</span>
                           </a>
                         </li>
                         <li>
-                          <a href="mentor.html">
+                          {/* attach the team section in the below a href */}
+
+                          <a href=""> 
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span className="item_text">Mentors</span>
+                            <span className="item_text">Team</span>
                           </a>
                         </li>
-                        <li>
-                          <a href="pricing.html">
+                         <li>
+                          <a href="https://t.me/noteshare1">
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span className="item_text">Prices</span>
+                            <span className="item_text">Community</span>
                           </a>
-                        </li>
-                        <li>
+                        </li> 
+                        {/* <li>
                           <a href="event.html">
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
                             <span className="item_text">Events</span>
                           </a>
-                        </li>
+                        </li> */}
                       </ul>
                     </div>
                   </div>
-                  <div className="col col-md-4 col-sm-4">
+                  {/* <div className="col col-md-4 col-sm-4">
                     <div className="footer_widget">
                       <h3 className="footer_widget_title">Class</h3>
                       <ul className="page_list unordered_list_block">
@@ -143,19 +145,19 @@ export default function Footer() {
                         </li>
                       </ul>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="col col-md-4 col-sm-4">
                     <div className="footer_widget">
                       <h3 className="footer_widget_title">Support</h3>
                       <ul className="page_list unordered_list_block">
-                        <li>
+                        {/* <li>
                           <a href="contact.html">
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
                             <span className="item_text">Help Center</span>
                           </a>
-                        </li>
+                        </li> */}
                         <li>
                           <a href="faq.html">
                             <span className="item_icon">
@@ -169,25 +171,25 @@ export default function Footer() {
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
-                            <span className="item_text">Contacts</span>
+                            <span className="item_text">Contact Us</span>
                           </a>
                         </li>
-                        <li>
+                        {/* <li>
                           <a href="#!">
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
                             <span className="item_text">Security</span>
                           </a>
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                           <a href="#!">
                             <span className="item_icon">
                               <i className="fas fa-caret-right"></i>
                             </span>{" "}
                             <span className="item_text">Private Police</span>
                           </a>
-                        </li>
+                        </li> */}
                       </ul>
                     </div>
                   </div>
