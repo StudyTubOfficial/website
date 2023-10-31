@@ -1,0 +1,17 @@
+.btn-course {
+  color: black;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.btn-course:hover {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+.pad-2 {
+  padding-top: 10px;
+}

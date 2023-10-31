@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./courseCard.css";
 /**
  * Renders a course card component.
  *
@@ -21,6 +21,11 @@ const CourseCards = ({ item }) => (
         <p className="mb-0" style={{ color: "black" }}>
           {item.description}
         </p>
+      </div>
+      <div className="pad-2">
+        <a href={item.href} className="btn-course">
+          Click Here
+        </a>
       </div>
     </div>
   </a>
