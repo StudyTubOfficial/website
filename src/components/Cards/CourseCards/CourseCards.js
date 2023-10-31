@@ -23,7 +23,7 @@ const CourseCards = ({ item }) => (
         </p>
       </div>
       <div className="pad-2">
-        <a href={item.href} className="btn-course">
+        <a href={item.href} target="_blank" className="btn-course">
           Click Here
         </a>
       </div>
