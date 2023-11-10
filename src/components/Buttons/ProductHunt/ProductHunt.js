@@ -11,6 +11,7 @@ export default function ProductHunt() {
         <a
           href="https://www.producthunt.com/posts/studytub?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-studytub"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img
             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=350364&theme=dark"

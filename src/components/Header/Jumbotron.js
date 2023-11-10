@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.css";
-import Anch_button from "../Buttons/Anch_button/Anch_button";
+import AnchButton from "../Buttons/Anch_button/Anch_button";
 export default function Jumbotron() {
   const SatisfiedData = [
     {
@@ -37,7 +37,7 @@ export default function Jumbotron() {
                 </p>
                 <ul className="banner_btns_group unordered_list ">
                   <li>
-                    <Anch_button
+                    <AnchButton
                       clas="btn btn_primary"
                       href="https://notes.studytub.workers.dev/0:/"
                       text1="Browse Notes"
@@ -48,6 +48,7 @@ export default function Jumbotron() {
                     <a
                       className="video_play_btn text-white popup_video "
                       href="https://youtu.be/kzwfyEfJEW4?si=y11E80WV1KL2rwDC"
+                      rel="noopener noreferrer"
                     >
                       <span className="icon" data-magnetic>
                         <i className="fas fa-play"></i>

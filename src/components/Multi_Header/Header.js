@@ -1,5 +1,5 @@
 import React from "react";
-import Dark_button from "../Buttons/Dark_button/Dark_button";
+import DarkButton from "../Buttons/Dark_button/Dark_button";
 
 export default function Header({ headerData }) {
   return (
@@ -28,7 +28,7 @@ export default function Header({ headerData }) {
               </p>
               <form action="#">
                 <div className="form_item mb-0">
-                  <Dark_button
+                  <DarkButton
                     text_1={headerData.text_1 || ""}
                     text_2={headerData.text_2 || ""}
                   />

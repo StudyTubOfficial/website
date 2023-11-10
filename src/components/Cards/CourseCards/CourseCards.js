@@ -11,7 +11,7 @@ import "./courseCard.css";
  * @returns {JSX.Element} - The course card component.
  */
 const CourseCards = ({ item }) => (
-  <a href={item.href} target="_blank">
+  <a href={item.href} rel="noopener noreferrer" target="_blank">
     <div className="service_item" data-magnetic>
       <div className="item_icon">
         <img src={item.img} alt="Collab – Online Learning Platform" />
@@ -23,7 +23,12 @@ const CourseCards = ({ item }) => (
         </p>
       </div>
       <div className="pad-2">
-        <a href={item.href} target="_blank" className="btn-course">
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-course"
+        >
           Click Here
         </a>
       </div>

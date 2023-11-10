@@ -15,7 +15,7 @@ export default function Navbar() {
                   alt="Collab - Online Learning Platform"
                   style={{ height: "70px" }}
                 />
-                <span>StudyTub</span>
+                <span className="logoo">StudyTub</span>
               </Link>
             </div>
           </div>
@@ -55,6 +55,7 @@ export default function Navbar() {
                         <a
                           href="https://notes.studytub.workers.dev/0:/First%20Year/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           First Semester
                         </a>
@@ -63,6 +64,7 @@ export default function Navbar() {
                         <a
                           href="https://notes.studytub.workers.dev/0:/First%20Year/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Second Semester
                         </a>
@@ -71,6 +73,7 @@ export default function Navbar() {
                         <a
                           href="https://notes.studytub.workers.dev/0:/3rd%20Sem/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Third Semester
                         </a>
@@ -79,6 +82,7 @@ export default function Navbar() {
                         <a
                           href="https://notes.studytub.workers.dev/0:/4th%20sem/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Fourth Semester
                         </a>
@@ -87,6 +91,7 @@ export default function Navbar() {
                         <a
                           href="https://notes.studytub.workers.dev/0:/5th%20sem/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Fifth Semester
                         </a>
@@ -95,6 +100,7 @@ export default function Navbar() {
                         <a
                           href="https://notes.studytub.workers.dev/0:/6th%20sem/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Sixth Semester
                         </a>
@@ -103,6 +109,7 @@ export default function Navbar() {
                         <a
                           href="https://notes.studytub.workers.dev/0:/7th%20Sem/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Seventh Semester
                         </a>
@@ -111,6 +118,7 @@ export default function Navbar() {
                         <a
                           href="https://notes.studytub.workers.dev/0:/8th%20Sem/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Eighth Semester
                         </a>
