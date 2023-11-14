@@ -9,13 +9,22 @@
   .logoo {
     font-size: 25px;
   }
+  .username {
+    display: none;
+  }
+  .dropdown-menu-right {
+    right: 1px;
+  }
 }
 
-.username {
-  font-size: 15px;
-  font-weight: 500;
-  color: #000;
-  margin: 0 7px;
+/* media query for desktop view */
+@media only screen and (min-width: 768px) {
+  .username {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    margin: 0 7px;
+  }
 }
 
 .dropdown-toggle::after {
