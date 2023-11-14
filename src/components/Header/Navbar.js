@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 const userThumb =
   "https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png";
 export default function Navbar() {
   const userId = localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user")).id
     : null;
+  const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("email");
-    localStorage.removeItem("phone");
-    window.location.href = "/login";
+    localStorage.removeItem("user");
+    navigate("/login");
   };
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   return (
