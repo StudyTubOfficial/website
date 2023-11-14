@@ -28,6 +28,7 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/list" element={<UserList />} />
+          <Route path="*" element={<Home />} />
         </Route>
 
         <Route path="/login" element={<Login />} />
