@@ -26,7 +26,7 @@ export default function Header({ headerData }) {
               <p className="page_description">
                 {headerData.page_description || ""}
               </p>
-              <form action="#">
+              <form>
                 <div className="form_item mb-0">
                   <DarkButton
                     text_1={headerData.text_1 || ""}
