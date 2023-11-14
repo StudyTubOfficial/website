@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
-import Anch_button from "../Buttons/Anch_button/Anch_button";
+
+const userThumb =
+  "https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png";
 export default function Navbar() {
+  const userId = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user")).id
+    : null;
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("email");
+    localStorage.removeItem("phone");
+    window.location.href = "/login";
+  };
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   return (
     <header className="site_header site_header_1">
       <div className="container">
@@ -39,7 +51,6 @@ export default function Navbar() {
                   <li className="dropdown">
                     <a
                       className="nav-link"
-                      href="#"
                       id="pages_submenu"
                       role="button"
                       data-bs-toggle="dropdown"
@@ -151,14 +162,46 @@ export default function Navbar() {
                 </button>
               </li>
               <li></li>
-              <li>
-                <Anch_button
-                  clas="btn btn_dark"
-                  href="https://notes.studytub.workers.dev/0:/"
-                  target="_blank"
-                  text1="Worker 🚀"
-                  text2="Lets go 🚀"
-                />
+
+              <li
+                onMouseEnter={() => setIsDropdownVisible(true)}
+                onMouseLeave={() => setIsDropdownVisible(false)}
+              >
+                <div className="ml-auto">
+                  <a
+                    className=" dropdown-toggle"
+                    href="#"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src={userThumb} // Make sure 'userThumb' is defined in your component
+                      width="40"
+                      height="40"
+                      className="rounded-circle"
+                      alt="User Thumbnail"
+                    />
+                    {userId && <span className="ml-2 username">{userId}</span>}
+                  </a>
+
+                  <div
+                    className={`dropdown-menu dropdown-menu-right ${
+                      isDropdownVisible ? "show" : ""
+                    }`}
+                    aria-labelledby="navbarDropdownMenuLink"
+                  >
+                    <a
+                      onClick={handleLogout}
+                      className="dropdown-item text-blackk"
+                      href="#"
+                    >
+                      Log Out
+                    </a>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>

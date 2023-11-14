@@ -1,0 +1,30 @@
+.btn_dark_btnn {
+  border: 1px solid #ccc;
+  padding: 8px 12px; /* Adjust padding as needed */
+  margin: 5px; /* Adjust margin as needed */
+  cursor: pointer;
+}
+.active {
+  background-color: #000; /* Change to your preferred active color */
+  color: #fff; /* Change to your preferred text color for the active button */
+  border-color: #000; /* Change to your preferred border color for the active button */
+}
+.btn_dark_hello {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.btn_dark_hello:hover {
+  background-color: #fff; /* Change to a slightly different shade or your preferred color */
+  border-color: #000;
+  color: #000;
+}
+.btn_dark_hello:disabled {
+  /* Styles for when the button is disabled */
+  background-color: #d6d6d6; /* Change to a muted color or your preferred color */
+  border-color: #d6d6d6;
+  color: #888888; /* Change to a muted color or your preferred color */
+  cursor: not-allowed;
+}

@@ -1,0 +1,19 @@
+/* Styles for mobile view */
+@media only screen and (max-width: 600px) {
+  .d-n {
+    display: none;
+  }
+  .mobile-view-display {
+    display: block;
+  }
+}
+
+/* Styles for other views */
+@media only screen and (min-width: 601px) {
+  .d-n {
+    display: block;
+  }
+  .mobile-view-display {
+    display: none;
+  }
+}

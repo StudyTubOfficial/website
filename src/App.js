@@ -4,7 +4,9 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Team from "./pages/Team";
 import Faq from "./pages/Faq";
-
+import Login from "./pages/Login";
+import UserList from "./pages/UserList";
+import PrivateRoute from "./utils/PrivateRoute";
 /**
  * Renders the main App component.
  * @returns {JSX.Element} The App component.
@@ -18,11 +20,17 @@ function App() {
         </a>
       </div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/faq" element={<Faq />} />
+        <Route element={<PrivateRoute />}>
+          {" "}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/list" element={<UserList />} />
+        </Route>
+
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );
