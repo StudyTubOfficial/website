@@ -3,6 +3,7 @@ import "./login.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const handleSubmit = async (e) => {
@@ -31,10 +32,7 @@ export default function Login() {
       return;
     } else {
       axios
-        .post(
-          "https://studytub-backend-production.up.railway.app/api/auth/login",
-          data
-        )
+        .post(`${process.env.REACT_APP_API_URL}api/auth/login`, data)
         .then((res) => {
           if (res.status === 200) {
             toast.success("Login successfully", {

@@ -6,6 +6,7 @@ import "./userlist.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 export default function UserList() {
   const conatctData = {
     page_title: "USER LIST",
@@ -27,15 +28,12 @@ export default function UserList() {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     if (email)
       axios
-        .delete(
-          `https://studytub-backend-production.up.railway.app/api/auth/delete-user`,
-          {
-            headers: {
-              Authorization: `${localStorage.getItem("token")}`,
-            },
-            data,
-          }
-        )
+        .delete(`${process.env.REACT_APP_API_URL}api/auth/delete-user`, {
+          headers: {
+            Authorization: `${localStorage.getItem("token")}`,
+          },
+          data,
+        })
         .then((res) => {
           toast.success("User deleted successfully", {
             position: "top-center",
@@ -58,14 +56,11 @@ export default function UserList() {
   };
   const GetAllUser = () => {
     axios
-      .get(
-        "https://studytub-backend-production.up.railway.app/api/auth/get-all-users",
-        {
-          headers: {
-            Authorization: `${localStorage.getItem("token")}`,
-          },
-        }
-      )
+      .get(`${process.env.REACT_APP_API_URL}api/auth/get-all-users`, {
+        headers: {
+          Authorization: `${localStorage.getItem("token")}`,
+        },
+      })
       .then((res) => {
         setUserData(res.data);
       })
