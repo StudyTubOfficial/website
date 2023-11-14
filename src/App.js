@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <div className="backtotop">
-        <a href="#" className="scroll">
+        <a className="scroll">
           <i className="far fa-arrow-up"></i>
         </a>
       </div>

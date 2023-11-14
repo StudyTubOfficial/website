@@ -170,7 +170,6 @@ export default function Navbar() {
                 <div className="ml-auto">
                   <a
                     className=" dropdown-toggle"
-                    href="#"
                     id="navbarDropdownMenuLink"
                     role="button"
                     data-toggle="dropdown"
@@ -196,7 +195,6 @@ export default function Navbar() {
                     <a
                       onClick={handleLogout}
                       className="dropdown-item text-blackk"
-                      href="#"
                     >
                       Log Out
                     </a>
