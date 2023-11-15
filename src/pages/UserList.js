@@ -125,7 +125,7 @@ export default function UserList() {
               <tbody>
                 {currentItems.map((item, index) => (
                   <tr key={index}>
-                    <td>{index + 1}</td>
+                    <td>{index + 1 + (currentPage - 1) * itemsPerPage}</td>
                     <td>{item.id}</td>
                     <td>
                       <a
