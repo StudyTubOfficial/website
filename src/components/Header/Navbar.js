@@ -27,7 +27,7 @@ export default function Navbar() {
                   alt="Collab - Online Learning Platform"
                   style={{ height: "70px" }}
                 />
-                <span className="logoo">StudyTub <i style={{color:"green"}} class="fas fa-tree-christmas"></i></span>
+                <span className="logoo">StudyTub </span>
               </Link>
             </div>
           </div>
