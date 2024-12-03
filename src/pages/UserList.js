@@ -6,8 +6,18 @@ import "./userlist.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import Snowfall from "react-snowfall";
 export default function UserList() {
+  const [authenticated, setAuthenticated] = useState(false);
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
+  const snowflakeCount = 413;
+  const minSpeed = 1.5;
+  const maxSpeed = 3.0;
+  const minWind = -0.5;
+  const maxWind = 2;
+  const minRadius = 2;
+  const maxRadius = 4;
   const conatctData = {
     page_title: "USER LIST",
     page_description:
@@ -20,6 +30,7 @@ export default function UserList() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const [userData, setUserData] = useState([]);
+  const [totalData, setTotalData] = useState();
 
   const handelDelete = (email) => {
     const data = {
@@ -62,7 +73,9 @@ export default function UserList() {
         },
       })
       .then((res) => {
-        setUserData(res.data);
+        setUserData(res.data.users);
+        setTotalData(res.data.totalUsers);
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -94,7 +107,7 @@ export default function UserList() {
     }
   };
   const totalPages = Math.ceil(userData.length / itemsPerPage);
-
+  const totalNumber = totalData;
   const pageNumbers = Array.from({ length: totalPages }).map(
     (_, index) => index + 1
   );
@@ -103,9 +116,63 @@ export default function UserList() {
     Math.max(0, currentPage - 2),
     Math.min(currentPage + 1, totalPages)
   );
+  const handleLogin = () => {
+    const validId = "Nishikanta";
+    const validPassword = "password123";
+
+    if (id === validId && password === validPassword) {
+      setAuthenticated(true);
+    } else {
+      toast.error("Invalid ID or Password. Please try again.");
+    }
+  };
+
+  if (!authenticated) {
+    return (
+      <div style={{ textAlign: "center", marginTop: "20vh" }}>
+        <h2>Authentication Required</h2>
+        <div style={{ margin: "10px 0" }}>
+          <input
+            type="text"
+            placeholder="Enter ID"
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+            style={{ padding: "10px", marginRight: "5px" }}
+          />
+        </div>
+        <div style={{ margin: "10px 0" }}>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={{ padding: "10px", marginRight: "5px" }}
+          />
+        </div>
+        <button
+          onClick={handleLogin}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#007bff",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+          }}>
+          Login
+        </button>
+        <ToastContainer />
+      </div>
+    );
+  }
   return (
     <div>
       <div className="page_wrapper">
+      <Snowfall
+        snowflakeCount={snowflakeCount}
+        speed={[minSpeed, maxSpeed]}
+        wind={[minWind, maxWind]}
+        radius={[minRadius, maxRadius]}
+      />
         <Navbar />
         <main className="page_content">
           <Header headerData={conatctData} />
@@ -130,8 +197,7 @@ export default function UserList() {
                     <td>
                       <a
                         href={`mailto:${item.email}`}
-                        className="text-dark text-center"
-                      >
+                        className="text-dark text-center">
                         {item.email}
                       </a>
                     </td>
@@ -141,8 +207,7 @@ export default function UserList() {
                         style={{ backgroundColor: "#bb2124" }}
                         onClick={() => {
                           handelDelete(item.email);
-                        }}
-                      >
+                        }}>
                         Delete
                       </button>
                     </td>
@@ -154,8 +219,7 @@ export default function UserList() {
           <div className="text-center">
             <div
               className="pagination text-center"
-              style={{ display: "inline-block" }}
-            >
+              style={{ display: "inline-block" }}>
               <button className="btn btn_dark_hello" onClick={prevPage}>
                 Previous
               </button>
@@ -169,8 +233,7 @@ export default function UserList() {
                   onClick={() => {
                     setCurrentPage(number);
                     paginate(number);
-                  }}
-                >
+                  }}>
                   {number}
                 </button>
               ))}
@@ -179,6 +242,7 @@ export default function UserList() {
               </button>
             </div>
             <p>Total page {totalPages}</p>
+            <p>Total {totalNumber}</p>
           </div>
         </div>
 

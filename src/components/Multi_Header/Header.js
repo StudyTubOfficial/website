@@ -22,7 +22,7 @@ export default function Header({ headerData }) {
                 </li>
                 <li>{headerData.details}</li>
               </ul>
-              <h1 className="page_title">{headerData.page_title || ""}</h1>
+              <h1 className="page_title">{headerData.page_title || ""} <i style={{color:"red"}} class="fas fa-hat-santa"></i></h1>
               <p className="page_description">
                 {headerData.page_description || ""}
               </p>
@@ -51,7 +51,7 @@ export default function Header({ headerData }) {
                 </li>
                 <li>{headerData.details}</li>
               </ul>
-              <h1 className="page_title">{headerData.page_title || ""}</h1>
+              <h1 className="page_title">{headerData.page_title || ""} <i style={{color:"red"}} class="fas fa-hat-santa"></i></h1>
               <p className="page_description">
                 {headerData.page_description || ""}
               </p>

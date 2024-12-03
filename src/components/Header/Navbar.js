@@ -27,7 +27,7 @@ export default function Navbar() {
                   alt="Collab - Online Learning Platform"
                   style={{ height: "70px" }}
                 />
-                <span className="logoo">StudyTub</span>
+                <span className="logoo">StudyTub <i style={{color:"green"}} class="fas fa-tree-christmas"></i></span>
               </Link>
             </div>
           </div>
@@ -136,7 +136,11 @@ export default function Navbar() {
                       </li>
                     </ul>
                   </li>
-
+                  <li>
+                    <Link className="nav-link" to="/faq">
+                      FAQ
+                    </Link>
+                  </li>
                   <li>
                     <Link className="nav-link" to="/contact">
                       Contact
@@ -177,12 +181,12 @@ export default function Navbar() {
                     aria-expanded="false"
                   >
                     <img
-                      src={userThumb} // Make sure 'userThumb' is defined in your component
+                      src={userThumb} 
                       width="40"
                       height="40"
                       className="rounded-circle"
                       alt="User Thumbnail"
-                    />
+                    /> 
                     {userId && <span className="ml-2 username">{userId}</span>}
                   </a>
 

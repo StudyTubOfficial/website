@@ -5,6 +5,7 @@ import Footer from "../components/Footer/Footer";
 import Team from "../components/Team/Team";
 import Faq from "../components/Faq/Faq";
 import Analytics from "../components/Analytics/Analytics";
+import Snowfall from "react-snowfall";
 import AboutUscards from "../components/Cards/AboutusCards/AboutUscards";
 /**
  * Renders the About page component.
@@ -45,8 +46,21 @@ export default function About() {
         "We don't just beat the competition; we outsmart them. Even when someone tries to copy our product, we've got the winning formula!",
     },
   ];
+  const snowflakeCount = 413;
+  const minSpeed = 1.5;
+  const maxSpeed = 3.0;
+  const minWind = -0.5;
+  const maxWind = 2;
+  const minRadius = 2;
+  const maxRadius = 4;
   return (
     <div className="page_wrapper">
+      <Snowfall
+        snowflakeCount={snowflakeCount}
+        speed={[minSpeed, maxSpeed]}
+        wind={[minWind, maxWind]}
+        radius={[minRadius, maxRadius]}
+      />
       <Navbar />
       <main className="page_content">
         <Header headerData={headerData} />
@@ -64,7 +78,10 @@ export default function About() {
               <div className="col col-lg-6">
                 <div className="content_wrap ps-lg-3">
                   <div className="section_heading">
-                    <h2 className="heading_text">Join Our Community!</h2>
+                    <h2 className="heading_text">
+                      Join Our Community!{" "}
+                      <i style={{ color: "red" }} class="fas fa-hat-santa"></i>
+                    </h2>
                     <p className="heading_description mb-0">
                       Are you looking to connect with like-minded individuals
                       and enhance your educational journey and win exciting
@@ -113,7 +130,8 @@ export default function About() {
               <div className="row align-items-center justify-content-lg-between">
                 <div className="col col-lg-6">
                   <h2 className="heading_text mb-0">
-                    What Makes StudyTub Stand Out?
+                    What Makes StudyTub Stand Out?{" "}
+                    <i style={{ color: "red" }} class="fas fa-hat-santa"></i>
                   </h2>
                 </div>
                 <div className="col col-lg-4">

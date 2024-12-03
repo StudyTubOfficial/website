@@ -10,13 +10,13 @@ export default function Analytics() {
     {
       id: 1,
       title: "users trust StudyTub for their educational journey",
-      value1: "1400",
+      value1: "4200",
       value2: "+",
     },
     {
       id: 2,
       title: "students have joyfully downloaded our notes!",
-      value1: "1500",
+      value1: "4100",
       value2: "+",
     },
     {

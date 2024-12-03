@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Header/Navbar";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Multi_Header/Header";
-
+import Snowfall from "react-snowfall";
 /**
  * Renders the Contact page component.
  * @returns {JSX.Element} The Contact page component.
@@ -16,8 +16,21 @@ export default function Contact() {
     text_2: "Now",
     details: "Contact Us",
   };
+  const snowflakeCount = 413;
+  const minSpeed = 1.5;
+  const maxSpeed = 3.0;
+  const minWind = -0.5;
+  const maxWind = 2;
+  const minRadius = 2;
+  const maxRadius = 4;
   return (
     <div className="page_wrapper">
+      <Snowfall
+        snowflakeCount={snowflakeCount}
+        speed={[minSpeed, maxSpeed]}
+        wind={[minWind, maxWind]}
+        radius={[minRadius, maxRadius]}
+      />
       <Navbar />
       <main className="page_content">
         <Header headerData={conatctData} />
@@ -72,8 +85,7 @@ export default function Contact() {
                   <iframe
                     id="gmap_canvas_iframe"
                     title="location of studytub"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119743.52297962956!2d85.82045315!3d20.300884149999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d2d5170aa5%3A0xfc580e2b68b33fa8!2sBhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1697908955915!5m2!1sen!2sin"
-                  ></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119743.52297962956!2d85.82045315!3d20.300884149999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d2d5170aa5%3A0xfc580e2b68b33fa8!2sBhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1697908955915!5m2!1sen!2sin"></iframe>
                 </div>
               </div>
             </div>

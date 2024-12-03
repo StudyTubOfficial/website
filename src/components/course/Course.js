@@ -69,7 +69,10 @@ export default function Course() {
         <div className="row">
           <div className="col col-lg-6">
             <div className="section_heading">
-              <h2 className="heading_text">What's in Store at StudyTub?</h2>
+              <h2 className="heading_text">
+                What's in Store at StudyTub?{" "}
+                <i style={{ color: "red" }} class="fas fa-hat-santa"></i>
+              </h2>
             </div>
             <div className="row">
               {serviceData1.map((item) => (

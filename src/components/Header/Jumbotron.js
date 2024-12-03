@@ -28,7 +28,7 @@ export default function Jumbotron() {
               <div className="col col-lg-7 d-n">
                 <h1 className="banner_small_title">Learning Excellence</h1>
                 <h2 className="banner_big_title">
-                  Your BTECH Companion in the Digital Age
+                Your BTECH Companion in the Digital Age 🎅
                 </h2>
                 <p className="banner_description">
                   Simplify your BTECH studies with StudyTub. Access high-quality
@@ -68,7 +68,7 @@ export default function Jumbotron() {
                     />
                   </div>
                   <div className="satisfied_student">
-                    <h3 className="wrap_title">1100+ Satisfied Students</h3>
+                    <h3 className="wrap_title">4100+ Satisfied Students <i style={{color:"red"}} class="fas fa-hat-santa"></i></h3>
                     <ul className="students_thumbnail unordered_list_center">
                       {SatisfiedData.map((item, index) => {
                         return (

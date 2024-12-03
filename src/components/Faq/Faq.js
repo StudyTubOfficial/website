@@ -35,7 +35,7 @@ export default function Faq() {
           <div class="row justify-content-center">
             <div class="col col-lg-7">
               <h2 class="heading_text mb-0">
-              Ready to 'note'ify your studies with StudyTub?
+              Ready to 'note'ify your studies with StudyTub? <i style={{color:"red"}} class="fas fa-hat-santa"></i>
               </h2>
             </div>
           </div>

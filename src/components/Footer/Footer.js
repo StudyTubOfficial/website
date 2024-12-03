@@ -16,7 +16,7 @@ export default function Footer() {
                         src="assets/images/logo/logo.png"
                         alt="Collab - Online Learning Platform"
                       />
-                      <span style={{ color: "white" }}>StudyTub</span>
+                      <span style={{ color: "white" }}>StudyTub <i style={{color:"green"}} class="fas fa-tree-christmas"></i></span>
                     </a>
                   </div>
                   <p>
@@ -168,7 +168,7 @@ export default function Footer() {
         <div className="copyright_widget">
           <div className="container">
             <p className="copyright_text text-center mb-0">
-              Copyright © 2023 || <b>Study Tub</b> . All rights reserved “For
+              Copyright © 2023 || <b>Study Tub 🎅 </b> . All rights reserved “For
               the students, by the students.”
             </p>
           </div>
