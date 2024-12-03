@@ -68,7 +68,7 @@ export default function Login() {
             <div className="col col-lg-5">
               <form>
                 <div className="register_form signup_login_form fm">
-                  <h1 className=" text-center">Login Here</h1>
+                  <h1 className=" text-center">🎅 Login Here</h1>
                   <p className=" font-sz text-center">
                     Unlock Learning, Discover, Thrive Together.
                   </p>
@@ -96,7 +96,7 @@ export default function Login() {
                   </button>
 
                   <p className=" login-footer text-center mb-0">
-                    Copyright © 2023 || <b>Study Tub</b> . All rights reserved.
+                    Copyright © 2023 || <b>Study Tub ❄️</b> . All rights reserved.
                   </p>
                 </div>
               </form>
