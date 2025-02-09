@@ -5,7 +5,6 @@ import Footer from "../components/Footer/Footer";
 import Team from "../components/Team/Team";
 import Faq from "../components/Faq/Faq";
 import Analytics from "../components/Analytics/Analytics";
-import Snowfall from "react-snowfall";
 import AboutUscards from "../components/Cards/AboutusCards/AboutUscards";
 /**
  * Renders the About page component.
@@ -46,21 +45,8 @@ export default function About() {
         "We don't just beat the competition; we outsmart them. Even when someone tries to copy our product, we've got the winning formula!",
     },
   ];
-  const snowflakeCount = 413;
-  const minSpeed = 1.5;
-  const maxSpeed = 3.0;
-  const minWind = -0.5;
-  const maxWind = 2;
-  const minRadius = 2;
-  const maxRadius = 4;
   return (
     <div className="page_wrapper">
-      <Snowfall
-        snowflakeCount={snowflakeCount}
-        speed={[minSpeed, maxSpeed]}
-        wind={[minWind, maxWind]}
-        radius={[minRadius, maxRadius]}
-      />
       <Navbar />
       <main className="page_content">
         <Header headerData={headerData} />

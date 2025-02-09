@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../components/Header/Navbar";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Multi_Header/Header";
-import Snowfall from "react-snowfall";
 /**
  * Renders the Contact page component.
  * @returns {JSX.Element} The Contact page component.
@@ -16,21 +15,8 @@ export default function Contact() {
     text_2: "Now",
     details: "Contact Us",
   };
-  const snowflakeCount = 413;
-  const minSpeed = 1.5;
-  const maxSpeed = 3.0;
-  const minWind = -0.5;
-  const maxWind = 2;
-  const minRadius = 2;
-  const maxRadius = 4;
   return (
     <div className="page_wrapper">
-      <Snowfall
-        snowflakeCount={snowflakeCount}
-        speed={[minSpeed, maxSpeed]}
-        wind={[minWind, maxWind]}
-        radius={[minRadius, maxRadius]}
-      />
       <Navbar />
       <main className="page_content">
         <Header headerData={conatctData} />

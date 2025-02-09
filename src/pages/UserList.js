@@ -6,18 +6,10 @@ import "./userlist.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Snowfall from "react-snowfall";
 export default function UserList() {
   const [authenticated, setAuthenticated] = useState(false);
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
-  const snowflakeCount = 413;
-  const minSpeed = 1.5;
-  const maxSpeed = 3.0;
-  const minWind = -0.5;
-  const maxWind = 2;
-  const minRadius = 2;
-  const maxRadius = 4;
   const conatctData = {
     page_title: "USER LIST",
     page_description:
@@ -167,12 +159,6 @@ export default function UserList() {
   return (
     <div>
       <div className="page_wrapper">
-      <Snowfall
-        snowflakeCount={snowflakeCount}
-        speed={[minSpeed, maxSpeed]}
-        wind={[minWind, maxWind]}
-        radius={[minRadius, maxRadius]}
-      />
         <Navbar />
         <main className="page_content">
           <Header headerData={conatctData} />
