@@ -5,7 +5,6 @@ import Contact from "./pages/Contact";
 import Team from "./pages/Team";
 import Faq from "./pages/Faq";
 import Login from "./pages/Login";
-import UserList from "./pages/UserList";
 import PrivateRoute from "./utils/PrivateRoute";
 /**
  * Renders the main App component.
