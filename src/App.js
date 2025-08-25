@@ -27,7 +27,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/team" element={<Team />} />
           <Route path="/faq" element={<Faq />} />
-          <Route path="/list" element={<UserList />} />
           <Route path="*" element={<Home />} />
         </Route>
 
