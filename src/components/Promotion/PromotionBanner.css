@@ -1,0 +1,269 @@
+/* Promotion Banner Section */
+.promotion_banner_section {
+  background: linear-gradient(135deg, #f7ff62 0%, #ffd32b 100%);
+  padding: 40px 0;
+  position: relative;
+  margin: 60px 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.promotion_banner_section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  z-index: 1;
+}
+
+.promotion_banner_wrapper {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 40px;
+  border: 2px solid #1f1d0d;
+  box-shadow: 0 10px 30px rgba(31, 29, 13, 0.15);
+}
+
+/* Close Button */
+.promotion_banner_close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f6f6f6;
+  border: 1px solid #d2d2d2;
+  color: #1f1d0d;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.promotion_banner_close:hover {
+  background-color: #1f1d0d;
+  color: #fff;
+  border-color: #1f1d0d;
+  transform: rotate(90deg);
+}
+
+/* Header */
+.promotion_banner_header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.promotion_banner_icon {
+  font-size: 32px;
+  margin-right: 15px;
+  animation: pulse 2s infinite;
+}
+
+.promotion_banner_title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 32px;
+  color: #1f1d0d;
+  margin: 0;
+  font-family: 'Barlow', sans-serif;
+}
+
+/* Content */
+.promotion_banner_content {
+  padding-right: 20px;
+}
+
+.promotion_banner_description {
+  font-size: 16px;
+  line-height: 24px;
+  color: #29281e;
+  margin-bottom: 25px;
+}
+
+.promotion_banner_description strong {
+  color: #1f1d0d;
+  font-weight: 700;
+}
+
+/* Features */
+.promotion_banner_features {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.feature_item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f1d0d;
+  background-color: rgba(247, 255, 98, 0.3);
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(31, 29, 13, 0.1);
+}
+
+.feature_item .feature_icon {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+/* CTA Section */
+.promotion_banner_cta {
+  text-align: center;
+}
+
+.cta_highlight {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #1f1d0d;
+  margin-bottom: 20px;
+  font-family: 'Barlow', sans-serif;
+}
+
+.promotion_banner_contact {
+  margin-bottom: 25px;
+}
+
+.contact_label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #29281e;
+  margin-bottom: 8px;
+}
+
+.contact_email {
+  color: #1f1d0d;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.contact_email:hover {
+  color: #29281e;
+  text-decoration: none;
+}
+
+.promotion_banner_actions .btn {
+  min-width: 180px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 991px) {
+  .promotion_banner_wrapper {
+    padding: 30px 25px;
+  }
+  
+  .promotion_banner_content {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  
+  .promotion_banner_title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  
+  .promotion_banner_features {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .promotion_banner_section {
+    margin: 40px 0;
+    padding: 30px 0;
+  }
+  
+  .promotion_banner_wrapper {
+    padding: 25px 20px;
+  }
+  
+  .promotion_banner_header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .promotion_banner_icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+    font-size: 28px;
+  }
+  
+  .promotion_banner_title {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  
+  .promotion_banner_features {
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .feature_item {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .feature_item .feature_icon {
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  
+  .cta_highlight {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .promotion_banner_wrapper {
+    padding: 20px 15px;
+  }
+  
+  .promotion_banner_description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .promotion_banner_features {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .promotion_banner_actions .btn {
+    width: 100%;
+    min-width: auto;
+  }
+}

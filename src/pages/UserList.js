@@ -6,10 +6,13 @@ import "./userlist.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AdBanner from "../components/AdBanner/AdBanner";
 export default function UserList() {
   const [authenticated, setAuthenticated] = useState(false);
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  const [loginAttempts, setLoginAttempts] = useState(0);
+  const [isLocked, setIsLocked] = useState(false);
   const conatctData = {
     page_title: "USER LIST",
     page_description:
@@ -77,6 +80,22 @@ export default function UserList() {
     GetAllUser();
   }, []);
 
+  // Logout function
+  const handleLogout = () => {
+    setAuthenticated(false);
+    setId("");
+    setPassword("");
+    setLoginAttempts(0);
+    toast.info("Logged out successfully.");
+  };
+
+  // Handle Enter key press for login
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleLogin();
+    }
+  };
+
   // Calculate pagination
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -109,49 +128,126 @@ export default function UserList() {
     Math.min(currentPage + 1, totalPages)
   );
   const handleLogin = () => {
-    const validId = "Nishikanta";
-    const validPassword = "password123";
+    // Check if account is locked due to too many failed attempts
+    if (isLocked) {
+      toast.error("Account temporarily locked. Please try again later.");
+      return;
+    }
+
+    // Validate input fields
+    if (!id.trim() || !password.trim()) {
+      toast.error("Please enter both ID and password.");
+      return;
+    }
+
+    const validId = process.env.REACT_APP_ADMIN_USER_ID;
+    const validPassword = process.env.REACT_APP_ADMIN_PASSWORD;
 
     if (id === validId && password === validPassword) {
       setAuthenticated(true);
+      setLoginAttempts(0);
+      toast.success("Login successful!");
+      
+      // Set session timeout (30 minutes)
+      setTimeout(() => {
+        setAuthenticated(false);
+        toast.info("Session expired. Please login again.");
+      }, 30 * 60 * 1000);
     } else {
-      toast.error("Invalid ID or Password. Please try again.");
+      const newAttempts = loginAttempts + 1;
+      setLoginAttempts(newAttempts);
+      
+      if (newAttempts >= 3) {
+        setIsLocked(true);
+        toast.error("Too many failed attempts. Account locked for 5 minutes.");
+        
+        // Unlock after 5 minutes
+        setTimeout(() => {
+          setIsLocked(false);
+          setLoginAttempts(0);
+        }, 5 * 60 * 1000);
+      } else {
+        toast.error(`Invalid credentials. ${3 - newAttempts} attempts remaining.`);
+      }
+      
+      // Clear password field
+      setPassword("");
     }
   };
 
   if (!authenticated) {
     return (
-      <div style={{ textAlign: "center", marginTop: "20vh" }}>
-        <h2>Authentication Required</h2>
-        <div style={{ margin: "10px 0" }}>
-          <input
-            type="text"
-            placeholder="Enter ID"
-            value={id}
-            onChange={(e) => setId(e.target.value)}
-            style={{ padding: "10px", marginRight: "5px" }}
-          />
-        </div>
-        <div style={{ margin: "10px 0" }}>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={{ padding: "10px", marginRight: "5px" }}
-          />
-        </div>
-        <button
-          onClick={handleLogin}
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "#007bff",
-            color: "white",
-            border: "none",
-            cursor: "pointer",
-          }}>
-          Login
-        </button>
+      <div className="page_wrapper">
+        <Navbar />
+        <main className="page_content">
+          <section className="register_section section_space_lg">
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col col-lg-5">
+                  <div className="register_form signup_login_form">
+                    <h2 className="text-center mb-3">Admin Authentication</h2>
+                    <p className="text-center mb-4">
+                      Access to user list requires admin credentials
+                    </p>
+                    
+                    <div className="form_item">
+                      <input
+                        type="text"
+                        placeholder="Enter Admin ID"
+                        value={id}
+                        onChange={(e) => setId(e.target.value)}
+                        onKeyPress={handleKeyPress}
+                        disabled={isLocked}
+                        required
+                      />
+                    </div>
+                    
+                    <div className="form_item">
+                      <input
+                        type="password"
+                        placeholder="Enter Admin Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        onKeyPress={handleKeyPress}
+                        disabled={isLocked}
+                        required
+                      />
+                    </div>
+
+                    {loginAttempts > 0 && !isLocked && (
+                      <p className="text-center" style={{ color: '#ff4444', fontSize: '14px', marginBottom: '15px' }}>
+                        {3 - loginAttempts} attempts remaining
+                      </p>
+                    )}
+
+                    {isLocked && (
+                      <p className="text-center" style={{ color: '#ff4444', fontSize: '14px', marginBottom: '15px' }}>
+                        Account locked. Please wait 5 minutes.
+                      </p>
+                    )}
+
+                    <button
+                      onClick={handleLogin}
+                      className="btn btn_dark"
+                      style={{ width: '100%' }}
+                      disabled={isLocked}
+                    >
+                      <span>
+                        <small>Login</small>
+                        <small>Access Admin Panel</small>
+                      </span>
+                    </button>
+
+                    <p className="text-center mt-4 mb-0" style={{ fontSize: '14px', color: '#666' }}>
+                      Authorized personnel only
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <Footer />
         <ToastContainer />
       </div>
     );
@@ -162,8 +258,31 @@ export default function UserList() {
         <Navbar />
         <main className="page_content">
           <Header headerData={conatctData} />
+          <div style={{ padding: '0 15px', marginTop: '20px' }}>
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <AdBanner 
+                title="🍕 Food Partnerships with StudyTub"
+                description="Connect your restaurant or food stall with our hungry student community. Offer educational nutrition content and exclusive coupons!"
+                type="horizontal"
+                size="large"
+              />
+            </div>
+          </div>
         </main>
         <div className="container" style={{ marginTop: "10vh" }}>
+          <div className="d-flex justify-content-between align-items-center mb-4">
+            <h3>User Management Panel</h3>
+            <button 
+              onClick={handleLogout}
+              className="btn btn_warning"
+              style={{ minWidth: '120px' }}
+            >
+              <span>
+                <small>Logout</small>
+                <small>Sign Out</small>
+              </span>
+            </button>
+          </div>
           <div class="table-responsive">
             {" "}
             <table className="table table-light ">

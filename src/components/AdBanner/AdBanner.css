@@ -1,0 +1,243 @@
+/* Ad Banner Component */
+.ad_banner {
+  position: relative;
+  border: 2px dashed #d2d2d2;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f6f6f6 0%, #fff 50%, #f6f6f6 100%);
+  margin: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.ad_banner:hover {
+  border-color: #ffd32b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(31, 29, 13, 0.1);
+}
+
+.ad_content {
+  position: relative;
+  z-index: 2;
+  padding: 25px;
+  text-align: center;
+}
+
+.ad_label {
+  margin-bottom: 15px;
+}
+
+.ad_tag {
+  background-color: #ffd32b;
+  color: #1f1d0d;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: 'Barlow', sans-serif;
+}
+
+.ad_title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #1f1d0d;
+  margin-bottom: 10px;
+  font-family: 'Barlow', sans-serif;
+}
+
+.ad_description {
+  font-size: 14px;
+  line-height: 20px;
+  color: #29281e;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+.ad_cta {
+  margin-top: 10px;
+}
+
+.cta_text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f1d0d;
+  font-family: 'Barlow', sans-serif;
+}
+
+/* Overlay for hover effect */
+.ad_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(247, 255, 98, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.ad_banner:hover .ad_overlay {
+  opacity: 1;
+}
+
+.overlay_content {
+  text-align: center;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.ad_banner:hover .overlay_content {
+  transform: scale(1);
+}
+
+.email_icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 10px;
+  animation: bounce 2s infinite;
+}
+
+.contact_text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f1d0d;
+  font-family: 'Barlow', sans-serif;
+}
+
+/* Size Variations */
+.ad_banner.small {
+  padding: 0;
+}
+
+.ad_banner.small .ad_content {
+  padding: 15px;
+}
+
+.ad_banner.small .ad_title {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.ad_banner.small .ad_description {
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+.ad_banner.medium .ad_content {
+  padding: 25px;
+}
+
+.ad_banner.large .ad_content {
+  padding: 35px;
+}
+
+.ad_banner.large .ad_title {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.ad_banner.large .ad_description {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* Type Variations */
+.ad_banner.horizontal {
+  width: 100%;
+  min-height: 120px;
+}
+
+.ad_banner.square {
+  aspect-ratio: 1;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.ad_banner.vertical {
+  max-width: 200px;
+  min-height: 350px;
+  margin: 20px auto;
+}
+
+.ad_banner.vertical .ad_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 767px) {
+  .ad_banner.medium .ad_content,
+  .ad_banner.large .ad_content {
+    padding: 20px;
+  }
+  
+  .ad_banner.large .ad_title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  .ad_banner.large .ad_description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .ad_banner.vertical {
+    max-width: 180px;
+    min-height: 280px;
+  }
+  
+  .ad_banner.square {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ad_banner {
+    margin: 15px 0;
+  }
+  
+  .ad_content {
+    padding: 15px !important;
+  }
+  
+  .ad_title {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  
+  .ad_description {
+    font-size: 12px !important;
+    line-height: 16px !important;
+  }
+  
+  .contact_text {
+    font-size: 14px;
+  }
+  
+  .email_icon {
+    font-size: 24px;
+  }
+}

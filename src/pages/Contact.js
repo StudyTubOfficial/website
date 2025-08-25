@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Header/Navbar";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Multi_Header/Header";
+import AdBanner from "../components/AdBanner/AdBanner";
 /**
  * Renders the Contact page component.
  * @returns {JSX.Element} The Contact page component.
@@ -22,6 +23,12 @@ export default function Contact() {
         <Header headerData={conatctData} />
         <section className="contact_section section_space_lg">
           <div className="container">
+            <AdBanner 
+              title="🍜 Restaurant Owners & Food Entrepreneurs"
+              description="Connect with 4000+ hungry students! Offer exclusive coupons, meal deals, and educational content about nutrition and cooking."
+              type="horizontal"
+              size="large"
+            />
             <div className="row">
               <div className="col col-lg-5">
                 <div className="pe-lg-5">

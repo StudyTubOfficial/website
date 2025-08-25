@@ -6,6 +6,7 @@ import Team from "../components/Team/Team";
 import Faq from "../components/Faq/Faq";
 import Analytics from "../components/Analytics/Analytics";
 import AboutUscards from "../components/Cards/AboutusCards/AboutUscards";
+import AdBanner from "../components/AdBanner/AdBanner";
 /**
  * Renders the About page component.
  * @returns {JSX.Element} The About page component.
@@ -139,9 +140,22 @@ export default function About() {
         </section>
         <Analytics />
 
+        <AdBanner 
+          title="🍽️ Campus Food Partners Wanted"
+          description="Join our food network and offer student discounts, meal coupons, and educational nutrition content."
+          type="horizontal"
+          size="medium"
+        />
+
         <br />
         <br />
         <Team />
+        <AdBanner 
+          title="🎓 Study Snacks & More"
+          description="Perfect combination of brain food and study materials for hungry learners."
+          type="square"
+          size="small"
+        />
         <Faq />
       </main>
       <Footer />

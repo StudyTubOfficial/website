@@ -1,0 +1,158 @@
+/* Image Banner Section */
+.image_banner_section {
+  padding: 40px 0;
+  background-color: #f6f6f6;
+}
+
+.image_banner_wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner_image {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(31, 29, 13, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.banner_image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(31, 29, 13, 0.15);
+}
+
+.banner_img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.banner_image:hover .banner_img {
+  transform: scale(1.02);
+}
+
+/* Add a subtle border */
+.banner_image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #f7ff62, #ffd32b) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: exclude;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.banner_image:hover::before {
+  opacity: 1;
+}
+
+/* Add click indicator overlay */
+.banner_image::after {
+  content: '📧 Click to Contact';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(31, 29, 13, 0.9);
+  color: #f7ff62;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.banner_image:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1199px) {
+  .image_banner_section {
+    padding: 35px 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .image_banner_section {
+    padding: 30px 0;
+  }
+  
+  .banner_image {
+    border-radius: 10px;
+  }
+  
+  .banner_img {
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .image_banner_section {
+    padding: 25px 0;
+  }
+  
+  .banner_image {
+    border-radius: 8px;
+    margin: 0 15px;
+  }
+  
+  .banner_img {
+    border-radius: 8px;
+  }
+  
+  .banner_image::after {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .image_banner_section {
+    padding: 20px 0;
+  }
+  
+  .banner_image {
+    margin: 0 10px;
+  }
+}
+
+/* Loading animation */
+.banner_img {
+  opacity: 0;
+  animation: fadeInImage 0.8s ease-in-out 0.2s forwards;
+}
+
+@keyframes fadeInImage {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
