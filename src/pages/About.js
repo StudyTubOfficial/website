@@ -1,164 +1,193 @@
 import React from "react";
-import Header from "../components/Multi_Header/Header";
+import { motion } from "framer-motion";
 import Navbar from "../components/Header/Navbar";
 import Footer from "../components/Footer/Footer";
-import Team from "../components/Team/Team";
-import Faq from "../components/Faq/Faq";
+import Header from "../components/Multi_Header/Header";
 import Analytics from "../components/Analytics/Analytics";
 import AboutUscards from "../components/Cards/AboutusCards/AboutUscards";
 import AdBanner from "../components/AdBanner/AdBanner";
-/**
- * Renders the About page component.
- * @returns {JSX.Element} The About page component.
- */
+import { FiArrowRight, FiCheck, FiTrendingUp } from "react-icons/fi";
+
+const chartData = [
+  { year: "2020", users: 50 },
+  { year: "2021", users: 400 },
+  { year: "2022", users: 1200 },
+  { year: "2023", users: 2400 },
+  { year: "2024", users: 3500 },
+  { year: "2025", users: 4100 },
+  { year: "2026", users: 4500 },
+];
+
+const headerData = {
+  page_title: "Our Story",
+  page_description:
+    "At StudyTub, we started in 2019 to empower BTECH students with high-quality study materials and make their education more accessible.",
+  details: "About Us",
+};
+
+const features = [
+  {
+    icon: "fas fa-book-open",
+    heading1: "We Add Sparkle to Study",
+    details:
+      "Learning doesn't have to be dull, and StudyTub knows it! We make education exciting.",
+  },
+  {
+    icon: "fas fa-code-branch",
+    heading1: "Premium Study Materials",
+    details:
+      "Your academic journey should be as smooth as butter. We provide high-quality notes.",
+  },
+  {
+    icon: "fas fa-user-graduate",
+    heading1: "Rewards for Stars",
+    details:
+      "We have special rewards for our top contributors. Shine bright like a star!",
+  },
+  {
+    icon: "fas fa-code-branch",
+    heading1: "Outsmarting Copycats",
+    details:
+      "We don't just beat the competition; we outsmart them with our winning formula.",
+  },
+];
+
+const communityPerks = [
+  "Share notes, gain insights, and collaborate with peers who share your passion.",
+  "Contribute to the community by providing the latest notes and resources.",
+  "Get a chance to win exciting goodies and certificates as a top contributor.",
+];
+
 export default function About() {
-  const headerData = {
-    page_title: "Our Story",
-    page_description:
-      " At StudyTub, we started in 2019 to empower BTECH students with high-quality study materials and make their education more accessible. Our core values remain the same: quality, simplicity, and innovation.",
-    text_1: "Get Started",
-    text_2: "Now",
-    details: "About Us",
-  };
-  const serviceData1 = [
-    {
-      icon: "fas fa-book-open",
-      heading1: "We Add Sparkle to Study ",
-      details:
-        "Learning doesn't have to be dull, and StudyTub knows it! We make education exciting, like adding glitter to your study routine.",
-    },
-    {
-      icon: "fas fa-code-branch",
-      heading1: "Premium Study Materials",
-      details:
-        "Your academic journey should be as smooth as butter. We provide high-quality notes, making your learning path a star-studded experience.",
-    },
-    {
-      icon: "fas fa-comment-smile",
-      heading1: "Rewards for Stars",
-      details:
-        "As if excellent notes aren't enough, we also have special rewards for our top contributors. Shine bright like a star and win exciting goodies!",
-    },
-    {
-      icon: "fas fa-user-graduate",
-      heading1: "Outsmarting Copycats",
-      details:
-        "We don't just beat the competition; we outsmart them. Even when someone tries to copy our product, we've got the winning formula!",
-    },
-  ];
   return (
-    <div className="page_wrapper">
+    <div className="page-wrapper">
       <Navbar />
-      <main className="page_content">
+      <main>
         <Header headerData={headerData} />
-        <section className="courses_info_section section_space_lg pb-0">
+
+        {/* Community Section */}
+        <section className="section">
           <div className="container">
-            <div className="row align-items-center">
-              <div className="col col-lg-6">
-                <div className="image_widget">
-                  <img
-                    src="assets/images/about/about.png"
-                    alt="Collab – Online Learning Platform"
-                  />
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
+              <motion.div
+                className="growth-chart"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                style={{
+                  background: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "var(--radius-lg)",
+                  padding: "28px 24px 20px",
+                  boxShadow: "var(--shadow-md)",
+                }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 20 }}>
+                  <FiTrendingUp size={18} style={{ color: "var(--primary)" }} />
+                  <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--text)" }}>User Growth</span>
+                  <span style={{ marginLeft: "auto", fontSize: "0.75rem", fontWeight: 700, color: "var(--primary)", background: "var(--bg-alt)", padding: "4px 10px", borderRadius: "var(--radius-full)" }}>4,500 total</span>
                 </div>
-              </div>
-              <div className="col col-lg-6">
-                <div className="content_wrap ps-lg-3">
-                  <div className="section_heading">
-                    <h2 className="heading_text">
-                      Join Our Community!{" "}
-                      <i style={{ color: "red" }} class="fas fa-hat-santa"></i>
-                    </h2>
-                    <p className="heading_description mb-0">
-                      Are you looking to connect with like-minded individuals
-                      and enhance your educational journey and win exciting
-                      prizes and certificates?
-                    </p>
-                  </div>
-                  <ul className="info_list unordered_list_block">
-                    <li>
-                      <i className="fas fa-square"></i>{" "}
-                      <span>
-                        Share notes, gain insights, and collaborate with peers
-                        who share your passion for learning.
+                <div style={{ display: "flex", alignItems: "flex-end", gap: 8, height: 180 }}>
+                  {chartData.map((d) => (
+                    <div key={d.year} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+                      <span style={{ fontSize: "0.65rem", fontWeight: 600, color: "var(--primary)" }}>
+                        {d.users >= 1000 ? `${(d.users / 1000).toFixed(1)}k` : d.users}
                       </span>
-                    </li>
-                    <li>
-                      <i className="fas fa-square"></i>{" "}
-                      <span>
-                        Contribute to the community by providing the latest
-                        notes and resources.
+                      <div style={{
+                        width: "100%",
+                        maxWidth: 40,
+                        height: `${(d.users / 4500) * 140 + 10}px`,
+                        background: `linear-gradient(180deg, var(--primary), var(--primary-light))`,
+                        borderRadius: "6px 6px 2px 2px",
+                        transition: "height 0.6s ease",
+                      }} />
+                      <span style={{ fontSize: "0.65rem", fontWeight: 500, color: "var(--text-light)" }}>
+                        {d.year.slice(2)}
                       </span>
-                    </li>
-                    <li>
-                      <i className="fas fa-square"></i>{" "}
-                      <span>
-                        Get a chance to win exciting goodies and certificates as
-                        one of the top 3 contributors.
-                      </span>
-                    </li>
-                  </ul>
-                  <div className="btn_wrap pb-0">
-                    <a className="btn btn_dark" href="https://t.me/noteshare1">
-                      <span>
-                        <small>Join Our Community!</small>{" "}
-                        <small>OG Community</small>
-                      </span>
-                    </a>
-                  </div>
+                    </div>
+                  ))}
                 </div>
-              </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <span className="section__label">Community</span>
+                <h2 className="section__title" style={{ textAlign: "left" }}>Join Our Community!</h2>
+                <p style={{ color: "var(--text-light)", lineHeight: 1.7, marginBottom: 24 }}>
+                  Connect with like-minded individuals and enhance your educational journey.
+                  Win exciting prizes and certificates!
+                </p>
+                <ul style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 28 }}>
+                  {communityPerks.map((perk, i) => (
+                    <li key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.9rem", color: "var(--text-light)" }}>
+                      <FiCheck size={18} style={{ color: "var(--primary)", flexShrink: 0, marginTop: 2 }} />
+                      {perk}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="https://t.me/noteshare1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--primary"
+                >
+                  Join Community <FiArrowRight size={16} />
+                </a>
+              </motion.div>
             </div>
           </div>
         </section>
-        <section className="policy_section section_space_lg">
-          <div className="container position-relative">
-            <div className="section_heading">
-              <div className="row align-items-center justify-content-lg-between">
-                <div className="col col-lg-6">
-                  <h2 className="heading_text mb-0">
-                    What Makes StudyTub Stand Out?{" "}
-                    <i style={{ color: "red" }} class="fas fa-hat-santa"></i>
-                  </h2>
-                </div>
-                <div className="col col-lg-4">
-                  <p className="heading_description mb-0 text-lg-end"></p>
-                </div>
-              </div>
+
+        {/* Features */}
+        <section className="section section--alt">
+          <div className="container">
+            <div className="section__header">
+              <span className="section__label">Why StudyTub</span>
+              <h2 className="section__title">What Makes StudyTub Stand Out?</h2>
             </div>
-            <div className="row">
-              {serviceData1.map((item) => (
-                <AboutUscards
-                  heading1={item.heading1}
-                  sub={item.sub}
-                  details={item.details}
-                  icon={item.icon}
-                />
+            <div className="grid grid--4">
+              {features.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ delay: i * 0.1, duration: 0.45 }}
+                >
+                  <AboutUscards
+                    heading1={item.heading1}
+                    details={item.details}
+                    icon={item.icon}
+                  />
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
+
         <Analytics />
 
-        <AdBanner 
-          title="🍽️ Campus Food Partners Wanted"
-          description="Join our food network and offer student discounts, meal coupons, and educational nutrition content."
-          type="horizontal"
-          size="medium"
-        />
-
-        <br />
-        <br />
-        <Team />
-        <AdBanner 
-          title="🎓 Study Snacks & More"
-          description="Perfect combination of brain food and study materials for hungry learners."
-          type="square"
-          size="small"
-        />
-        <Faq />
+        <div className="container" style={{ padding: "24px" }}>
+          <AdBanner
+            title="🍽️ Campus Food Partners Wanted"
+            description="Join our food network and offer student discounts, meal coupons, and educational content."
+            type="horizontal"
+            size="medium"
+          />
+        </div>
       </main>
       <Footer />
+
+      <style>{`
+        @media (max-width: 768px) {
+          .about-grid-2col {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

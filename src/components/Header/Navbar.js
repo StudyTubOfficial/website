@@ -1,213 +1,137 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { FiMenu, FiX, FiChevronDown, FiLogOut, FiUser } from "react-icons/fi";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./header.css";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-const userThumb =
-  "https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png";
+
+const semesterLinks = [
+  { label: "1st Semester", href: "https://notes.studytub.workers.dev/0:/First%20Year/" },
+  { label: "2nd Semester", href: "https://notes.studytub.workers.dev/0:/First%20Year/" },
+  { label: "3rd Semester", href: "https://notes.studytub.workers.dev/0:/3rd%20Sem/" },
+  { label: "4th Semester", href: "https://notes.studytub.workers.dev/0:/4th%20sem/" },
+  { label: "5th Semester", href: "https://notes.studytub.workers.dev/0:/5th%20sem/" },
+  { label: "6th Semester", href: "https://notes.studytub.workers.dev/0:/6th%20sem/" },
+  { label: "7th Semester", href: "https://notes.studytub.workers.dev/0:/7th%20Sem/" },
+  { label: "8th Semester", href: "https://notes.studytub.workers.dev/0:/8th%20Sem/" },
+];
+
+const navLinks = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { label: "Study Materials", dropdown: true },
+  { to: "/faq", label: "FAQ" },
+  { to: "/contact", label: "Contact" },
+];
+
 export default function Navbar() {
-  const userId = localStorage.getItem("user")
-    ? JSON.parse(localStorage.getItem("user")).id
-    : null;
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setDropdownOpen(false);
+  }, [location]);
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     navigate("/login");
   };
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
   return (
-    <header className="site_header site_header_1">
+    <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
       <div className="container">
-        <div className="row align-items-center">
-          <div className="col col-lg-3 col-5">
-            <div className="site_logo">
-              <Link className="site_link" to="/">
-                <img
-                  src="assets/images/logo/logo.png"
-                  alt="Collab - Online Learning Platform"
-                  style={{ height: "70px" }}
-                />
-                <span className="logoo">StudyTub </span>
-              </Link>
-            </div>
-          </div>
-          <div className="col col-lg-6 col-2">
-            <nav className="main_menu navbar navbar-expand-lg">
-              <div
-                className="main_menu_inner collapse navbar-collapse justify-content-center"
-                id="main_menu_dropdown"
-              >
-                <ul className="main_menu_list unordered_list_center">
-                  <li>
-                    <Link className="nav-link" to="/">
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="nav-link" to="/about">
-                      About Us
-                    </Link>
-                  </li>
-                  <li className="dropdown">
-                    <a
-                      className="nav-link"
-                      id="pages_submenu"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Study Materials
-                    </a>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="pages_submenu"
-                    >
-                      <li>
-                        <a
-                          href="https://notes.studytub.workers.dev/0:/First%20Year/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          First Semester
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://notes.studytub.workers.dev/0:/First%20Year/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Second Semester
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://notes.studytub.workers.dev/0:/3rd%20Sem/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Third Semester
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://notes.studytub.workers.dev/0:/4th%20sem/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Fourth Semester
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://notes.studytub.workers.dev/0:/5th%20sem/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Fifth Semester
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://notes.studytub.workers.dev/0:/6th%20sem/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Sixth Semester
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://notes.studytub.workers.dev/0:/7th%20Sem/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Seventh Semester
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://notes.studytub.workers.dev/0:/8th%20Sem/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Eighth Semester
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <Link className="nav-link" to="/faq">
-                      FAQ
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="nav-link" to="/contact">
-                      Contact
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <div className="col col-lg-3 col-5">
-            <ul className="header_btns_group unordered_list_end">
-              <li>
-                <button
-                  className="mobile_menu_btn"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#main_menu_dropdown"
-                  aria-controls="main_menu_dropdown"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
+        <nav className="nav__inner">
+          <Link to="/" className="nav__logo">
+            <img src="assets/images/logo/logo.png" alt="StudyTub" className="nav__logo-img" />
+            <span className="nav__logo-text">StudyTub</span>
+          </Link>
+
+          <ul className={`nav__links ${mobileOpen ? "nav__links--open" : ""}`}>
+            {navLinks.map((link) =>
+              link.dropdown ? (
+                <li
+                  key={link.label}
+                  className="nav__item nav__item--dropdown"
+                  onMouseEnter={() => setDropdownOpen(true)}
+                  onMouseLeave={() => setDropdownOpen(false)}
                 >
-                  <i className="far fa-bars"></i>
-                </button>
-              </li>
-              <li></li>
+                  <button
+                    className="nav__link nav__link--dropdown"
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    aria-expanded={dropdownOpen}
+                  >
+                    {link.label} <FiChevronDown size={16} />
+                  </button>
+                  <ul className={`nav__dropdown ${dropdownOpen ? "nav__dropdown--open" : ""}`}>
+                    {semesterLinks.map((sem) => (
+                      <li key={sem.label}>
+                        <a href={sem.href} target="_blank" rel="noopener noreferrer" className="nav__dropdown-link">
+                          {sem.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li key={link.to} className="nav__item">
+                  <Link
+                    to={link.to}
+                    className={`nav__link ${location.pathname === link.to ? "nav__link--active" : ""}`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              )
+            )}
+          </ul>
 
-              <li
-                onMouseEnter={() => setIsDropdownVisible(true)}
-                onMouseLeave={() => setIsDropdownVisible(false)}
+          <div className="nav__actions">
+            <ThemeToggle />
+            {user ? (
+              <div
+                className="nav__user"
+                onMouseEnter={() => setUserMenuOpen(true)}
+                onMouseLeave={() => setUserMenuOpen(false)}
               >
-                <div className="ml-auto">
-                  <a
-                    className=" dropdown-toggle"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src={userThumb} 
-                      width="40"
-                      height="40"
-                      className="rounded-circle"
-                      alt="User Thumbnail"
-                    /> 
-                    {userId && <span className="ml-2 username">{userId}</span>}
-                  </a>
-
-                  <div
-                    className={`dropdown-menu dropdown-menu-right ${
-                      isDropdownVisible ? "show" : ""
-                    }`}
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
-                    <a
-                      onClick={handleLogout}
-                      className="dropdown-item text-blackk"
-                    >
-                      Log Out
-                    </a>
+                <button className="nav__user-btn">
+                  <FiUser size={18} />
+                  <span className="nav__user-name">{user.id}</span>
+                </button>
+                {userMenuOpen && (
+                  <div className="nav__user-menu">
+                    <button onClick={handleLogout} className="nav__user-menu-item">
+                      <FiLogOut size={16} /> Logout
+                    </button>
                   </div>
-                </div>
-              </li>
-            </ul>
+                )}
+              </div>
+            ) : (
+              <Link to="/login" className="btn btn--primary btn--sm">
+                Login
+              </Link>
+            )}
+            <button
+              className="nav__toggle"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
           </div>
-        </div>
+        </nav>
       </div>
     </header>
   );

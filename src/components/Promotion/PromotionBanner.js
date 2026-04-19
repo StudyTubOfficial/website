@@ -17,7 +17,7 @@ export default function PromotionBanner() {
           <button className="promotion_banner_close" onClick={handleClose}>
             ✕
           </button>
-          
+
           <div className="row align-items-center">
             <div className="col-lg-8">
               <div className="promotion_banner_content">
@@ -25,10 +25,10 @@ export default function PromotionBanner() {
                   <span className="promotion_banner_icon">📢</span>
                   <h2 className="promotion_banner_title">Promote With StudyTub</h2>
                 </div>
-                
+
                 <p className="promotion_banner_description">
-                  StudyTub isn't just a Digital Library — it's a growing student community with 
-                  <strong> 4000+ active users</strong>. If you have a product or service that helps 
+                  StudyTub isn't just a Digital Library — it's a growing student community with
+                  <strong> 4000+ active users</strong>. If you have a product or service that helps
                   students, educators, or universities, this is the right place to reach your audience.
                 </p>
 
@@ -48,7 +48,7 @@ export default function PromotionBanner() {
                 </div>
               </div>
             </div>
-            
+
             <div className="col-lg-4">
               <div className="promotion_banner_cta">
                 <p className="cta_highlight">
@@ -56,14 +56,14 @@ export default function PromotionBanner() {
                 </p>
                 <div className="promotion_banner_contact">
                   <span className="contact_label">📩 Contact us today:</span>
-                  <a href="mailto:studytub1@gmail.com" className="contact_email">
-                    studytub1@gmail.com
+                  <a href="mailto:studytub@nishikanta.in" className="contact_email">
+                    studytub@nishikanta.in
                   </a>
                 </div>
                 <div className="promotion_banner_actions">
-                  <button 
-                    className="btn btn_primary" 
-                    onClick={() => window.open('mailto:studytub1@gmail.com', '_blank')}
+                  <button
+                    className="btn btn_primary"
+                    onClick={() => window.open('mailto:studytub@nishikanta.in', '_blank')}
                   >
                     <span>
                       <small>Get Started</small>

@@ -1,37 +1,20 @@
 import React from "react";
+import { FiExternalLink } from "react-icons/fi";
 import "./courseCard.css";
-/**
- * Renders a course card component.
- *
- * @param {Object} item - The course item to be displayed.
- * @param {string} item.href - The URL of the course.
- * @param {string} item.img - The image source of the course.
- * @param {string} item.title - The title of the course.
- * @param {string} item.description - The description of the course.
- * @returns {JSX.Element} - The course card component.
- */
+
 const CourseCards = ({ item }) => (
-  <a href={item.href} rel="noopener noreferrer" target="_blank">
-    <div className="service_item" data-magnetic>
-      <div className="item_icon">
-        <img src={item.img} alt="Collab – Online Learning Platform" />
-      </div>
-      <div className="item_content">
-        <h3 className="item_title">{item.title}</h3>
-        <p className="mb-0" style={{ color: "black" }}>
-          {item.description}
-        </p>
-      </div>
-      <div className="pad-2">
-        <a
-          href={item.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-course"
-        >
-          Click Here
-        </a>
-      </div>
+  <a href={item.href} target="_blank" rel="noopener noreferrer" className="course-card">
+    <div className="course-card__icon">
+      <img src={item.img} alt={item.title} />
+    </div>
+    <div className="course-card__body">
+      <h3 className="course-card__title">{item.title}</h3>
+      <p className="course-card__desc">{item.description}</p>
+    </div>
+    <div className="course-card__footer">
+      <span className="course-card__link">
+        View Notes <FiExternalLink size={14} />
+      </span>
     </div>
   </a>
 );

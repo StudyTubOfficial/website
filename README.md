@@ -39,6 +39,6 @@ Massive love to the StudyTub squad for bringing the knowledge party to life. You
 
 ## 💬 Let's Chat
 
-Got thoughts, suggestions, or just want to share your latest meme obsession? Hit us up at support@nishikanta.tech.
+Got thoughts, suggestions, or just want to share your latest meme obsession? Hit us up at support@nishikanta.in.
 
 Cheers for choosing StudyTub! 🚀

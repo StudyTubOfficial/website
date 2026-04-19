@@ -13,14 +13,8 @@ import PrivateRoute from "./utils/PrivateRoute";
 function App() {
   return (
     <>
-      <div className="backtotop">
-        <a className="scroll">
-          <i className="far fa-arrow-up"></i>
-        </a>
-      </div>
       <Routes>
         <Route element={<PrivateRoute />}>
-          {" "}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
@@ -28,7 +22,6 @@ function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="*" element={<Home />} />
         </Route>
-
         <Route path="/login" element={<Login />} />
       </Routes>
     </>

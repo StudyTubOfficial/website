@@ -1,110 +1,165 @@
-import { React, useState } from "react";
-import "./login.css";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FiMail, FiArrowRight } from "react-icons/fi";
 
 export default function Login() {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {
-      email: email,
-    };
-
-    if (email === "") {
-      toast.error("Please enter email", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-      });
+    if (!email) {
+      toast.error("Please enter email", { position: "top-center" });
       return;
-    } else if (!email.includes("@")) {
-      toast.error("Please enter valid email", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-      });
+    }
+    if (!email.includes("@")) {
+      toast.error("Please enter a valid email", { position: "top-center" });
       return;
-    } else {
-      axios
-        .post(`${process.env.REACT_APP_API_URL}api/auth/login`, data)
-        .then((res) => {
-          if (res.status === 200) {
-            toast.success("Login successfully", {
-              position: "top-center",
-              autoClose: 5000,
-              hideProgressBar: true,
-              closeOnClick: true,
-              pauseOnHover: true,
-            });
-          }
+    }
 
-          localStorage.setItem("token", res.data.token);
-          localStorage.setItem("user", JSON.stringify(res.data.user));
-          window.location.href = "/";
-        })
-        .catch((err) => {
-          console.log(err);
-          toast.error("Invalid email or password", {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-          });
-        });
+    setLoading(true);
+    try {
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_URL}api/auth/login`,
+        { email }
+      );
+      if (res.status === 200) {
+        toast.success("Login successful!", { position: "top-center" });
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+        window.location.href = "/";
+      }
+    } catch (err) {
+      toast.error("Invalid email or password", { position: "top-center" });
+    } finally {
+      setLoading(false);
     }
   };
+
   return (
-    <main className="page_content mobile_view page_banner ">
-      <section className="register_section section_space_lg">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col col-lg-5">
-              <form>
-                <div className="register_form signup_login_form fm">
-                  <h1 className=" text-center">Login Here</h1>
-                  <p className=" font-sz text-center">
-                    Unlock Learning, Discover, Thrive Together.
-                  </p>
-                  <div className="form_item">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Please enter your Email Address"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </div>
+    <div className="login-page">
+      <div className="login-card">
+        <Link to="/" className="login-logo">
+          <img src="assets/images/logo/logo.png" alt="StudyTub" />
+          <span>StudyTub</span>
+        </Link>
+        <h1 className="login-title">Welcome Back</h1>
+        <p className="login-subtitle">Unlock Learning, Discover, Thrive Together.</p>
 
-                  <button
-                    type="submit"
-                    onClick={(e) => {
-                      handleSubmit(e);
-                    }}
-                    className="btn btn_dark mb-5"
-                  >
-                    <span>
-                      <small>Login Now</small> <small>Login Now</small>
-                    </span>
-                  </button>
-
-                  <p className=" login-footer text-center mb-0">
-                    Copyright © 2023 || <b>Study Tub </b> . All rights reserved.
-                  </p>
-                </div>
-              </form>
+        <form onSubmit={handleSubmit} className="login-form">
+          <div className="login-field">
+            <div className="login-field__icon">
+              <FiMail size={18} />
             </div>
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="login-field__input"
+            />
           </div>
-        </div>
-      </section>
+          <button type="submit" className="btn btn--primary btn--lg" style={{ width: "100%" }} disabled={loading}>
+            {loading ? "Logging in..." : "Login Now"} <FiArrowRight size={16} />
+          </button>
+        </form>
+
+        <p className="login-footer">
+          © {new Date().getFullYear()} StudyTub. All rights reserved.
+        </p>
+      </div>
       <ToastContainer />
-    </main>
+
+      <style>{`
+        .login-page {
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg) 40%, var(--bg-alt) 100%);
+          padding: 24px;
+        }
+        .login-card {
+          background: var(--bg);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          padding: 48px 40px;
+          max-width: 440px;
+          width: 100%;
+          text-align: center;
+          box-shadow: var(--shadow-lg);
+        }
+        .login-logo {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font-weight: 800;
+          font-size: 1.15rem;
+          color: var(--primary);
+          margin-bottom: 32px;
+        }
+        .login-logo img {
+          height: 32px;
+          width: auto;
+        }
+        .login-title {
+          font-size: 1.75rem;
+          font-weight: 800;
+          margin-bottom: 8px;
+        }
+        .login-subtitle {
+          color: var(--text-light);
+          font-size: 0.9rem;
+          margin-bottom: 32px;
+        }
+        .login-form {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        .login-field {
+          display: flex;
+          align-items: center;
+          border: 2px solid var(--border);
+          border-radius: var(--radius-md);
+          transition: border-color var(--transition);
+          overflow: hidden;
+        }
+        .login-field:focus-within {
+          border-color: var(--primary);
+        }
+        .login-field__icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 14px;
+          color: var(--text-light);
+        }
+        .login-field__input {
+          flex: 1;
+          padding: 14px 14px 14px 0;
+          font-size: 0.95rem;
+          background: none;
+          color: var(--text);
+        }
+        .login-field__input::placeholder {
+          color: var(--text-light);
+        }
+        .login-footer {
+          margin-top: 32px;
+          font-size: 0.75rem;
+          color: var(--text-light);
+        }
+        @media (max-width: 480px) {
+          .login-card {
+            padding: 32px 24px;
+          }
+        }
+      `}</style>
+    </div>
   );
 }

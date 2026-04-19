@@ -11,34 +11,32 @@ import Promotion from "../components/Promotion/Promotion";
 import ImageBanner from "../components/ImageBanner/ImageBanner";
 import AdBanner from "../components/AdBanner/AdBanner";
 import StickyAd from "../components/StickyAd/StickyAd";
+
 export default function Home() {
   return (
-    <div className="page_wrapper">
+    <div className="page-wrapper">
       <Navbar />
-      <Jumbotron />
-      <Analytics />
-      <ImageBanner />
-      <AdBanner 
-        title="🍕 Hungry Students? Feed Them!"
-        description="Promote your food stall or restaurant with exclusive student coupons and discounts."
-        type="horizontal"
-        size="medium"
-      />
-      <Course />
-      <AdBanner 
-        title="📚 Food + Education Partnership"
-        description="Combine delicious meals with educational content for the perfect student experience."
-        type="square"
-        size="small"
-      />
-      <Team />
-
-      <Heading
-        text={"Discover Us on Product Hunt!"}
-        clss={"text-center"}
-        clss2={12}
-      />
-      <ProductHunt />
+      <main>
+        <Jumbotron />
+        <Analytics />
+        <ImageBanner />
+        <AdBanner
+          title="🍕 Hungry Students? Feed Them!"
+          description="Promote your food stall or restaurant with exclusive student coupons and discounts."
+          type="horizontal"
+          size="medium"
+        />
+        <Course />
+        <AdBanner
+          title="📚 Food + Education Partnership"
+          description="Combine delicious meals with educational content for the perfect student experience."
+          type="horizontal"
+          size="small"
+        />
+        <Team />
+        <Heading text="Discover Us on Product Hunt!" />
+        <ProductHunt />
+      </main>
       <Footer />
       <Promotion />
       <StickyAd />
