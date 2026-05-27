@@ -1,0 +1,21 @@
+# StudyTub
+
+> Free, community-curated study notes for BTECH engineering students. Founded 2019.
+
+## Pages
+
+- [Home](https://studytub.netlify.app/): Landing page with featured courses and platform analytics
+- [About](https://studytub.netlify.app/about): Our story, mission, and growth from 2019 to 4,500+ users
+- [Team](https://studytub.netlify.app/team): The people behind StudyTub and how to contribute
+- [FAQ](https://studytub.netlify.app/faq): Common questions about subjects, pricing, contributions, and community
+- [Contact](https://studytub.netlify.app/contact): Get in touch for enquiries, contributions, or partnerships
+
+## Markdown Twins
+
+All pages have markdown twins served via content negotiation (AEO Spec v1.0):
+
+- [Home](https://studytub.netlify.app/index.md)
+- [About](https://studytub.netlify.app/about.md)
+- [Team](https://studytub.netlify.app/team.md)
+- [FAQ](https://studytub.netlify.app/faq.md)
+- [Contact](https://studytub.netlify.app/contact.md)

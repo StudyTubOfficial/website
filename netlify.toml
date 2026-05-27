@@ -4,3 +4,10 @@
 
 [build.environment]
   SECRETS_SCAN_OMIT_KEYS = "REACT_APP_ADMIN_USER_ID"
+
+# AEO (Answer Engine Optimization) — AEO Spec v1.0
+# Runs on every request: handles content negotiation, AI bot detection,
+# markdown twin serving, and discovery header injection.
+[[edge_functions]]
+  path = "/*"
+  function = "aeo"
