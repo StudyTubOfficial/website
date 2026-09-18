@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://studytub.netlify.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://studytub.netlify.app/notes/first-year-engineering-notes.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://studytub.netlify.app/notes/data-structures-notes.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://studytub.netlify.app/about</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://studytub.netlify.app/faq</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://studytub.netlify.app/team</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://studytub.netlify.app/contact</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+</urlset>

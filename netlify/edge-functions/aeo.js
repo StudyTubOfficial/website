@@ -104,13 +104,18 @@ function negotiateFormat(accept) {
 
 /**
  * Convert an HTML page path to its markdown twin path.
- *   /          → /index.md
- *   /about     → /about.md
- *   /about.md  → /about.md  (idempotent)
+ *   /                  → /index.md
+ *   /about             → /about.md
+ *   /notes/foo.html    → /notes/foo.md   (explicit .html is stripped first)
+ *   /about.md          → /about.md       (idempotent)
  */
 function toMdPath(pathname) {
     if (pathname.endsWith(".md")) return pathname;
-    const clean = pathname.replace(/\/$/, "") || "/index";
+    // Static pages carry a real .html extension; without stripping it the twin
+    // would resolve to "…​.html.md", which does not exist, and every AI bot
+    // would get a 404 for those pages.
+    const withoutHtml = pathname.replace(/\.html?$/i, "");
+    const clean = withoutHtml.replace(/\/$/, "") || "/index";
     return clean === "/" ? "/index.md" : `${clean}.md`;
 }
 
