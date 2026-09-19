@@ -4,6 +4,28 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FiMail, FiArrowRight } from "react-icons/fi";
+import Seo from "../components/Seo/Seo";
+
+/**
+ * Where to send the user after a successful login.
+ *
+ * Only same-origin paths and the notes drive are accepted. An open redirect —
+ * following any ?redirect= value — would let someone send a StudyTub login link
+ * that lands on a site they control, which is a credible phishing vector.
+ */
+function safeRedirect() {
+  const raw = new URLSearchParams(window.location.search).get("redirect");
+  if (!raw) return "/";
+  try {
+    const url = new URL(raw, window.location.origin);
+    const allowed =
+      url.origin === window.location.origin ||
+      url.hostname === "notes.studytub.workers.dev";
+    return allowed ? url.href : "/";
+  } catch {
+    return "/";
+  }
+}
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -30,7 +52,10 @@ export default function Login() {
         toast.success("Login successful!", { position: "top-center" });
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.user));
-        window.location.href = "/";
+        // Return the user to wherever they were headed. The static notes pages
+        // send visitors here with ?redirect=<drive url> when they click through
+        // to the files while signed out.
+        window.location.href = safeRedirect();
       }
     } catch (err) {
       toast.error("Invalid email or password", { position: "top-center" });
@@ -40,10 +65,17 @@ export default function Login() {
   };
 
   return (
-    <div className="login-page">
+    <>
+      <Seo
+        path="/login"
+        title="Sign in to StudyTub"
+        description="Sign in with your email to open StudyTub notes and question papers. Free, no password to remember."
+        noindex
+      />
+<div className="login-page">
       <div className="login-card">
         <Link to="/" className="login-logo">
-          <img src="assets/images/logo/logo.png" alt="StudyTub" />
+          <img src="/assets/images/logo/logo.png" alt="StudyTub" />
           <span>StudyTub</span>
         </Link>
         <h1 className="login-title">Welcome Back</h1>
@@ -161,5 +193,6 @@ export default function Login() {
         }
       `}</style>
     </div>
+    </>
   );
 }

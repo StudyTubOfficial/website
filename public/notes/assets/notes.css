@@ -1,0 +1,288 @@
+/* ---------------------------------------------------------------------------
+   Supplementary styles for the static notes pages.
+
+   These pages load the app's compiled stylesheet first and reuse its classes
+   (.nav, .container, .section, .card, .btn, .badge, .grid). This file adds only
+   what the app does not already define, and builds entirely on the app's own
+   design tokens from src/index.css — no second palette.
+
+   It also supplies the .footer rules, which the app's markup references but
+   index.css never defined, so the footer renders unstyled everywhere today.
+--------------------------------------------------------------------------- */
+
+/* ── hero ──────────────────────────────────────────────────────────────── */
+.section--hero { padding-top: 120px; padding-bottom: 32px; }
+.hero-split {
+  display: grid; grid-template-columns: minmax(0,1fr) auto;
+  gap: 48px; align-items: center;
+}
+.hero-title {
+  font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.12;
+  letter-spacing: -.025em; margin: 16px 0 12px; color: var(--text);
+}
+.hero-lede {
+  font-size: 1.12rem; line-height: 1.65; color: var(--text-light);
+  max-width: 58ch; margin: 0;
+}
+.hero-media {
+  width: 220px; height: 220px; display: grid; place-items: center;
+  background: var(--bg-alt); border-radius: var(--radius-lg); padding: 34px;
+}
+.hero-media img { width: 100%; height: 100%; object-fit: contain; }
+/* The semester SVGs are hardcoded to fill="#242528" and vanish on a dark
+   background. Inverting is cheaper than re-authoring eight files. */
+[data-theme="dark"] .hero-media img,
+[data-theme="dark"] .card__icon { filter: invert(1) brightness(1.75); }
+
+@media (max-width: 860px) {
+  .hero-split { grid-template-columns: 1fr; gap: 28px; }
+  .hero-media { width: 148px; height: 148px; padding: 22px; }
+  .section--hero { padding-top: 96px; }
+}
+
+/* ── stat row ──────────────────────────────────────────────────────────── */
+.statrow { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 0; }
+.stat {
+  background: var(--bg-alt); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 10px 16px; min-width: 92px;
+}
+.stat b { display: block; font-size: 1.3rem; line-height: 1.2; color: var(--text); }
+.stat span { font-size: .78rem; color: var(--text-light); }
+
+.btnrow { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 0; }
+
+/* ── cards (extends the app's .card) ───────────────────────────────────── */
+.card--link { text-decoration: none; color: inherit; display: block; }
+.card__icon { width: 48px; height: 48px; object-fit: contain; margin-bottom: 14px; }
+.card__title { font-size: 1.02rem; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+.card__text { font-size: .9rem; line-height: 1.55; color: var(--text-light); margin: 0; }
+.card__meta {
+  display: block; margin-top: 12px; font-size: .78rem; font-weight: 600;
+  color: var(--primary); text-transform: uppercase; letter-spacing: .04em;
+}
+
+/* ── notice / auth banner ──────────────────────────────────────────────── */
+.notice {
+  display: flex; align-items: flex-start; gap: 11px;
+  background: var(--bg-alt); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm); padding: 14px 18px;
+  margin: 0 0 32px; font-size: .94rem; color: var(--text);
+}
+.notice svg { flex: none; margin-top: 2px; color: var(--accent); }
+.notice a:not(.btn) { color: var(--primary); font-weight: 600; }
+
+/* ── table ─────────────────────────────────────────────────────────────── */
+.tablewrap {
+  overflow-x: auto; border: 1px solid var(--border);
+  border-radius: var(--radius-md); background: var(--bg);
+}
+.table { border-collapse: collapse; width: 100%; min-width: 520px; }
+.table th, .table td {
+  padding: 12px 16px; text-align: left; font-size: .93rem;
+  border-bottom: 1px solid var(--border);
+}
+.table th {
+  background: var(--bg-alt); font-size: .76rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .05em; color: var(--text-light);
+}
+.table tr:last-child td { border-bottom: none; }
+.table tbody tr:hover { background: var(--bg-alt); }
+.table a:not(.btn) { color: var(--primary); text-decoration: none; font-weight: 600; }
+.table a:not(.btn):hover { text-decoration: underline; }
+
+/* ── inline bits ───────────────────────────────────────────────────────── */
+.code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--bg-alt); border: 1px solid var(--border);
+  color: var(--primary); padding: 2px 8px; border-radius: 5px;
+  font-size: .84rem; font-weight: 600;
+}
+.chiprow { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
+.chip {
+  display: inline-block; padding: 6px 13px; border-radius: var(--radius-full);
+  background: var(--bg-alt); border: 1px solid var(--border);
+  color: var(--text); text-decoration: none; font-size: .87rem; font-weight: 500;
+  transition: var(--transition);
+}
+.chip:hover { border-color: var(--primary); color: var(--primary); }
+
+/* ── prose ─────────────────────────────────────────────────────────────── */
+.prose { max-width: 760px; }
+.prose h2 { font-size: 1.5rem; margin: 40px 0 14px; letter-spacing: -.015em; color: var(--text); }
+.prose h2:first-child { margin-top: 0; }
+.prose p, .prose li { color: var(--text-light); line-height: 1.75; }
+.prose strong { color: var(--text); }
+.prose ul { padding-left: 22px; }
+.prose li { margin: 8px 0; }
+/* Exclude buttons: .prose a is more specific than .btn--primary, so without
+   this a call-to-action inside prose renders indigo-on-indigo and the label
+   disappears entirely. */
+.prose a:not(.btn) { color: var(--primary); }
+.prose .btn--primary { color: #fff; }
+.prose .btn--outline { color: var(--text); }
+.prose .btn--outline:hover { color: var(--primary); }
+.muted { font-size: .9rem; color: var(--text-light); }
+.muted a:not(.btn) { color: var(--primary); text-decoration: none; }
+.muted a:not(.btn):hover { text-decoration: underline; }
+
+/* ── FAQ (native disclosure, no JS) ────────────────────────────────────── */
+.faq {
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 0; margin: 10px 0; background: var(--bg);
+}
+.faq summary {
+  cursor: pointer; padding: 15px 18px; font-weight: 600; color: var(--text);
+  list-style: none; display: flex; justify-content: space-between; align-items: center;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; font-size: 1.3rem; font-weight: 400; color: var(--text-light); line-height: 1;
+}
+.faq[open] summary::after { content: "\2013"; }
+.faq[open] summary { border-bottom: 1px solid var(--border); }
+.faq p { margin: 0; padding: 15px 18px; color: var(--text-light); line-height: 1.7; }
+
+/* ── theme toggle ──────────────────────────────────────────────────────── */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; padding: 0; cursor: pointer;
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: transparent; color: var(--text-light); transition: var(--transition);
+}
+.theme-toggle:hover { border-color: var(--primary); color: var(--primary); }
+.theme-toggle .i-sun { display: none; }
+[data-theme="dark"] .theme-toggle .i-sun { display: block; }
+[data-theme="dark"] .theme-toggle .i-moon { display: none; }
+
+/* ── footer ────────────────────────────────────────────────────────────────
+   Footer.js references these classes but index.css never defined them, so the
+   footer renders unstyled across the whole site. Defined here so at least the
+   notes pages are complete; moving this into index.css would fix the app too. */
+.footer { background: var(--bg-alt); border-top: 1px solid var(--border); padding: 56px 0 28px; margin-top: 64px; }
+.footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+.footer__logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 800; font-size: 1.1rem; }
+.footer__logo-img { width: 30px; height: 30px; object-fit: contain; }
+.footer__tagline { color: var(--text-light); font-size: .92rem; line-height: 1.6; margin: 14px 0 0; max-width: 42ch; }
+.footer__heading { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--text); margin: 0 0 14px; }
+.footer__list { list-style: none; padding: 0; margin: 0; }
+.footer__list li { margin: 9px 0; }
+.footer__list a { color: var(--text-light); text-decoration: none; font-size: .92rem; transition: var(--transition); }
+.footer__list a:hover { color: var(--primary); }
+.footer__bottom { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--border); }
+.footer__bottom p { margin: 0; font-size: .87rem; color: var(--text-light); }
+@media (max-width: 720px) { .footer__grid { grid-template-columns: 1fr; gap: 30px; } }
+
+a[data-gated="true"] .lock { font-size: .9em; opacity: .85; margin-left: 2px; }
+/* .btn uses gap for its flex children, so the appended lock would otherwise sit
+   a full gap away from the label. */
+.btn .lock { margin-left: -4px; }
+
+/* ── search ────────────────────────────────────────────────────────────
+   Same rules as src/components/Search/notesSearch.css, so the field looks
+   identical on the React homepage and on these static pages. */
+/* Notes search — built on the app's existing tokens from src/index.css. */
+
+/* Notes search — built on the app's existing tokens from src/index.css. */
+
+.nsearch { position: relative; width: 100%; max-width: 620px; }
+
+.nsearch__field {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 4px 6px 4px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.nsearch__field:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 14%, transparent);
+}
+.nsearch__icon { color: var(--text-light); flex: none; }
+
+.nsearch__input {
+  flex: 1; min-width: 0; border: 0; outline: 0; background: transparent;
+  font-family: var(--font); font-size: 1.05rem; color: var(--text);
+  padding: 15px 0;
+}
+.nsearch__input::placeholder { color: var(--text-light); }
+/* The native clear affordance clashes with the rounded field. */
+.nsearch__input::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+.nsearch__kbd {
+  flex: none; margin-right: 12px; padding: 3px 9px;
+  border: 1px solid var(--border); border-radius: 6px;
+  font: 600 .78rem var(--font); color: var(--text-light); background: var(--bg-alt);
+}
+@media (max-width: 560px) { .nsearch__kbd { display: none; } }
+
+/* ── results ─────────────────────────────────────────────────────────── */
+.nsearch__panel {
+  position: absolute; top: calc(100% + 10px); left: 0; right: 0; z-index: 60;
+  /* Opaque by design: the panel floats over other sections, so any
+     transparency lets their headings and badges bleed through it. */
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 48px rgba(15, 23, 42, .18), 0 2px 8px rgba(15, 23, 42, .08);
+  overflow: hidden;
+  /* Taller lists scroll rather than running off the page. */
+  max-height: min(60vh, 460px);
+  overflow-y: auto;
+}
+
+[data-theme="dark"] .nsearch__panel {
+  background: #1e293b;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .55), 0 2px 8px rgba(0, 0, 0, .4);
+}
+
+.nsearch__hit {
+  display: grid; grid-template-columns: 78px 1fr auto;
+  align-items: center; gap: 12px; width: 100%;
+  padding: 12px 16px; border: 0; background: transparent;
+  text-align: left; cursor: pointer; font-family: var(--font);
+  border-bottom: 1px solid var(--border);
+}
+.nsearch__hit:last-of-type { border-bottom: 0; }
+.nsearch__hit.is-active { background: #f1f5f9; }
+[data-theme="dark"] .nsearch__hit.is-active { background: #334155; }
+
+.nsearch__kind {
+  font-size: .68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .05em; padding: 3px 8px; border-radius: var(--radius-full);
+  text-align: center; color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+}
+.nsearch__kind--file {
+  color: var(--text-light);
+  background: var(--bg-alt);
+}
+
+.nsearch__title {
+  font-size: .95rem; color: var(--text); font-weight: 500;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.nsearch__meta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .8rem; color: var(--text-light); white-space: nowrap;
+}
+
+.nsearch__empty { padding: 20px 18px; color: var(--text-light); font-size: .92rem; }
+.nsearch__empty code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--bg-alt); padding: 2px 6px; border-radius: 5px; color: var(--primary);
+}
+
+.nsearch__foot {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  padding: 9px 16px; background: #f8fafc;
+  position: sticky; bottom: 0;
+  border-top: 1px solid var(--border);
+  font-size: .76rem; color: var(--text-light);
+}
+.nsearch__foot span { display: inline-flex; align-items: center; gap: 5px; }
+[data-theme="dark"] .nsearch__foot { background: #172033; }
+
+.hero-search { margin: 26px 0 4px; max-width: 560px; }

@@ -3,52 +3,56 @@ import { motion } from "framer-motion";
 import CourseCards from "../Cards/CourseCards/CourseCards";
 import { FiArrowRight } from "react-icons/fi";
 
+// Each card links to its on-site notes page rather than straight to the drive.
+// That page lists the subjects the semester actually contains and is crawlable
+// by Google, which the client-rendered drive index is not. The page then links
+// on to the files, so the drive is one click further rather than unreachable.
 const allCourses = [
   {
-    href: "https://notes.studytub.workers.dev/0:/First%20Year/",
-    img: "assets/images/service/1st.svg",
+    href: "/notes/first-year-engineering-notes.html",
+    img: "/assets/images/service/1st.svg",
     title: "1st Semester",
     description: "Where the BTECH journey begins! Dive into the fun world of fundamentals.",
   },
   {
-    href: "https://notes.studytub.workers.dev/0:/First%20Year/",
-    img: "assets/images/service/2nd.svg",
+    href: "/notes/first-year-engineering-notes.html",
+    img: "/assets/images/service/2nd.svg",
     title: "2nd Semester",
     description: "Level up your knowledge and discover the secrets of your second semester.",
   },
   {
-    href: "https://notes.studytub.workers.dev/0:/3rd%20Sem/",
-    img: "assets/images/service/3rd.svg",
+    href: "/notes/3rd-semester-btech-notes.html",
+    img: "/assets/images/service/3rd.svg",
     title: "3rd Semester",
     description: "Things are heating up! Explore advanced topics and conquer the third semester.",
   },
   {
-    href: "https://notes.studytub.workers.dev/0:/4th%20sem/",
-    img: "assets/images/service/4th.svg",
+    href: "/notes/4th-semester-btech-notes.html",
+    img: "/assets/images/service/4th.svg",
     title: "4th Semester",
     description: "Halfway there! Uncover the excitement of your fourth semester adventures.",
   },
   {
-    href: "https://notes.studytub.workers.dev/0:/5th%20sem/",
-    img: "assets/images/service/5th.svg",
+    href: "/notes/5th-semester-btech-notes.html",
+    img: "/assets/images/service/5th.svg",
     title: "5th Semester",
     description: "Ready to rock the fifth semester? Let's unravel the mysteries together!",
   },
   {
-    href: "https://notes.studytub.workers.dev/0:/6th%20sem/",
-    img: "assets/images/service/6th.svg",
+    href: "/notes/6th-semester-btech-notes.html",
+    img: "/assets/images/service/6th.svg",
     title: "6th Semester",
     description: "Gear up for the sixth semester thrill ride and ace your engineering journey.",
   },
   {
-    href: "https://notes.studytub.workers.dev/0:/7th%20Sem/",
-    img: "assets/images/service/7th.svg",
+    href: "/notes/7th-semester-btech-notes.html",
+    img: "/assets/images/service/7th.svg",
     title: "7th Semester",
     description: "It's the 'Lucky Number Seven' — where dreams take flight!",
   },
   {
-    href: "https://notes.studytub.workers.dev/0:/8th%20Sem/",
-    img: "assets/images/service/8th.svg",
+    href: "/notes/8th-semester-btech-notes.html",
+    img: "/assets/images/service/8th.svg",
     title: "8th Semester",
     description: "The final frontier! Prepare to graduate with flying colors.",
   },
@@ -91,12 +95,7 @@ export default function Course() {
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.4 }}
         >
-          <a
-            href="https://notes.studytub.workers.dev/0:/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn--outline"
-          >
+          <a href="/notes/" className="btn btn--outline">
             Browse All Notes <FiArrowRight size={16} />
           </a>
         </motion.div>

@@ -14,15 +14,25 @@ function App() {
   return (
     <>
       <Routes>
+        {/* Public. These pages describe what StudyTub is and are the pages
+            search engines and first-time visitors land on — gating them behind
+            a login meant Googlebot saw a redirect and nothing was indexable.
+            The notes FILES are still gated: the drive links ask for a login. */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/contact" element={<Contact />} />
+
+        {/* Anything signed-in-only goes inside this wrapper. */}
         <Route element={<PrivateRoute />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="*" element={<Home />} />
+          <Route path="/account" element={<Home />} />
         </Route>
+
         <Route path="/login" element={<Login />} />
+
+        {/* Catch-all last, so it cannot shadow the routes above. */}
+        <Route path="*" element={<Home />} />
       </Routes>
     </>
   );

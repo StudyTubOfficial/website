@@ -1,0 +1,911 @@
+{
+ "semFiles": {
+  "3rd Sem": 83,
+  "4th sem": 51,
+  "6th sem": 66,
+  "7th Sem": 133,
+  "8th Sem": 119,
+  "First Year": 112
+ },
+ "semFolders": {
+  "3rd Sem": [
+   "CSE-3rd-sem",
+   "Csn-3rdsem",
+   "CST-3rd-sem",
+   "ECE-3rd-sem",
+   "EEE-3rd-sem",
+   "EIE-3rd-sem",
+   "Sem_3_BTech_question paper"
+  ],
+  "4th sem": [
+   "CSE-4th-sem",
+   "ECE_4th-sem",
+   "EEE_4th_sem",
+   "EIE_4th_sem",
+   "mid-end"
+  ],
+  "5th sem": [
+   "5th sem",
+   "Cse",
+   "Ece",
+   "Eee",
+   "Eie",
+   "MIDTERM_ENDTERM-Question paper"
+  ],
+  "6th sem": [
+   "Cse",
+   "Ece",
+   "Eee",
+   "Eie",
+   "mid_end"
+  ],
+  "7th Sem": [
+   "Antenna and wave propagation",
+   "Applied Linear Algebra",
+   "Compiler Design",
+   "Cryptography and Network Security",
+   "DCLab",
+   "Digital Communications",
+   "DIVP",
+   "ETLAB",
+   "Extras",
+   "IOT",
+   "ITA",
+   "Machine Learning",
+   "Microwave",
+   "Mobile Communication",
+   "Organization Behaviour",
+   "Project Management",
+   "question",
+   "SC Lab",
+   "SCS",
+   "Soft Computing",
+   "wireless sensor network"
+  ],
+  "8th Sem": [
+   "Antenna and wave propagation",
+   "DCLab",
+   "Digital Communications",
+   "DIVP",
+   "ENTPD",
+   "ETLAB",
+   "Extras",
+   "Extras (1)",
+   "ITA",
+   "Machine Learning",
+   "MCN",
+   "Microwave",
+   "Project Management",
+   "question",
+   "SCS",
+   "wireless sensor network"
+  ],
+  "First Year": [
+   "5th sem",
+   "BE",
+   "BEE+BEE-LAB",
+   "C-PROG",
+   "Chem",
+   "Ci",
+   "Data-structure",
+   "Engineering Graphics",
+   "Envs",
+   "Manufacturing Practices",
+   "MATH-1",
+   "MATH-2",
+   "mid term-endterm",
+   "PHYSICS"
+  ]
+ },
+ "subjects": [
+  {
+   "key": "pmm",
+   "display": "Pm M",
+   "files": [
+    "PM M-1.pdf",
+    "PM M-1.pdf",
+    "PM M-1to2(Cheatsheet).pdf",
+    "PM M-1to2(Cheatsheet).pdf",
+    "PM M-1to5 Merged.pdf",
+    "PM M-1to5 Merged.pdf",
+    "PM M-2.pdf",
+    "PM M-2.pdf",
+    "PM M-3.pdf",
+    "PM M-3.pdf",
+    "PM M-3to5(CheatSheet).pdf",
+    "PM M-3to5(CheatSheet).pdf",
+    "PM M-4.pdf",
+    "PM M-4.pdf",
+    "PM M-5.pdf",
+    "PM M-5.pdf"
+   ],
+   "codes": [],
+   "years": [],
+   "sem": [
+    "7th Sem",
+    "8th Sem"
+   ],
+   "paths": [
+    "/0:/7th%20Sem/Project%20Management/",
+    "/0:/8th%20Sem/Project%20Management/"
+   ]
+  },
+  {
+   "key": "math",
+   "display": "Math",
+   "files": [
+    "MATH-III FOR CSE(18BS1T07) - End-Term Exam - 2020-2021.pdf",
+    "MATH-III FOR CSE(18BS1T07) - Mid-Term Exam - 2020-2021.pdf",
+    "MATH-III FOR CSE(18BS1T07)-End-Term Exam - 2020-2021.pdf",
+    "MATH-III FOR ECE EEE EIE(18BS1T03) - End-Term Exam - 2020-2021.pdf",
+    "MATH-III FOR ECE EEE EIE(18BS1T03) - Mid-Term Exam - 2020-2021.pdf",
+    "MATH-III FOR ECE EEE EIE(18BS1T03)-End-Term Exam - 2020-2021.pdf",
+    "MATH-IV FOR ECE EEE EIE(18BS1T04) - End Term Exam - 2020-2021.pdf",
+    "MATH-IV FOR ECE EEE EIE(18BS1T04) 4th - LE - End Term Exam - 2020-2021.pdf",
+    "Math - III for CSE (18BS1T07)- Mid-Term Exam - 2020-2021.pdf",
+    "Math - III for ECE, EEE, EIE (18BS1T03)- Mid-Term Exam - 2020-2021.pdf",
+    "Math - IV for CS (18BS1T08) - Mid-Term Exam - 2019-2020.pdf",
+    "Math - IV for ECE EEE EIE(18BS1T04) - End-Term Exam -2019-2020.pdf",
+    "Math - iii for ECE, EEE, EIE (18BS1T03) - End-Term Exam - 2019-2020.pdf",
+    "Math- IV FOR CSE(18BS1T08) - Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18BS1T03",
+    "18BS1T04",
+    "18BS1T07",
+    "18BS1T08"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem",
+    "4th sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/",
+    "/0:/4th%20sem/mid-end/"
+   ]
+  },
+  {
+   "key": "digitalcommunication",
+   "display": "Digital Communication",
+   "files": [
+    "DIGITAL COMMUNICATION(18EC1T12) - End Term Exam - 2021-2022.pdf",
+    "DIGITAL COMMUNICATION(18EC1T12) - End Term Exam - 2021-2022.pdf",
+    "DIGITAL COMMUNICATION(18EC1T12) - End Term Exam - 2022-2023.pdf",
+    "DIGITAL COMMUNICATION(18EC1T12) - End Term Exam - 2022-2023.pdf",
+    "DIGITAL COMMUNICATION(18EC1T12) - Mid Term Exam - 2021-2022.pdf",
+    "DIGITAL COMMUNICATION(18EC1T12) - Mid Term Exam - 2021-2022.pdf",
+    "DIGITAL COMMUNICATION(18EC1T12) - Mid-Term Exam (2022-23).pdf",
+    "DIGITAL COMMUNICATION(18EC1T12) - Mid-Term Exam (2022-23).pdf",
+    "DIGITAL COMMUNICATION(18EC1T12) - Repeat Mid Term Exam - 2022-2023.pdf",
+    "DIGITAL COMMUNICATION(18EC1T12) - Repeat Mid Term Exam - 2022-2023.pdf",
+    "DIGITAL COMMUNICATION(18EC1T12) - Repeat_Mid Term Exam - 2021-22.pdf",
+    "DIGITAL COMMUNICATION(18EC1T12) - Repeat_Mid Term Exam - 2021-22.pdf"
+   ],
+   "codes": [
+    "18EC1T12"
+   ],
+   "years": [
+    "2021-2022",
+    "2022-2023"
+   ],
+   "sem": [
+    "7th Sem",
+    "8th Sem"
+   ],
+   "paths": [
+    "/0:/7th%20Sem/question/",
+    "/0:/8th%20Sem/question/"
+   ]
+  },
+  {
+   "key": "digitalimagevideoprocessing",
+   "display": "Digital Image & Video Processing",
+   "files": [
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - End Term Exam - 2021-2022.pdf",
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - End Term Exam - 2021-2022.pdf",
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - End Term Exam - 2022-2023.pdf",
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - End Term Exam - 2022-2023.pdf",
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - Mid Term Exam - 2021-2022.pdf",
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - Mid Term Exam - 2021-2022.pdf",
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - Mid-Term Exam (2022-23).pdf",
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - Mid-Term Exam (2022-23).pdf",
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - Repeat Mid Term Exam - 2022-2023.pdf",
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - Repeat Mid Term Exam - 2022-2023.pdf",
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - Repeat_Mid Term Exam - 2021-22.pdf",
+    "DIGITAL IMAGE & VIDEO PROCESSING(18EC2T13) - Repeat_Mid Term Exam - 2021-22.pdf"
+   ],
+   "codes": [
+    "18EC2T13"
+   ],
+   "years": [
+    "2021-2022",
+    "2022-2023"
+   ],
+   "sem": [
+    "7th Sem",
+    "8th Sem"
+   ],
+   "paths": [
+    "/0:/7th%20Sem/question/",
+    "/0:/8th%20Sem/question/"
+   ]
+  },
+  {
+   "key": "mobilecommunicationnetworks",
+   "display": "Mobile Communication & Networks",
+   "files": [
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - End Term Exam - 2021-2022.pdf",
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - End Term Exam - 2021-2022.pdf",
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - End Term Exam - 2022-2023.pdf",
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - End Term Exam - 2022-2023.pdf",
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - Mid Term Exam - 2021-2022.pdf",
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - Mid Term Exam - 2021-2022.pdf",
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - Mid-Term Exam (2022-23).pdf",
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - Mid-Term Exam (2022-23).pdf",
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - Repeat Mid Term Exam - 2022-2023.pdf",
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - Repeat Mid Term Exam - 2022-2023.pdf",
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - Repeat_Mid Term Exam - 2021-22.pdf",
+    "MOBILE COMMUNICATION & NETWORKS(18EC2T20) - Repeat_Mid Term Exam - 2021-22.pdf"
+   ],
+   "codes": [
+    "18EC2T20"
+   ],
+   "years": [
+    "2021-2022",
+    "2022-2023"
+   ],
+   "sem": [
+    "7th Sem",
+    "8th Sem"
+   ],
+   "paths": [
+    "/0:/7th%20Sem/question/",
+    "/0:/8th%20Sem/question/"
+   ]
+  },
+  {
+   "key": "wirelesssensornetworks",
+   "display": "Wireless Sensor Networks",
+   "files": [
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - End Term Exam - 2021-2022.pdf",
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - End Term Exam - 2021-2022.pdf",
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - End Term Exam - 2022-2023.pdf",
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - End Term Exam - 2022-2023.pdf",
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - Mid Term Exam - 2021-2022.pdf",
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - Mid Term Exam - 2021-2022.pdf",
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - Mid-Term Exam (2022-23).pdf",
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - Mid-Term Exam (2022-23).pdf",
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - Repeat Mid Term Exam - 2022-2023.pdf",
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - Repeat Mid Term Exam - 2022-2023.pdf",
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - Repeat_Mid Term Exam - 2021-22.pdf",
+    "WIRELESS SENSOR NETWORKS(18EC2T62) - Repeat_Mid Term Exam - 2021-22.pdf"
+   ],
+   "codes": [
+    "18EC2T62"
+   ],
+   "years": [
+    "2021-2022",
+    "2022-2023"
+   ],
+   "sem": [
+    "7th Sem",
+    "8th Sem"
+   ],
+   "paths": [
+    "/0:/7th%20Sem/question/",
+    "/0:/8th%20Sem/question/"
+   ]
+  },
+  {
+   "key": "basicsofmechanicalengineering",
+   "display": "Basics Of Mechanical Engineering",
+   "files": [
+    "BASICS OF MECHANICAL ENGINEERING (BTBS-T-ES-013) - Mid Term Exam - 2021-2022.pdf",
+    "BASICS OF MECHANICAL ENGINEERING(18ES1T08) - End Term Exam - 2020-2021.pdf",
+    "BASICS OF MECHANICAL ENGINEERING(18ES1T08) - End-Term Exam - 2020-2021.pdf",
+    "BASICS OF MECHANICAL ENGINEERING(18ES1T08) - Mid-Term Exam - 2020-2021.pdf",
+    "BASICS OF MECHANICAL ENGINEERING(18ES1T08)- Mid-Term Exam - 2020-2021.pdf",
+    "BASICS OF MECHANICAL ENGINEERING(18ES1T08)-End-Term Exam - 2020-2021.pdf",
+    "Basics of Mechanical Engineering (18ES1T08)  - End-Term Exam - 2019-2020.pdf",
+    "Basics of Mechanical Engineering (18ES1T08) - End-Term Exam -2019-2020.pdf",
+    "Basics of Mechanical Engineering (18ES1T08) - Mid-Term Exam - 2019-2020.pdf",
+    "Basics of Mechanical Engineering (18ES1T08) - Mid-Term Exam - 2019-2020.pdf",
+    "Basics of Mechanical Engineering (18ES1T08)- Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18ES1T08"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021",
+    "2021-2022"
+   ],
+   "sem": [
+    "3rd Sem",
+    "4th sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/",
+    "/0:/4th%20sem/mid-end/"
+   ]
+  },
+  {
+   "key": "analogelectroniccircuits",
+   "display": "Analog Electronic Circuits",
+   "files": [
+    "ANALOG ELECTRONIC CIRCUITS(18EI1T01) - End Term Exam - 2020-2021.pdf",
+    "ANALOG ELECTRONIC CIRCUITS(18EI1T01) - End-Term Exam - 2020-2021.pdf",
+    "ANALOG ELECTRONIC CIRCUITS(18EI1T01) - Mid-Term Exam - 2020-2021.pdf",
+    "ANALOG ELECTRONIC CIRCUITS(18EI1T01)- Mid-Term Exam - 2020-2021.pdf",
+    "ANALOG ELECTRONIC CIRCUITS(18EI1T01)-End-Term Exam - 2020-2021.pdf",
+    "Analog Electronic Circuits (18EI1T01)  - End-Term Exam- 2019-2020.pdf",
+    "Analog Electronic Circuits (18EI1T01) - Mid-Term Exam - 2019-2020.pdf",
+    "Analog Electronic Circuits (18EI1T01) -End-Term Exam - 2019-2020.pdf",
+    "Analog Electronic Circuits (18EI1T01)- Mid-Term Exam - 2019-2020.pdf",
+    "Analog Electronic Circuits (18EI1T01)- Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18EI1T01"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem",
+    "4th sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/",
+    "/0:/4th%20sem/mid-end/"
+   ]
+  },
+  {
+   "key": "biologyforengineers",
+   "display": "Biology For Engineers",
+   "files": [
+    "BIOLOGY FOR ENGINEERS(18BS1T11) - End Term Exam - 2020-2021 (1).pdf",
+    "BIOLOGY FOR ENGINEERS(18BS1T11) - End Term Exam - 2020-2021.pdf",
+    "BIOLOGY FOR ENGINEERS(18BS1T11) - Mid Term Exam - 2021-2022.pdf",
+    "BIOLOGY FOR ENGINEERS(18BS1T11)- End Term Exam. 2020-2021(1).pdf",
+    "BIOLOGY FOR ENGINEERS(18BS1T11)- End Term Exam. 2020-2021.pdf",
+    "BIOLOGY FOR ENGINEERS(18BS1T11)- Mid-Term Exam - 2020-2021(1).pdf",
+    "BIOLOGY FOR ENGINEERS(18BS1T11)- Mid-Term Exam - 2020-2021.pdf",
+    "BIOLOGY FOR ENGINEERS(18BS1T11)- Mid-Term Exam - 2020-2021.pdf",
+    "Biology For Engineers (18BS1T11) - End-Term Exam -2019-2020.pdf"
+   ],
+   "codes": [
+    "18BS1T11"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021",
+    "2021-2022"
+   ],
+   "sem": [
+    "4th sem",
+    "6th sem"
+   ],
+   "paths": [
+    "/0:/4th%20sem/mid-end/",
+    "/0:/6th%20sem/mid_end/"
+   ]
+  },
+  {
+   "key": "basicelectricalengineering",
+   "display": "Basic Electrical Engineering",
+   "files": [
+    "BASIC ELECTRICAL ENGINEERING(BTEE-T-ES-001) - End-Term Exam - 2020-2021 (1).pdf",
+    "BASIC ELECTRICAL ENGINEERING(BTEE-T-ES-001) - End-Term Exam - 2020-2021.pdf",
+    "BASIC ELECTRICAL ENGINEERING(BTEE-T-ES-001) - Mid-Term Exam - 2020-2021.pdf",
+    "BASIC ELECTRICAL ENGINEERING(BTEE-T-ES-001)- Repeat Mid Term Examination - 2020-2021.pdf",
+    "Basic Electrical Engineering (18ES1T02) - End-Term Exam - 2018-2019.pdf",
+    "Basic Electrical Engineering (18ES1T02) - End-Term Exam - 2019-2020.pdf",
+    "Basic Electrical Engineering (18ES1T02) - Mid-Term Exam - 2018-2019.pdf",
+    "Basic Electrical Engineering (18ESIT02) - Mid-Term Exam - 2018-2019.pdf",
+    "Basic Electrical Engineering (BTEE-T-ES-001) - End Term Exam - 2021-2022.pdf"
+   ],
+   "codes": [
+    "18ES1T02"
+   ],
+   "years": [
+    "2018-2019",
+    "2019-2020",
+    "2020-2021",
+    "2021-2022"
+   ],
+   "sem": [
+    "First Year"
+   ],
+   "paths": [
+    "/0:/First%20Year/mid%20term-endterm/"
+   ]
+  },
+  {
+   "key": "professionalethicsandvalues",
+   "display": "Professional Ethics And Values",
+   "files": [
+    "PROFESSIONAL ETHICS AND VALUES(18NC1T03) - Back Mid Term Exam - 2021-2022.pdf",
+    "PROFESSIONAL ETHICS AND VALUES(18NC1T03) - End Term Exam - 2020-2021.pdf",
+    "PROFESSIONAL ETHICS AND VALUES(18NC1T03)- End Term Exam. 2020-2021 (1).pdf",
+    "PROFESSIONAL ETHICS AND VALUES(18NC1T03)- End Term Exam. 2020-2021(1).pdf",
+    "PROFESSIONAL ETHICS AND VALUES(18NC1T03)- End Term Exam. 2020-2021.pdf",
+    "PROFESSIONAL ETHICS AND VALUES(18NC1T03)- Mid-Term Exam - 2020-2021(1).pdf",
+    "PROFESSIONAL ETHICS AND VALUES(18NC1T03)- Mid-Term Exam - 2020-2021.pdf",
+    "PROFESSIONAL ETHICS AND VALUES(18NC1T03)- Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18NC1T03"
+   ],
+   "years": [
+    "2020-2021",
+    "2021-2022"
+   ],
+   "sem": [
+    "4th sem",
+    "6th sem"
+   ],
+   "paths": [
+    "/0:/4th%20sem/mid-end/",
+    "/0:/6th%20sem/mid_end/"
+   ]
+  },
+  {
+   "key": "microwaveengineering",
+   "display": "Microwave Engineering",
+   "files": [
+    "MICROWAVE ENGINEERING(18EC1T11) - End Term Exam - 2021-2022.pdf",
+    "MICROWAVE ENGINEERING(18EC1T11) - End Term Exam - 2021-2022.pdf",
+    "MICROWAVE ENGINEERING(18EC1T11) - End Term Exam - 2022-2023.pdf",
+    "MICROWAVE ENGINEERING(18EC1T11) - End Term Exam - 2022-2023.pdf",
+    "MICROWAVE ENGINEERING(18EC1T11) - Mid Term Exam - 2021-2022.pdf",
+    "MICROWAVE ENGINEERING(18EC1T11) - Mid Term Exam - 2021-2022.pdf",
+    "MICROWAVE ENGINEERING(18EC1T11) - Mid-Term Exam (2022-23).pdf",
+    "MICROWAVE ENGINEERING(18EC1T11) - Mid-Term Exam (2022-23).pdf"
+   ],
+   "codes": [
+    "18EC1T11"
+   ],
+   "years": [
+    "2021-2022",
+    "2022-2023"
+   ],
+   "sem": [
+    "7th Sem",
+    "8th Sem"
+   ],
+   "paths": [
+    "/0:/7th%20Sem/question/",
+    "/0:/8th%20Sem/question/"
+   ]
+  },
+  {
+   "key": "wsn",
+   "display": "Wsn",
+   "files": [
+    "WSN(Annapurna Maam notes).pdf",
+    "WSN(Annapurna Maam notes).pdf",
+    "WSN(Madhav).pdf",
+    "WSN(Madhav).pdf",
+    "WSN(Prasanta Behera).pdf",
+    "WSN(Prasanta Behera).pdf",
+    "WSN(Shekharesh Barik).pdf",
+    "WSN(Shekharesh Barik).pdf"
+   ],
+   "codes": [],
+   "years": [],
+   "sem": [
+    "7th Sem",
+    "8th Sem"
+   ],
+   "paths": [
+    "/0:/7th%20Sem/wireless%20sensor%20network/",
+    "/0:/8th%20Sem/wireless%20sensor%20network/"
+   ]
+  },
+  {
+   "key": "basicelectronicsengineering",
+   "display": "Basic Electronics Engineering",
+   "files": [
+    "BASIC ELECTRONICS ENGINEERING(18ES1T01)- Repeat Mid Term Examination (back)- 2020-2021.pdf",
+    "BASIC ELECTRONICS ENGINEERING(BTEC-T-ES-001) - End-Term Exam - 2020-2021.pdf",
+    "BASIC ELECTRONICS ENGINEERING(BTEC-T-ES-001) - Mid Term Exam - 2021-2022.pdf",
+    "BASIC ELECTRONICS ENGINEERING(BTEC-T-ES-001) - Mid-Term Exam - 2020-2021.pdf",
+    "BASIC ELECTRONICS ENGINEERING(BTEC-T-ES-001)- Repeat Mid Term Examination - 2020-2021 (1).pdf",
+    "BASIC ELECTRONICS ENGINEERING(BTEC-T-ES-001)- Repeat Mid Term Examination - 2020-2021.pdf",
+    "Basic Electronics Engineering (BTEC-T-ES-001) - End Term Exam - 2021-2022.pdf"
+   ],
+   "codes": [
+    "18ES1T01"
+   ],
+   "years": [
+    "2020-2021",
+    "2021-2022"
+   ],
+   "sem": [
+    "First Year"
+   ],
+   "paths": [
+    "/0:/First%20Year/mid%20term-endterm/"
+   ]
+  },
+  {
+   "key": "circuittheory",
+   "display": "Circuit Theory",
+   "files": [
+    "CIRCUIT THEORY (18EE1T01) - End-Term Exam - 2020-2021.pdf",
+    "CIRCUIT THEORY (18EE1T01) - Mid-Term Exam - 2020-2021.pdf",
+    "CIRCUIT THEORY (18EE1T01)-End-Term Exam - 2020-2021.pdf",
+    "Circuit Theory (18EE1T01)  - End-Term Exam - 2019-2020.pdf",
+    "Circuit Theory (18EE1T01) - Mid-Term Exam - 2019-2020.pdf",
+    "Circuit Theory (18EE1T01)- Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18EE1T01"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/"
+   ]
+  },
+  {
+   "key": "digitalelectronics",
+   "display": "Digital Electronics",
+   "files": [
+    "DIGITAL ELECTRONICS(18ES1T07) - End-Term Exam - 2020-2021.pdf",
+    "DIGITAL ELECTRONICS(18ES1T07) - Mid-Term Exam - 2020-2021.pdf",
+    "DIGITAL ELECTRONICS(18ES1T07)-End-Term Exam - 2020-2021.pdf",
+    "Digital Electronics (18ES1T07) - End-Term Exam - 2019-2020.pdf",
+    "Digital Electronics (18ES1T07) - Mid-Term Exam - 2019-2020.pdf",
+    "Digital Electronics (18ES1T07)- Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18ES1T07"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/"
+   ]
+  },
+  {
+   "key": "electronicdevices",
+   "display": "Electronic Devices",
+   "files": [
+    "ELECTRONIC DEVICES(18EC1T02) - End-Term Exam - 2020-2021.pdf",
+    "ELECTRONIC DEVICES(18EC1T02)- Mid-Term Exam - 2020-2021.pdf",
+    "ELECTRONIC DEVICES(18EC1T02)-End-Term Exam - 2020-2021.pdf",
+    "Electronic Devices (18EC1T02) - End-Term Exam - 2019-2020.pdf",
+    "Electronic Devices (18EC1T02) - Mid-Term Exam - 2019-2020.pdf",
+    "Electronic Devices (18EC1T02)- Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18EC1T02"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/"
+   ]
+  },
+  {
+   "key": "engineeringeconomics",
+   "display": "Engineering Economics",
+   "files": [
+    "ENGINEERING ECONOMICS(18HS1T02) - End-Term Exam - 2020-2021.pdf",
+    "ENGINEERING ECONOMICS(18HS1T02) - Mid-Term Exam - 2020-2021.pdf",
+    "ENGINEERING ECONOMICS(18HS1T02)-End-Term Exam - 2020-2021.pdf",
+    "Engineering Economics (18HS1T02) - End-Term Exam - 2019-2020.pdf",
+    "Engineering Economics (18HS1T02) - Mid-Term Exam - 2019-2020.pdf",
+    "Engineering Economics (18HS1T02)- Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18HS1T02"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/"
+   ]
+  },
+  {
+   "key": "fundamentalsofmanagement",
+   "display": "Fundamentals Of Management",
+   "files": [
+    "FUNDAMENTALS OF MANAGEMENT(18HS1T03) - End-Term Exam - 2020-2021.pdf",
+    "FUNDAMENTALS OF MANAGEMENT(18HS1T03) - Mid-Term Exam - 2020-2021.pdf",
+    "FUNDAMENTALS OF MANAGEMENT(18HS1T03)-End-Term Exam - 2020-2021.pdf",
+    "Fundamentals of Management (18HS1T03) - End-Term Exam - 2019-2020.pdf",
+    "Fundamentals of Management (18HS1T03) - Mid-Term Exam - 2019-2020.pdf",
+    "Fundamentals of Management (18HS1T03)- Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18HS1T03"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/"
+   ]
+  },
+  {
+   "key": "oopusingjava",
+   "display": "Oop Using Java",
+   "files": [
+    "OOP USING JAVA(18ES1T06) - End-Term Exam - 2020-2021.pdf",
+    "OOP USING JAVA(18ES1T06)- Mid-Term Exam - 2020-2021.pdf",
+    "OOP USING JAVA(18ES1T06)-End-Term Exam - 2020-2021.pdf",
+    "OOP using JAVA (18ES1T06)  - End-Term Exam - 2019-2020.pdf",
+    "OOP using JAVA (18ES1T06) - Mid-Term Exam - 2019-2020.pdf",
+    "OOP using JAVA (18ES1T06) - Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18ES1T06"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/"
+   ]
+  },
+  {
+   "key": "controlsystemsengineering",
+   "display": "Control Systems Engineering",
+   "files": [
+    "CONTROL SYSTEMS ENGINEERING(18EE1T03) - End Term Exam - 2020-2021.pdf",
+    "CONTROL SYSTEMS ENGINEERING(18EE1T03) - Mid Term Exam - 2021-2022.pdf",
+    "CONTROL SYSTEMS ENGINEERING(18EE1T03)- End Term Exam. 2020-2021.pdf",
+    "CONTROL SYSTEMS ENGINEERING(18EE1T03)- Mid-Term Exam - 2020-2021.pdf",
+    "CONTROL SYSTEMS ENGINEERING(18EE1T03)- Mid-Term Exam - 2020-2021.pdf",
+    "CONTROL SYSTEMS ENGINEERING(BTEE-T-PC-005) - Mid Term Exam - 2021-2022.pdf"
+   ],
+   "codes": [
+    "18EE1T03"
+   ],
+   "years": [
+    "2020-2021",
+    "2021-2022"
+   ],
+   "sem": [
+    "4th sem",
+    "6th sem"
+   ],
+   "paths": [
+    "/0:/4th%20sem/mid-end/",
+    "/0:/6th%20sem/mid_end/"
+   ]
+  },
+  {
+   "key": "computerprogramming",
+   "display": "Computer Programming",
+   "files": [
+    "COMPUTER PROGRAMMING(18ES1T03) - End-Term Exam - 2020-2021.pdf",
+    "COMPUTER PROGRAMMING(BTCS-T-ES-001) - Mid Term Exam - 2021-2022.pdf",
+    "COMPUTER PROGRAMMING(BTCS-T-ES-001)- Mid-Term Exam - 2020-2021.pdf",
+    "Computer Programming (18ES1T03)  - Mid-Term Exam - 2019-2020.pdf",
+    "Computer Programming (18ES1T03) - Mid-Term Exam - 2018-2019.pdf",
+    "Computer Programming (BTCS-T-ES-001) - End Term Exam - 2021-2022.pdf"
+   ],
+   "codes": [
+    "18ES1T03"
+   ],
+   "years": [
+    "2018-2019",
+    "2019-2020",
+    "2020-2021",
+    "2021-2022"
+   ],
+   "sem": [
+    "First Year"
+   ],
+   "paths": [
+    "/0:/First%20Year/mid%20term-endterm/"
+   ]
+  },
+  {
+   "key": "digitalelectroniccircuits",
+   "display": "Digital Electronic Circuits",
+   "files": [
+    "DIGITAL ELECTRONIC CIRCUITS(18EC1T03) - End-Term Exam - 2020-2021.pdf",
+    "DIGITAL ELECTRONIC CIRCUITS(18EC1T03) - Mid-Term Exam - 2020-2021.pdf",
+    "DIGITAL ELECTRONIC CIRCUITS(18EC1T03)-End-Term Exam - 2020-2021.pdf",
+    "Digital Electronic Circuits (18EC1T03)- Mid-Term Exam - 2020-2021.pdf",
+    "Digital Electronic Circuits (18ES1T07) - Mid-Term Exam - 2019-2020.pdf"
+   ],
+   "codes": [
+    "18EC1T03",
+    "18ES1T07"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/"
+   ]
+  },
+  {
+   "key": "discretemathematics",
+   "display": "Discrete Mathematics",
+   "files": [
+    "DISCRETE MATHEMATICS (18BS1T09) - End-Term Exam - 2020-2021.pdf",
+    "DISCRETE MATHEMATICS (18BS1T09)-End-Term Exam - 2020-2021.pdf",
+    "Discrete Mathematics (18BS1T09) - End-Term Exam - 2019-2020.pdf",
+    "Discrete Mathematics (18BS1T09) - Mid-Term Exam - 2019-2020.pdf",
+    "Discrete Mathematics (18BS1T09)- Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18BS1T09"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/"
+   ]
+  },
+  {
+   "key": "engineeringmechanics",
+   "display": "Engineering Mechanics",
+   "files": [
+    "ENGINEERING MECHANICS(18ES1T04) - End-Term Exam - 2020-2021.pdf",
+    "ENGINEERING MECHANICS(18ES1T04)- Mid-Term Exam - 2020-2021.pdf",
+    "ENGINEERING MECHANICS(18ES1T04)-End-Term Exam - 2020-2021.pdf",
+    "Engineering Mechanics (18ES1T04)  - End-Term Exam - 2019-2020.pdf",
+    "Engineering Mechanics (18ES1T04) - Mid-Term Exam - 2019-2020.pdf"
+   ],
+   "codes": [
+    "18ES1T04"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/"
+   ]
+  },
+  {
+   "key": "measurementsandinstrumentation",
+   "display": "Measurements And Instrumentation",
+   "files": [
+    "MEASUREMENTS AND INSTRUMENTATION(18EE1T02) - End-Term Exam - 2020-2021.pdf",
+    "MEASUREMENTS AND INSTRUMENTATION(18EE1T02) - Mid-Term Exam - 2020-2021.pdf",
+    "MEASUREMENTS AND INSTRUMENTATION(18EE1T02)- Mid-Term Exam - 2020-2021.pdf",
+    "MEASUREMENTS AND INSTRUMENTATION(18EE1T02)-End-Term Exam - 2020-2021.pdf",
+    "Measurements and Instrumentation (18EE1T02) - Mid-Term Exam - 2019-2020.pdf"
+   ],
+   "codes": [
+    "18EE1T02"
+   ],
+   "years": [
+    "2019-2020",
+    "2020-2021"
+   ],
+   "sem": [
+    "3rd Sem",
+    "4th sem"
+   ],
+   "paths": [
+    "/0:/3rd%20Sem/Sem_3_BTech_question%20paper/",
+    "/0:/4th%20sem/mid-end/"
+   ]
+  },
+  {
+   "key": "digitalvlsidesign",
+   "display": "Digital Vlsi Design",
+   "files": [
+    "DIGITAL VLSI DESIGN(18EI1T03) - End Term Exam. 2020-2021(1).pdf",
+    "DIGITAL VLSI DESIGN(18EI1T03) - End Term Exam. 2020-2021.pdf",
+    "DIGITAL VLSI DESIGN(18EI1T03) - Mid Term Exam - 2021-2022.pdf",
+    "DIGITAL VLSI DESIGN(18EI1T03)- Mid-Term Exam - 2020-2021(1).pdf",
+    "DIGITAL VLSI DESIGN(18EI1T03)- Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18EI1T03"
+   ],
+   "years": [
+    "2020-2021",
+    "2021-2022"
+   ],
+   "sem": [
+    "6th sem"
+   ],
+   "paths": [
+    "/0:/6th%20sem/mid_end/"
+   ]
+  },
+  {
+   "key": "softwareengineering",
+   "display": "Software Engineering",
+   "files": [
+    "SOFTWARE ENGINEERING(18CS1T06) - Mid Term Exam - 2021-2022 (1).pdf",
+    "SOFTWARE ENGINEERING(18CS1T06) - Mid Term Exam - 2021-2022.pdf",
+    "SOFTWARE ENGINEERING(18CS1T06)- Mid-Term Exam - 2020-2021 (1).pdf",
+    "SOFTWARE ENGINEERING(18CS1T06)- Mid-Term Exam - 2020-2021 (2).pdf",
+    "SOFTWARE ENGINEERING(18CS1T06)- Mid-Term Exam - 2020-2021.pdf"
+   ],
+   "codes": [
+    "18CS1T06"
+   ],
+   "years": [
+    "2020-2021",
+    "2021-2022"
+   ],
+   "sem": [
+    "6th sem"
+   ],
+   "paths": [
+    "/0:/6th%20sem/mid_end/"
+   ]
+  },
+  {
+   "key": "module",
+   "display": "Module",
+   "files": [
+    "Module-1 ( INTERNET WORKING).pdf",
+    "Module-1to5 merged.pdf",
+    "Module-2_Radio Wave Propagation- (MCN).pdf",
+    "Module-I_merged.pdf",
+    "Module-I_merged.pdf"
+   ],
+   "codes": [],
+   "years": [],
+   "sem": [
+    "7th Sem",
+    "8th Sem"
+   ],
+   "paths": [
+    "/0:/7th%20Sem/Machine%20Learning/",
+    "/0:/7th%20Sem/Mobile%20Communication/",
+    "/0:/8th%20Sem/MCN/",
+    "/0:/8th%20Sem/Machine%20Learning/"
+   ]
+  }
+ ]
+}

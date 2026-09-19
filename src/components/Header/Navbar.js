@@ -5,14 +5,17 @@ import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./header.css";
 
 const semesterLinks = [
-  { label: "1st Semester", href: "https://notes.studytub.workers.dev/0:/First%20Year/" },
-  { label: "2nd Semester", href: "https://notes.studytub.workers.dev/0:/First%20Year/" },
-  { label: "3rd Semester", href: "https://notes.studytub.workers.dev/0:/3rd%20Sem/" },
-  { label: "4th Semester", href: "https://notes.studytub.workers.dev/0:/4th%20sem/" },
-  { label: "5th Semester", href: "https://notes.studytub.workers.dev/0:/5th%20sem/" },
-  { label: "6th Semester", href: "https://notes.studytub.workers.dev/0:/6th%20sem/" },
-  { label: "7th Semester", href: "https://notes.studytub.workers.dev/0:/7th%20Sem/" },
-  { label: "8th Semester", href: "https://notes.studytub.workers.dev/0:/8th%20Sem/" },
+// Point at the on-site notes pages rather than straight at the drive. Those
+// pages describe what each semester contains, are crawlable by Google (the drive
+// index renders client-side and is not), and link on to the drive themselves.
+  { label: "1st Semester", href: "/notes/first-year-engineering-notes.html" },
+  { label: "2nd Semester", href: "/notes/first-year-engineering-notes.html" },
+  { label: "3rd Semester", href: "/notes/3rd-semester-btech-notes.html" },
+  { label: "4th Semester", href: "/notes/4th-semester-btech-notes.html" },
+  { label: "5th Semester", href: "/notes/5th-semester-btech-notes.html" },
+  { label: "6th Semester", href: "/notes/6th-semester-btech-notes.html" },
+  { label: "7th Semester", href: "/notes/7th-semester-btech-notes.html" },
+  { label: "8th Semester", href: "/notes/8th-semester-btech-notes.html" },
 ];
 
 const navLinks = [
@@ -20,6 +23,9 @@ const navLinks = [
   { to: "/about", label: "About" },
   { label: "Study Materials", dropdown: true },
   { to: "/faq", label: "FAQ" },
+  // Anchors to the Contribute section on the homepage — the ask for more notes
+  // needs a route from the nav, not just a card halfway down the page.
+  { to: "/#contribute", label: "Add Notes" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -55,7 +61,7 @@ export default function Navbar() {
       <div className="container">
         <nav className="nav__inner">
           <Link to="/" className="nav__logo">
-            <img src="assets/images/logo/logo.png" alt="StudyTub" className="nav__logo-img" />
+            <img src="/assets/images/logo/logo.png" alt="StudyTub" className="nav__logo-img" />
             <span className="nav__logo-text">StudyTub</span>
           </Link>
 
@@ -78,7 +84,7 @@ export default function Navbar() {
                   <ul className={`nav__dropdown ${dropdownOpen ? "nav__dropdown--open" : ""}`}>
                     {semesterLinks.map((sem) => (
                       <li key={sem.label}>
-                        <a href={sem.href} target="_blank" rel="noopener noreferrer" className="nav__dropdown-link">
+                        <a href={sem.href} className="nav__dropdown-link">
                           {sem.label}
                         </a>
                       </li>
@@ -87,12 +93,18 @@ export default function Navbar() {
                 </li>
               ) : (
                 <li key={link.to} className="nav__item">
-                  <Link
-                    to={link.to}
-                    className={`nav__link ${location.pathname === link.to ? "nav__link--active" : ""}`}
-                  >
-                    {link.label}
-                  </Link>
+                  {link.to.includes("#") ? (
+                    // React Router does not scroll to a hash on the current
+                    // route; a plain anchor does, and needs no router at all.
+                    <a href={link.to} className="nav__link">{link.label}</a>
+                  ) : (
+                    <Link
+                      to={link.to}
+                      className={`nav__link ${location.pathname === link.to ? "nav__link--active" : ""}`}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               )
             )}
