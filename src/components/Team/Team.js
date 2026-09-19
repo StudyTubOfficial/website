@@ -5,7 +5,7 @@ import { FiGithub, FiLinkedin, FiMapPin } from "react-icons/fi";
 const teamData = [
   {
     name: "Nishikanta Ray",
-    image: "https://avatars.githubusercontent.com/u/62615392?v=4",
+    image: "https://avatars.githubusercontent.com/u/62615392?v=4&s=320",
     designation: "Fullstack Developer",
     company: "LetsFlo",
     github: "https://github.com/NishikantaRay",
@@ -13,7 +13,7 @@ const teamData = [
   },
   {
     name: "Sumeet Naik",
-    image: "https://avatars.githubusercontent.com/u/25149022?v=4",
+    image: "https://avatars.githubusercontent.com/u/25149022?v=4&s=320",
     designation: "Fullstack Developer",
     company: "McKinley Rice",
     github: "https://github.com/sumeetweb",
@@ -21,7 +21,7 @@ const teamData = [
   },
   {
     name: "Anirudh Panda",
-    image: "https://avatars.githubusercontent.com/u/66218496?v=4",
+    image: "https://avatars.githubusercontent.com/u/66218496?v=4&s=320",
     designation: "Tech & Content",
     company: "Curefit",
     github: "https://github.com/AnirudhPanda",

@@ -477,3 +477,21 @@
   margin: 0 auto;
   line-height: 1.7;
 }
+/* Hero entrance.
+   Replaces Framer Motion's initial="hidden", which left the LCP element at
+   opacity 0 until a JavaScript bundle downloaded — measured at 2,860 ms of
+   render delay. CSS runs as soon as the stylesheet is parsed, so the text is
+   painted with the page and the fade is decoration rather than a gate. */
+.fade-up {
+  animation: heroFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Respect a reduced-motion preference: show the content, skip the movement. */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { animation: none; opacity: 1; transform: none; }
+}

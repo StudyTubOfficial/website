@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import NotesSearch from "../Search/NotesSearch";
 import "./header.css";
 
@@ -14,21 +13,26 @@ import "./header.css";
  * The avatar row stays: "4,100+ students" is a real trust signal and costs a
  * single small row rather than half the screen.
  */
+// s=96 asks GitHub for a resized copy: these render at 34px, so the originals
+// were 193 KiB of pixels nobody sees. 96 still covers a 2.8x display.
 const avatars = [
-  "https://avatars.githubusercontent.com/u/62615392?v=4",
-  "https://avatars.githubusercontent.com/u/25149022?v=4",
-  "https://avatars.githubusercontent.com/u/66218496?v=4",
-  "https://avatars.githubusercontent.com/u/63730038?v=4",
-  "https://avatars.githubusercontent.com/u/88227246?v=4",
+  "https://avatars.githubusercontent.com/u/62615392?v=4&s=96",
+  "https://avatars.githubusercontent.com/u/25149022?v=4&s=96",
+  "https://avatars.githubusercontent.com/u/66218496?v=4&s=96",
+  "https://avatars.githubusercontent.com/u/63730038?v=4&s=96",
+  "https://avatars.githubusercontent.com/u/88227246?v=4&s=96",
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i = 0) => ({
-    opacity: 1, y: 0,
-    transition: { delay: i * 0.08, duration: 0.5, ease: "easeOut" },
-  }),
-};
+/**
+ * The hero used Framer Motion with initial="hidden" — opacity 0 until the
+ * animation library loaded and ran. Lighthouse measured that as 2,860 ms of
+ * LCP "element render delay" against 0 ms of network time: the text was there
+ * the whole time, just invisible, waiting on JavaScript.
+ *
+ * It is a CSS animation now. The markup paints with the HTML and the fade is
+ * decoration on top, so LCP no longer waits for a bundle to download.
+ */
+const step = (i) => ({ animationDelay: `${i * 80}ms` });
 
 const QUICK = [
   ["First year", "/notes/first-year-engineering-notes.html"],
@@ -43,38 +47,38 @@ export default function Jumbotron() {
       <div className="hero__bg" aria-hidden="true" />
       <div className="container">
         <div className="hero__inner">
-          <motion.div className="hero__label" variants={fadeUp} initial="hidden" animate="visible" custom={0}>
+          <div className="hero__label fade-up" style={step(0)}>
             🎓 6,000+ students · 564 free notes &amp; papers
-          </motion.div>
+          </div>
 
-          <motion.h1 className="hero__title" variants={fadeUp} initial="hidden" animate="visible" custom={1}>
+          <h1 className="hero__title fade-up" style={step(1)}>
             Find your BTECH notes <span>in seconds</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p className="hero__desc" variants={fadeUp} initial="hidden" animate="visible" custom={2}>
+          <p className="hero__desc fade-up" style={step(2)}>
             Handwritten class notes, previous year question papers and lab manuals for every
             semester and branch. Search by subject or subject code.
-          </motion.p>
+          </p>
 
-          <motion.div className="hero__search" variants={fadeUp} initial="hidden" animate="visible" custom={3}>
+          <div className="hero__search fade-up" style={step(3)}>
             <NotesSearch />
-          </motion.div>
+          </div>
 
-          <motion.div className="hero__quick" variants={fadeUp} initial="hidden" animate="visible" custom={4}>
+          <div className="hero__quick fade-up" style={step(4)}>
             <span className="hero__quick-label">Popular</span>
             {QUICK.map(([label, href]) => (
               <a key={href} href={href} className="hero__chip">{label}</a>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.div className="hero__social" variants={fadeUp} initial="hidden" animate="visible" custom={5}>
+          <div className="hero__social fade-up" style={step(5)}>
             <div className="hero__avatars">
               {avatars.map((src, i) => (
                 <img key={i} src={src} alt="" width="34" height="34" loading="lazy" />
               ))}
             </div>
             <p><strong>6,000+</strong> students already studying here</p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
