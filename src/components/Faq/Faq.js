@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { FiChevronDown } from "react-icons/fi";
 
 const faqData = [
@@ -55,19 +54,15 @@ export default function Faq() {
       <div className="container">
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
           {faqData.map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: i * 0.08, duration: 0.4, ease: "easeOut" }}
             >
               <FaqItem
                 item={item}
                 isOpen={openIndex === i}
                 onToggle={() => setOpenIndex(openIndex === i ? -1 : i)}
               />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiGithub, FiYoutube, FiLinkedin, FiArrowRight } from "react-icons/fi";
 import { gatedHref, handleDriveClick, isDriveLink, isLoggedIn } from "../../utils/driveLink";
@@ -25,12 +24,8 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="footer">
-      <motion.div
+      <div
         className="container"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="footer__grid">
           <div className="footer__brand">
@@ -52,7 +47,7 @@ export default function Footer() {
           </div>
 
           <div className="footer__col">
-            <h4 className="footer__heading">Quick Links</h4>
+            <p className="footer__heading">Quick Links</p>
             <ul className="footer__list">
               {footerLinks.map((link, i) => (
                 <li key={i}>
@@ -72,7 +67,7 @@ export default function Footer() {
           </div>
 
           <div className="footer__col">
-            <h4 className="footer__heading">Support</h4>
+            <p className="footer__heading">Support</p>
             <ul className="footer__list">
               {supportLinks.map((link, i) => (
                 <li key={i}>
@@ -83,7 +78,7 @@ export default function Footer() {
           </div>
 
           <div className="footer__col">
-            <h4 className="footer__heading">Stay Updated</h4>
+            <p className="footer__heading">Stay Updated</p>
             <p className="footer__col-desc">
               Follow us on LinkedIn for the latest updates and resources.
             </p>
@@ -101,7 +96,7 @@ export default function Footer() {
         <div className="footer__bottom">
           <p>© {new Date().getFullYear()} StudyTub. All rights reserved.</p>
         </div>
-      </motion.div>
+      </div>
 
       <style>{`
         .footer {

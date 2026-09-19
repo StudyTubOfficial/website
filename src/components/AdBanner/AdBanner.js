@@ -62,8 +62,9 @@ export default function AdBanner({
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.08em;
-          color: var(--text-light);
-          background: var(--border);
+          color: var(--text);
+          background: var(--bg-alt);
+          border: 1px solid var(--border);
           padding: 3px 8px;
           border-radius: var(--radius-full);
           flex-shrink: 0;

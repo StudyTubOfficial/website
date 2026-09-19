@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { FiUploadCloud, FiEdit3, FiUsers, FiMail, FiArrowRight } from "react-icons/fi";
 import "./contribute.css";
 
@@ -58,13 +57,9 @@ export default function Contribute() {
 
         <div className="grid grid--3">
           {WAYS.map((w, i) => (
-            <motion.div
-              className="card contribute-card"
+            <div
+              className="card contribute-card reveal"
               key={w.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: i * 0.1, duration: 0.45, ease: "easeOut" }}
             >
               <span className="pitch__icon">{w.icon}</span>
               <h3 className="pitch__card-title">{w.title}</h3>
@@ -75,7 +70,7 @@ export default function Contribute() {
               >
                 {w.cta} <FiArrowRight size={15} />
               </a>
-            </motion.div>
+            </div>
           ))}
         </div>
 

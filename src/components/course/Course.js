@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import CourseCards from "../Cards/CourseCards/CourseCards";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -62,43 +61,31 @@ export default function Course() {
   return (
     <section className="section">
       <div className="container">
-        <motion.div
+        <div
           className="section__header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
         >
           <span className="section__label">Study Materials</span>
           <h2 className="section__title">What's in Store at StudyTub?</h2>
           <p className="section__desc">
             Access comprehensive notes for every semester of your BTECH journey.
           </p>
-        </motion.div>
+        </div>
         <div className="grid grid--4">
           {allCourses.map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: i * 0.08, duration: 0.45, ease: "easeOut" }}
             >
               <CourseCards item={item} />
-            </motion.div>
+            </div>
           ))}
         </div>
-        <motion.div
+        <div
           style={{ textAlign: "center", marginTop: 40 }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.4 }}
         >
           <a href="/notes/" className="btn btn--outline">
             Browse All Notes <FiArrowRight size={16} />
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

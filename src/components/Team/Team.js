@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMapPin } from "react-icons/fi";
 
 const teamData = [
@@ -33,28 +32,20 @@ export default function Team() {
   return (
     <section className="section section--alt">
       <div className="container">
-        <motion.div
+        <div
           className="section__header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
         >
           <span className="section__label">Our Team</span>
           <h2 className="section__title">Meet the Librarians</h2>
           <p className="section__desc">
             The passionate people behind StudyTub who make learning accessible for everyone.
           </p>
-        </motion.div>
+        </div>
         <div className="grid grid--3" style={{ maxWidth: 900, margin: "0 auto" }}>
           {teamData.map((member, i) => (
-            <motion.div
-              className="team-card"
+            <div
+              className="team-card reveal"
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: i * 0.15, duration: 0.5, ease: "easeOut" }}
             >
               <div className="team-card__avatar">
                 <img src={member.image} alt={member.name} width="160" height="160" loading="lazy" />
@@ -72,7 +63,7 @@ export default function Team() {
                   <FiLinkedin size={18} />
                 </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

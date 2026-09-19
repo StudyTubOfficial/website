@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { FiMail, FiArrowRight, FiSearch, FiFolder, FiUploadCloud } from "react-icons/fi";
 import "./imageBanner.css";
 
@@ -47,18 +46,14 @@ export default function ImageBanner() {
 
         <div className="grid grid--3">
           {POINTS.map((p, i) => (
-            <motion.div
-              className="card"
+            <div
+              className="card reveal"
               key={p.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: i * 0.1, duration: 0.45, ease: "easeOut" }}
             >
               <span className="pitch__icon">{p.icon}</span>
               <h3 className="pitch__card-title">{p.title}</h3>
               <p className="pitch__card-text">{p.text}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 

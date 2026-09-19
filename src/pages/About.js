@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import Navbar from "../components/Header/Navbar";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Multi_Header/Header";
@@ -76,12 +75,8 @@ export default function About() {
         <section className="section">
           <div className="container">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
-              <motion.div
+              <div
                 className="growth-chart"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
                 style={{
                   background: "var(--bg)",
                   border: "1px solid var(--border)",
@@ -114,12 +109,8 @@ export default function About() {
                     </div>
                   ))}
                 </div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+              </div>
+              <div
               >
                 <span className="section__label">Community</span>
                 <h2 className="section__title" style={{ textAlign: "left" }}>Join Our Community!</h2>
@@ -143,7 +134,7 @@ export default function About() {
                 >
                   Join Community <FiArrowRight size={16} />
                 </a>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -157,19 +148,15 @@ export default function About() {
             </div>
             <div className="grid grid--4">
               {features.map((item, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ delay: i * 0.1, duration: 0.45 }}
                 >
                   <AboutUscards
                     heading1={item.heading1}
                     details={item.details}
                     icon={item.icon}
                   />
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
