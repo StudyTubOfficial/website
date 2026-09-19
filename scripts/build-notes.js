@@ -63,6 +63,18 @@ function publishAppCss() {
 }
 const APP_CSS = publishAppCss();
 
+/** Copy the prebuilt search index into both output roots. */
+function publishSearchIndex() {
+  const src = path.join(ROOT, "public", "notes", "assets", "search-index.json");
+  if (!fs.existsSync(src)) return;
+  for (const base of [BUILD]) {
+    const dir = path.join(base, "notes", "assets");
+    fs.mkdirSync(dir, { recursive: true });
+    fs.copyFileSync(src, path.join(dir, "search-index.json"));
+  }
+}
+publishSearchIndex();
+
 const SEMS = [
   ["first-year-engineering-notes", "First Year", "First%20Year", "First Year", "1st.svg",
    "Sem 1 and 2 — Maths, Physics, Chemistry, C programming, Data Structures and BEE"],
@@ -142,6 +154,15 @@ const FOOTER = `<footer class="footer">
   </div>
 </footer>`;
 
+const SEARCHBOX = `<div class="nsearch" data-notes-search>
+  <div class="nsearch__field">
+    <svg class="nsearch__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input type="search" class="nsearch__input" placeholder="Search notes, subjects or a subject code…" aria-label="Search notes" autocomplete="off"/>
+    <kbd class="nsearch__kbd">/</kbd>
+  </div>
+  <div class="nsearch__panel" data-results hidden></div>
+</div>`;
+
 const AUTHBAR = `<div class="notice" data-auth-banner>
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
   <span><strong>Reading is open.</strong> Opening the files asks for a free account &mdash; <a href="/login">sign in</a>, and you will be returned here.</span>
@@ -198,13 +219,14 @@ ${body}
 </main>
 ${FOOTER}
 <script src="/notes/assets/notes-auth.js" defer></script>
+<script src="/notes/assets/search.js" defer></script>
 </body>
 </html>
 `;
 }
 
 // ── hero, using the app's existing semester artwork ────────────────────────
-const hero = ({ label, h1, lede, stats, img, actions }) => `
+const hero = ({ label, h1, lede, stats, img, actions, search }) => `
 <section class="section section--hero">
   <div class="container">
     <div class="hero-split">
@@ -214,6 +236,7 @@ const hero = ({ label, h1, lede, stats, img, actions }) => `
         <p class="hero-lede">${lede}</p>
         <div class="statrow">${stats.map(([v, l]) =>
           `<div class="stat"><b>${v}</b><span>${esc(l)}</span></div>`).join("")}</div>
+        ${search ? `<div class="hero-search">${SEARCHBOX}</div>` : ""}
         <div class="btnrow">${actions}</div>
       </div>
       ${img ? `<div class="hero-media"><img src="/assets/images/service/${img}" alt="" width="220" height="220" loading="eager"/></div>` : ""}
@@ -320,8 +343,8 @@ const urls = [];
       label: "All semesters", h1: "BTECH notes by semester",
       lede: "Free engineering notes for every semester &mdash; handwritten class notes, previous year question papers and lab manuals, for CSE, ECE, EEE and EIE.",
       stats: [[SEMS.length, "semesters"], [subjects.length, "subjects"], [`${totalFiles}+`, "files"]],
-      img: "icon_diploma.svg",
-      actions: `<a class="btn btn--primary btn--lg" href="/notes/subjects/">Find a subject</a>`,
+      img: "icon_diploma.svg", search: true,
+      actions: `<a class="btn btn--primary btn--lg" href="/notes/subjects/">Browse all subjects</a>`,
     }) + `
 <section class="section section--alt">
   <div class="container">
@@ -434,8 +457,8 @@ for (const [s, label, enc, raw, img, blurb] of SEMS) {
       label: "By subject", h1: "Notes by subject",
       lede: "Every subject lists the actual files available, its subject code, and the years its question papers cover.",
       stats: [[subjects.length, "subjects"], [totalFiles, "files"], ["2018&ndash;23", "papers"]],
-      img: "icon_communication.svg",
-      actions: `<a class="btn btn--outline btn--lg" href="/notes/">By semester</a>`,
+      img: "icon_communication.svg", search: true,
+      actions: `<a class="btn btn--outline btn--lg" href="/notes/">Browse by semester</a>`,
     }) + `
 <section class="section section--alt">
   <div class="container">

@@ -177,3 +177,95 @@ a[data-gated="true"] .lock { font-size: .9em; opacity: .85; margin-left: 2px; }
 /* .btn uses gap for its flex children, so the appended lock would otherwise sit
    a full gap away from the label. */
 .btn .lock { margin-left: -4px; }
+
+/* ── search ────────────────────────────────────────────────────────────
+   Same rules as src/components/Search/notesSearch.css, so the field looks
+   identical on the React homepage and on these static pages. */
+/* Notes search — built on the app's existing tokens from src/index.css. */
+
+.nsearch { position: relative; width: 100%; max-width: 620px; }
+
+.nsearch__field {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 4px 6px 4px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.nsearch__field:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 14%, transparent);
+}
+.nsearch__icon { color: var(--text-light); flex: none; }
+
+.nsearch__input {
+  flex: 1; min-width: 0; border: 0; outline: 0; background: transparent;
+  font-family: var(--font); font-size: 1.05rem; color: var(--text);
+  padding: 15px 0;
+}
+.nsearch__input::placeholder { color: var(--text-light); }
+/* The native clear affordance clashes with the rounded field. */
+.nsearch__input::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+.nsearch__kbd {
+  flex: none; margin-right: 12px; padding: 3px 9px;
+  border: 1px solid var(--border); border-radius: 6px;
+  font: 600 .78rem var(--font); color: var(--text-light); background: var(--bg-alt);
+}
+@media (max-width: 560px) { .nsearch__kbd { display: none; } }
+
+/* ── results ─────────────────────────────────────────────────────────── */
+.nsearch__panel {
+  position: absolute; top: calc(100% + 10px); left: 0; right: 0; z-index: 60;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.nsearch__hit {
+  display: grid; grid-template-columns: 78px 1fr auto;
+  align-items: center; gap: 12px; width: 100%;
+  padding: 12px 16px; border: 0; background: transparent;
+  text-align: left; cursor: pointer; font-family: var(--font);
+  border-bottom: 1px solid var(--border);
+}
+.nsearch__hit:last-of-type { border-bottom: 0; }
+.nsearch__hit.is-active { background: var(--bg-alt); }
+
+.nsearch__kind {
+  font-size: .68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .05em; padding: 3px 8px; border-radius: var(--radius-full);
+  text-align: center; color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+}
+.nsearch__kind--file {
+  color: var(--text-light);
+  background: var(--bg-alt);
+}
+
+.nsearch__title {
+  font-size: .95rem; color: var(--text); font-weight: 500;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.nsearch__meta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .8rem; color: var(--text-light); white-space: nowrap;
+}
+
+.nsearch__empty { padding: 20px 18px; color: var(--text-light); font-size: .92rem; }
+.nsearch__empty code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--bg-alt); padding: 2px 6px; border-radius: 5px; color: var(--primary);
+}
+
+.nsearch__foot {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  padding: 9px 16px; background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  font-size: .76rem; color: var(--text-light);
+}
+.nsearch__foot span { display: inline-flex; align-items: center; gap: 5px; }
+
+.hero-search { margin: 26px 0 4px; max-width: 560px; }
