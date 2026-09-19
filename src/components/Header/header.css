@@ -253,8 +253,12 @@
   position: relative;
   /* Deliberately NOT overflow:hidden — that clipped the search results panel
      at the section boundary. The decorative blob is clipped by its own
-     wrapper below instead. */
-  z-index: 1;
+     wrapper below instead.
+
+     z-index must be high here, not 1: any value creates a stacking context, so
+     the panel's own z-index is resolved WITHIN the hero and cannot rise above
+     later sections. The hero has to outrank them itself. */
+  z-index: 20;
 }
 
 /* Contains the ::before blob without clipping anything that must escape. */

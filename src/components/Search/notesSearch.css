@@ -36,9 +36,21 @@
 /* ── results ─────────────────────────────────────────────────────────── */
 .nsearch__panel {
   position: absolute; top: calc(100% + 10px); left: 0; right: 0; z-index: 60;
-  background: var(--bg); border: 1px solid var(--border);
-  border-radius: var(--radius-md); box-shadow: var(--shadow-lg);
+  /* Opaque by design: the panel floats over other sections, so any
+     transparency lets their headings and badges bleed through it. */
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 48px rgba(15, 23, 42, .18), 0 2px 8px rgba(15, 23, 42, .08);
   overflow: hidden;
+  /* Taller lists scroll rather than running off the page. */
+  max-height: min(60vh, 460px);
+  overflow-y: auto;
+}
+
+[data-theme="dark"] .nsearch__panel {
+  background: #1e293b;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .55), 0 2px 8px rgba(0, 0, 0, .4);
 }
 
 .nsearch__hit {
@@ -49,7 +61,8 @@
   border-bottom: 1px solid var(--border);
 }
 .nsearch__hit:last-of-type { border-bottom: 0; }
-.nsearch__hit.is-active { background: var(--bg-alt); }
+.nsearch__hit.is-active { background: #f1f5f9; }
+[data-theme="dark"] .nsearch__hit.is-active { background: #334155; }
 
 .nsearch__kind {
   font-size: .68rem; font-weight: 700; text-transform: uppercase;
@@ -79,8 +92,10 @@
 
 .nsearch__foot {
   display: flex; gap: 16px; flex-wrap: wrap;
-  padding: 9px 16px; background: var(--bg-alt);
+  padding: 9px 16px; background: #f8fafc;
+  position: sticky; bottom: 0;
   border-top: 1px solid var(--border);
   font-size: .76rem; color: var(--text-light);
 }
 .nsearch__foot span { display: inline-flex; align-items: center; gap: 5px; }
+[data-theme="dark"] .nsearch__foot { background: #172033; }
