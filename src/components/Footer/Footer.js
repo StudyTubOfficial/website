@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiGithub, FiYoutube, FiLinkedin, FiArrowRight } from "react-icons/fi";
+import { gatedHref, handleDriveClick, isDriveLink, isLoggedIn } from "../../utils/driveLink";
 
 const footerLinks = [
   { label: "About", to: "/about" },
@@ -58,7 +59,12 @@ export default function Footer() {
                   {link.to ? (
                     <Link to={link.to}>{link.label}</Link>
                   ) : (
-                    <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                    <a
+                  href={gatedHref(link.href)}
+                  onClick={handleDriveClick(link.href)}
+                  target={isDriveLink(link.href) && !isLoggedIn() ? undefined : "_blank"}
+                  rel="noopener noreferrer"
+                >{link.label}</a>
                   )}
                 </li>
               ))}

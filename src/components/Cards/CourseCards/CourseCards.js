@@ -1,9 +1,16 @@
 import React from "react";
 import { FiExternalLink } from "react-icons/fi";
 import "./courseCard.css";
+import { gatedHref, handleDriveClick, isDriveLink, isLoggedIn } from "../../../utils/driveLink";
 
 const CourseCards = ({ item }) => (
-  <a href={item.href} target="_blank" rel="noopener noreferrer" className="course-card">
+  <a
+    href={gatedHref(item.href)}
+    onClick={handleDriveClick(item.href)}
+    target={isDriveLink(item.href) && !isLoggedIn() ? undefined : "_blank"}
+    rel="noopener noreferrer"
+    className="course-card"
+  >
     <div className="course-card__icon">
       <img src={item.img} alt={item.title} />
     </div>

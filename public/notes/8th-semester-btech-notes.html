@@ -46,6 +46,10 @@
     th { background:#20202e; } th,td { border-color:#2c2c3c; }
     .lede { color:#b6b6c6; } footer { color:#9a9aae; border-color:#2c2c3c; }
   }
+  .authbar { border:1px solid #e2e2ea; background:#faf9fd; border-radius:10px; padding:12px 14px; margin:18px 0; font-size:.94rem; }
+  .authbar a { color:#6b3fa0; font-weight:600; }
+  a[data-gated="true"] .lock { font-size:.9em; }
+  @media (prefers-color-scheme: dark) { .authbar { background:#1b1b28; border-color:#2c2c3c; } }
 </style>
 </head>
 <body>
@@ -59,6 +63,12 @@
   <a class="cta" href="https://notes.studytub.workers.dev/0:/8th%20Sem/">Open these notes</a>
   <a class="cta" href="/">Browse all semesters</a>
 </p>
+
+<div class="authbar" data-auth-banner>
+  <strong>Reading is open.</strong> Opening the files asks for a free account —
+  <a href="/login">sign in</a>, and you will be returned here.
+</div>
+
 
 <p>Eighth semester runs alongside final year project work and job joining formalities, so most students want notes that are quick to revise from rather than exhaustive.</p>
 
@@ -105,5 +115,6 @@ get in touch through the <a href="/contact">contact page</a>.</p>
   <a href="/">Home</a> · <a href="/about">About</a> · <a href="/faq">FAQ</a> · <a href="/contact">Contact</a></p>
 </footer>
 </div>
+<script src="/notes/notes-auth.js" defer></script>
 </body>
 </html>

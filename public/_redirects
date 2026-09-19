@@ -1,8 +1,10 @@
-# Real static files (notes pages, sitemap, markdown twins) must be served as
-# themselves. Without these exclusions the SPA catch-all below rewrites every
-# URL to index.html, so Googlebot sees an empty React shell instead of content.
-/notes/*  /notes/:splat  200
-/sitemap.xml  /sitemap.xml  200
+# Static, crawlable pages must be served as themselves. Without these
+# exclusions the SPA catch-all below rewrites every URL to index.html, so
+# Googlebot sees an empty React shell instead of content.
+/notes/*      /notes/:splat   200
+/home.html    /home.html      200
+/sitemap.xml  /sitemap.xml    200
+/robots.txt   /robots.txt     200
 
 # SPA catch-all — everything else is handled by React Router.
 /*  /index.html  200
