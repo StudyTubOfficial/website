@@ -47,7 +47,7 @@ function publishAppCss() {
     "src/index.css",
     "src/components/Header/header.css",
     "src/components/Cards/CourseCards/courseCard.css",
-    "src/components/Analytics/analytics.css",
+    "src/components/Search/notesSearch.css",
   ];
   const src = sources
     .filter((f) => fs.existsSync(path.join(ROOT, f)))

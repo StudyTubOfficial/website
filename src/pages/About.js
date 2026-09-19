@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Header/Navbar";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Multi_Header/Header";
-import Analytics from "../components/Analytics/Analytics";
 import AboutUscards from "../components/Cards/AboutusCards/AboutUscards";
 import AdBanner from "../components/AdBanner/AdBanner";
 import { FiArrowRight, FiCheck, FiTrendingUp } from "react-icons/fi";
@@ -167,8 +166,6 @@ export default function About() {
             </div>
           </div>
         </section>
-
-        <Analytics />
 
         <div className="container" style={{ padding: "24px" }}>
           <AdBanner
