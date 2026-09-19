@@ -6,7 +6,6 @@ import Team from "../components/Team/Team";
 import Footer from "../components/Footer/Footer";
 import ProductHunt from "../components/Buttons/ProductHunt/ProductHunt";
 import Heading from "../components/Heading/Heading";
-import Promotion from "../components/Promotion/Promotion";
 import Contribute from "../components/Contribute/Contribute";
 import ImageBanner from "../components/ImageBanner/ImageBanner";
 import AdBanner from "../components/AdBanner/AdBanner";
@@ -53,7 +52,6 @@ export default function Home() {
         <ProductHunt />
       </main>
       <Footer />
-      <Promotion />
       <StickyAd />
     </div>
     </>
