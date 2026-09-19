@@ -57,7 +57,7 @@ export default function Jumbotron() {
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           >
             <img
-              src="assets/images/banner/hero_banner_img_1.jpg"
+              src="/assets/images/banner/hero_banner_img_1.jpg"
               alt="Students learning on StudyTub"
             />
             <motion.div

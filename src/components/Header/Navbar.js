@@ -58,7 +58,7 @@ export default function Navbar() {
       <div className="container">
         <nav className="nav__inner">
           <Link to="/" className="nav__logo">
-            <img src="assets/images/logo/logo.png" alt="StudyTub" className="nav__logo-img" />
+            <img src="/assets/images/logo/logo.png" alt="StudyTub" className="nav__logo-img" />
             <span className="nav__logo-text">StudyTub</span>
           </Link>
 
