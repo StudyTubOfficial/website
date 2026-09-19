@@ -29,3 +29,4 @@ yarn-error.log*
 /public/notes/*.html
 /public/notes/subjects/*.html
 /public/sitemap.xml
+/public/notes/assets/app.css
