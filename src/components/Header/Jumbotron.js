@@ -40,10 +40,11 @@ const QUICK = [
 export default function Jumbotron() {
   return (
     <section className="hero">
+      <div className="hero__bg" aria-hidden="true" />
       <div className="container">
         <div className="hero__inner">
           <motion.div className="hero__label" variants={fadeUp} initial="hidden" animate="visible" custom={0}>
-            🎓 4,200+ free notes &amp; question papers
+            🎓 6,000+ students · 564 free notes &amp; papers
           </motion.div>
 
           <motion.h1 className="hero__title" variants={fadeUp} initial="hidden" animate="visible" custom={1}>
@@ -72,7 +73,7 @@ export default function Jumbotron() {
                 <img key={i} src={src} alt="" width="34" height="34" loading="lazy" />
               ))}
             </div>
-            <p><strong>4,100+</strong> students already studying here</p>
+            <p><strong>6,000+</strong> students already studying here</p>
           </motion.div>
         </div>
       </div>

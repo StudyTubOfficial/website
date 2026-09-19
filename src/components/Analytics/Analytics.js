@@ -4,7 +4,7 @@ import { FiTrendingUp, FiDownload, FiBook, FiStar } from "react-icons/fi";
 import "./analytics.css";
 
 const stats = [
-  { icon: <FiTrendingUp />, value: "4,200+", label: "Active Users" },
+  { icon: <FiTrendingUp />, value: "6,000+", label: "Active Users" },
   { icon: <FiDownload />, value: "4,100+", label: "Downloads" },
   { icon: <FiBook />, value: "25/75", label: "Theory/Practice" },
   { icon: <FiStar />, value: "4.8", label: "User Rating" },

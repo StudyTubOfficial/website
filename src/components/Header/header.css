@@ -251,14 +251,26 @@
   padding: 132px 0 72px;
   background: linear-gradient(135deg, #f0f0ff 0%, #fff 45%, #fef9ec 100%);
   position: relative;
+  /* Deliberately NOT overflow:hidden — that clipped the search results panel
+     at the section boundary. The decorative blob is clipped by its own
+     wrapper below instead. */
+  z-index: 1;
+}
+
+/* Contains the ::before blob without clipping anything that must escape. */
+.hero__bg {
+  position: absolute;
+  inset: 0;
   overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
 [data-theme="dark"] .hero {
   background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg) 45%, var(--bg-alt) 100%);
 }
 
-.hero::before {
+.hero__bg::before {
   content: '';
   position: absolute;
   top: -240px;
@@ -327,6 +339,9 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  /* Above the stats section below, so the results panel is not painted over. */
+  position: relative;
+  z-index: 40;
 }
 
 .hero__quick {

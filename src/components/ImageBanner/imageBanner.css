@@ -1,0 +1,122 @@
+/* Digital library pitch — uses the app's own tokens from src/index.css. */
+
+.pitch {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+  background: var(--bg-dark);
+  border-radius: var(--radius-lg);
+  padding: 52px 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pitch::after {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--primary) 32%, transparent) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.pitch__body { position: relative; z-index: 1; }
+
+.pitch__label {
+  display: inline-block;
+  padding: 6px 15px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--primary) 22%, transparent);
+  color: var(--primary-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.pitch__title {
+  font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--text-white);
+  margin: 0 0 14px;
+}
+
+.pitch__title span {
+  background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pitch__desc {
+  font-size: 1.04rem;
+  line-height: 1.7;
+  color: rgba(226, 232, 240, 0.78);
+  max-width: 54ch;
+  margin: 0 0 24px;
+}
+
+.pitch__points { list-style: none; padding: 0; margin: 0 0 30px; }
+
+.pitch__points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  color: rgba(226, 232, 240, 0.9);
+  font-size: 0.95rem;
+}
+
+.pitch__point-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--primary) 26%, transparent);
+  color: var(--primary-light);
+}
+
+.pitch__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+
+.pitch__note { margin: 0; font-size: 0.87rem; color: rgba(226, 232, 240, 0.62); }
+.pitch__note a { color: var(--primary-light); font-weight: 600; }
+
+.pitch__aside {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pitch__stat {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+}
+
+.pitch__stat b {
+  display: block;
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-white);
+}
+
+.pitch__stat span { font-size: 0.85rem; color: rgba(226, 232, 240, 0.65); }
+
+@media (max-width: 900px) {
+  .pitch { grid-template-columns: 1fr; gap: 32px; padding: 38px 28px; }
+  .pitch__aside { flex-direction: row; flex-wrap: wrap; }
+  .pitch__stat { flex: 1 1 140px; padding: 16px 18px; }
+}
