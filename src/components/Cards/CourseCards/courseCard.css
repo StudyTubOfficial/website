@@ -29,6 +29,18 @@
   object-fit: contain;
 }
 
+/* The semester SVGs are hardcoded to fill="#242528", so on a dark background
+   they render near-black on near-black and vanish. Inverting flips them to
+   light without needing to re-author eight files. */
+[data-theme="dark"] .course-card__icon img {
+  filter: invert(1) brightness(1.7);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .course-card__icon img {
+    filter: invert(1) brightness(1.7);
+  }
+}
+
 .course-card__title {
   font-size: 1rem;
   font-weight: 700;
