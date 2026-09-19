@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ACID Properties Explained with Real Examples | StudyTub</title>
+<meta name="description" content="Atomicity, Consistency, Isolation, Durability — what each actually guarantees, what breaks without it, and the isolation levels that show up in every DBMS exam."/>
+<link rel="canonical" href="https://studytub.netlify.app/blog/acid-properties-explained.html"/>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
+<meta property="og:site_name" content="StudyTub"/>
+<meta property="og:title" content="ACID Properties Explained with Real Examples"/>
+<meta property="og:description" content="Atomicity, Consistency, Isolation, Durability — what each actually guarantees, what breaks without it, and the isolation levels that show up in every DBMS exam."/>
+<meta property="og:url" content="https://studytub.netlify.app/blog/acid-properties-explained.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:image" content="https://studytub.netlify.app/assets/images/logo/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ACID Properties Explained with Real Examples"/>
+<meta name="twitter:description" content="Atomicity, Consistency, Isolation, Durability — what each actually guarantees, what breaks without it, and the isolation levels that show up in every DBMS exam."/>
+<link rel="icon" href="/assets/images/logo/logo.png"/>
+<link rel="alternate" type="text/markdown" href="/blog/acid-properties-explained.md"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/notes/assets/app.css"/>
+<link rel="stylesheet" href="/notes/assets/notes.css"/>
+<script src="/notes/assets/theme.js"></script>
+<script src="https://traffic-production-bba7.up.railway.app/api/sites/site_9ad371c3/script"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"StudyTub","item":"https://studytub.netlify.app/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://studytub.netlify.app/blog/"},{"@type":"ListItem","position":3,"name":"ACID Properties Explained with Real Examples","item":"https://studytub.netlify.app/blog/acid-properties-explained.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ACID Properties Explained with Real Examples","description":"Atomicity, Consistency, Isolation, Durability — what each actually guarantees, what breaks without it, and the isolation levels that show up in every DBMS exam.","url":"https://studytub.netlify.app/blog/acid-properties-explained.html","datePublished":"2026-09-06","dateModified":"2026-09-06","author":{"@type":"Organization","name":"StudyTub"},"publisher":{"@type":"Organization","name":"StudyTub","url":"https://studytub.netlify.app/"},"keywords":"Databases, DBMS","isAccessibleForFree":true}</script>
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <nav class="nav__inner">
+      <a class="nav__logo" href="/">
+        <img src="/assets/images/logo/logo.png" alt="StudyTub" class="nav__logo-img"/>
+        <span class="nav__logo-text">StudyTub</span>
+      </a>
+      <ul class="nav__links">
+        <li class="nav__item"><a class="nav__link" href="/">Home</a></li><li class="nav__item"><a class="nav__link" href="/notes/">Notes</a></li><li class="nav__item"><a class="nav__link" href="/notes/subjects/">Subjects</a></li><li class="nav__item"><a class="nav__link nav__link--active" href="/blog/">Blog</a></li><li class="nav__item"><a class="nav__link" href="/faq">FAQ</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" type="button" onclick="__toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <a class="btn btn--primary btn--sm" href="/login">Login</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+
+<article class="section section--hero">
+  <div class="container">
+    <div class="postwrap">
+      <p class="post__meta"><span class="badge badge--primary">Databases</span> <span class="badge badge--primary">DBMS</span></p>
+      <h1 class="post__title">ACID Properties Explained with Real Examples</h1>
+      <p class="post__sub">Atomicity, Consistency, Isolation, Durability — what each actually guarantees, what breaks without it, and the isolation levels that show up in every DBMS exam.</p>
+      <p class="post__meta">6 September 2026 · 7 min read</p>
+    </div>
+  </div>
+</article>
+<section class="section">
+  <div class="container">
+    <div class="postwrap prose">
+<h2>Why ACID exists</h2>
+<p>A bank transfer moves money from one account to another. It is two operations, and if the system crashes between them the money vanishes. ACID is the set of guarantees that stops that.</p>
+<h2>Atomicity — all or nothing</h2>
+<p>Either every part of a transaction happens, or none does.</p>
+<pre><code>BEGIN;
+UPDATE accounts SET balance = balance - 500 WHERE id = 1;
+UPDATE accounts SET balance = balance + 500 WHERE id = 2;
+COMMIT;</code></pre>
+<p>A crash after the first statement rolls back the whole thing. There is no state where the money has left one account without arriving at the other.</p>
+<h2>Consistency — rules are never violated</h2>
+<p>The database moves from one valid state to another. Constraints, foreign keys and checks hold before and after.</p>
+<p>If a column says \<code>balance &gt;= 0\</code>, no transaction can leave it negative — the transaction fails instead.</p>
+<h2>Isolation — concurrent transactions do not corrupt each other</h2>
+<p>The subtlest one, and the most examined. Four standard levels, each preventing more:</p>
+<div class="tablewrap"><table class="table"><thead><tr><th>Level</th><th>Dirty read</th><th>Non-repeatable read</th><th>Phantom read</th></tr></thead><tbody><tr><td>Read Uncommitted</td><td>possible</td><td>possible</td><td>possible</td></tr><tr><td>Read Committed</td><td>prevented</td><td>possible</td><td>possible</td></tr><tr><td>Repeatable Read</td><td>prevented</td><td>prevented</td><td>possible</td></tr><tr><td>Serializable</td><td>prevented</td><td>prevented</td><td>prevented</td></tr></tbody></table></div>
+<p><strong>Dirty read</strong> — you see another transaction&#39;s uncommitted change, which may be rolled back. <strong>Non-repeatable read</strong> — you read the same row twice and get different values. <strong>Phantom read</strong> — you run the same query twice and get different *rows*.</p>
+<p>Higher isolation costs concurrency. Most systems default to Read Committed because Serializable is too slow for general use.</p>
+<h2>Durability — committed means committed</h2>
+<p>Once \<code>COMMIT\</code> returns, the data survives a power failure. Achieved through write-ahead logging: the change is written to a durable log before it is applied, so a crashed database can replay the log on restart.</p>
+<h2>Where ACID is deliberately relaxed</h2>
+<p>Analytics databases often loosen these. Reading slightly stale data to answer &quot;how many visitors yesterday&quot; is fine; blocking a write for it is not.</p>
+<p>That is why an analytics system commonly writes to an ACID store like PostgreSQL and reads from a separate store that trades some guarantees for speed. Knowing *which* guarantee is being traded, and why it does not matter for that query, is the actual engineering judgement.</p>
+    </div>
+  </div>
+</section>
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__header"><span class="section__label">Related</span>
+      <h2 class="section__title">Keep reading</h2></div>
+    <div class="grid grid--3">
+      <a class="card card--link" href="/blog/what-is-a-columnar-database.html">
+        <h3 class="card__title">What Is a Columnar Database? (And Why Analytics Uses One)</h3>
+        <p class="card__text">Row stores and column stores explained with the same query — why a database that stores columns together reads a hundredth of the data for an analytics question. Useful for DBMS courses and interviews.</p>
+      </a>
+      <a class="card card--link" href="/blog/sql-window-functions-explained.html">
+        <h3 class="card__title">SQL Window Functions Explained Simply</h3>
+        <p class="card__text">ROW_NUMBER, RANK, LAG and running totals, with examples you can follow. The part of SQL that separates a passing grade from an actually useful skill.</p>
+      </a>
+      <a class="card card--link" href="/blog/database-indexing-explained.html">
+        <h3 class="card__title">How Database Indexes Actually Work</h3>
+        <p class="card__text">B-trees, why an index makes reads fast and writes slow, composite index column order, and when the query planner ignores your index entirely.</p>
+      </a></div>
+    <p class="btnrow" style="margin-top:28px">
+      <a class="btn btn--primary btn--lg" href="/notes/">Browse free notes</a>
+      <a class="btn btn--outline btn--lg" href="/blog/">All articles</a>
+    </p>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="footer__logo" href="/">
+          <img src="/assets/images/logo/logo.png" alt="StudyTub" class="footer__logo-img"/>
+          <span class="footer__logo-text">StudyTub</span>
+        </a>
+        <p class="footer__tagline">Free study notes and previous year question papers for BTECH students.</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Notes</h4>
+        <ul class="footer__list">
+          <li><a href="/notes/">By semester</a></li>
+          <li><a href="/notes/subjects/">By subject</a></li>
+          <li><a href="/notes/first-year-engineering-notes.html">First year</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Support</h4>
+        <ul class="footer__list">
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom"><p>&copy; 2026 StudyTub &mdash; free for students, always.</p></div>
+  </div>
+</footer>
+<script src="/notes/assets/notes-auth.js" defer></script>
+<script src="/notes/assets/search.js" defer></script>
+</body>
+</html>

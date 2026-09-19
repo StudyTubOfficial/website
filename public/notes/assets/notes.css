@@ -286,3 +286,39 @@ a[data-gated="true"] .lock { font-size: .9em; opacity: .85; margin-left: 2px; }
 [data-theme="dark"] .nsearch__foot { background: #172033; }
 
 .hero-search { margin: 26px 0 4px; max-width: 560px; }
+
+/* ── blog ──────────────────────────────────────────────────────────────── */
+.postwrap { max-width: 760px; margin: 0 auto; }
+
+.post__title {
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  line-height: 1.15; letter-spacing: -0.025em;
+  color: var(--text); margin: 16px 0 14px;
+}
+.post__sub { font-size: 1.1rem; line-height: 1.65; color: var(--text-light); margin: 0 0 16px; }
+.post__meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  font-size: 0.86rem; color: var(--text-light); margin: 0 0 8px; }
+
+/* Body copy inside a post. */
+.prose h2 { font-size: 1.5rem; margin: 40px 0 14px; letter-spacing: -0.015em; }
+.prose h3 { font-size: 1.15rem; margin: 28px 0 10px; color: var(--text); }
+.prose p { font-size: 1.02rem; line-height: 1.8; margin: 0 0 18px; }
+.prose pre {
+  background: var(--bg-alt); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 16px 18px;
+  overflow-x: auto; margin: 18px 0;
+}
+.prose pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88rem; line-height: 1.6; color: var(--text);
+  background: none; border: 0; padding: 0;
+}
+.prose :not(pre) > code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88em; background: var(--bg-alt);
+  border: 1px solid var(--border); border-radius: 4px;
+  padding: 1px 6px; color: var(--primary);
+}
+.prose .tablewrap { margin: 20px 0; }
+.prose ol { padding-left: 22px; }
+.prose ol li { margin: 8px 0; color: var(--text-light); line-height: 1.75; }

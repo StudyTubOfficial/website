@@ -24,6 +24,7 @@ const PUBLIC = path.join(ROOT, "public");
 const SITE = "https://studytub.netlify.app";
 const DRIVE = "https://notes.studytub.workers.dev/0:";
 const data = require("./notes-data.json");
+const BLOG = require("./blog-data.js");
 
 /**
  * HTML-escape. Page content comes from Google Drive file names, so anyone able
@@ -114,6 +115,88 @@ const SKIP = new Set(["pmm", "wsn", "module", "math"]);
 const subjects = data.subjects.filter((s) => !SKIP.has(s.key) && s.display.length >= 4);
 const totalFiles = subjects.reduce((n, s) => n + s.files.length, 0);
 
+
+/**
+ * Render a post body to HTML.
+ *
+ * A deliberately small markdown subset — headings, paragraphs, lists, tables,
+ * fenced and inline code, bold and links — rather than a dependency. Post
+ * bodies are authored in this repo, not user input, so the surface is known;
+ * anything outside the subset simply passes through as a paragraph.
+ */
+function renderBody(md) {
+  const lines = md.trim().split("\n");
+  const out = [];
+  let i = 0;
+
+  const inline = (t) => esc(t)
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+  while (i < lines.length) {
+    const line = lines[i];
+
+    // Pre-rendered HTML blocks in the source pass straight through.
+    if (line.startsWith("<pre>") || line.startsWith("<table")) {
+      const buf = [];
+      while (i < lines.length && !lines[i].match(/<\/(pre|table)>/)) buf.push(lines[i++]);
+      if (i < lines.length) buf.push(lines[i++]);
+      out.push(buf.join("\n"));
+      continue;
+    }
+
+    const h = line.match(/^(#{2,4})\s+(.*)$/);
+    if (h) { const n = h[1].length; out.push(`<h${n}>${inline(h[2])}</h${n}>`); i++; continue; }
+
+    // Pipe table.
+    if (line.startsWith("|") && lines[i + 1] && /^\|[\s:|-]+\|$/.test(lines[i + 1])) {
+      const cells = (r) => r.split("|").slice(1, -1).map((c) => c.trim());
+      const head = cells(line);
+      i += 2;
+      const rows = [];
+      while (i < lines.length && lines[i].startsWith("|")) rows.push(cells(lines[i++]));
+      out.push('<div class="tablewrap"><table class="table"><thead><tr>'
+        + head.map((c) => `<th>${inline(c)}</th>`).join("")
+        + "</tr></thead><tbody>"
+        + rows.map((r) => "<tr>" + r.map((c) => `<td>${inline(c)}</td>`).join("") + "</tr>").join("")
+        + "</tbody></table></div>");
+      continue;
+    }
+
+    if (/^[-*]\s+/.test(line)) {
+      const items = [];
+      while (i < lines.length && /^[-*]\s+/.test(lines[i])) items.push(inline(lines[i++].replace(/^[-*]\s+/, "")));
+      out.push("<ul>" + items.map((x) => `<li>${x}</li>`).join("") + "</ul>");
+      continue;
+    }
+
+    if (/^\d+\.\s+/.test(line)) {
+      const items = [];
+      while (i < lines.length && /^\d+\.\s+/.test(lines[i])) items.push(inline(lines[i++].replace(/^\d+\.\s+/, "")));
+      out.push("<ol>" + items.map((x) => `<li>${x}</li>`).join("") + "</ol>");
+      continue;
+    }
+
+    // Indented block — treated as preformatted.
+    if (/^ {4}\S/.test(line)) {
+      const buf = [];
+      while (i < lines.length && (/^ {4}/.test(lines[i]) || lines[i].trim() === "")) buf.push(lines[i++].replace(/^ {4}/, ""));
+      out.push(`<pre><code>${esc(buf.join("\n").trim())}</code></pre>`);
+      continue;
+    }
+
+    if (line.trim() === "") { i++; continue; }
+
+    const para = [];
+    while (i < lines.length && lines[i].trim() !== "" && !/^(#{2,4}\s|[-*]\s|\d+\.\s|\||<pre|<table| {4}\S)/.test(lines[i])) {
+      para.push(lines[i++]);
+    }
+    out.push(`<p>${inline(para.join(" "))}</p>`);
+  }
+  return out.join("\n");
+}
+
 // ── chrome, mirroring Navbar.js / Footer.js markup ─────────────────────────
 
 const navbar = (active) => {
@@ -127,7 +210,7 @@ const navbar = (active) => {
         <span class="nav__logo-text">StudyTub</span>
       </a>
       <ul class="nav__links">
-        ${li("/", "Home")}${li("/notes/", "Notes")}${li("/notes/subjects/", "Subjects")}${li("/faq", "FAQ")}
+        ${li("/", "Home")}${li("/notes/", "Notes")}${li("/notes/subjects/", "Subjects")}${li("/blog/", "Blog")}${li("/faq", "FAQ")}
       </ul>
       <div class="nav__actions">
         <button class="theme-toggle" type="button" onclick="__toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
@@ -569,6 +652,113 @@ for (const s of subjects) {
 </section>`,
   }));
   urls.push([url, "monthly", "0.7"]); written++;
+}
+
+// ── blog ───────────────────────────────────────────────────────────────────
+// Static, for the same reason the notes pages are: the React app renders
+// client-side, so anything meant to be found by search has to exist in HTML.
+{
+  const posts = [...BLOG].sort((a, b) => b.date.localeCompare(a.date));
+  const fmtDate = (d) => new Date(d + "T00:00:00Z").toLocaleDateString("en-GB",
+    { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+
+  // Index
+  const url = `${SITE}/blog/`;
+  const cards = posts.map((p) => `
+    <a class="card card--link" href="/blog/${p.slug}.html">
+      <span class="card__meta">${p.tags.map(esc).join(" · ")}</span>
+      <h3 class="card__title">${esc(p.title)}</h3>
+      <p class="card__text">${esc(p.desc)}</p>
+      <span class="card__meta">${fmtDate(p.date)} · ${p.mins} min read</span>
+    </a>`).join("\n");
+
+  out("blog/index.html", page({
+    title: "Engineering Blog — Databases, SQL, Web Performance | StudyTub",
+    desc: `${posts.length} guides on the computer science topics BTECH students actually get asked about: databases and DBMS, SQL, system design, web performance, and software engineering practice.`,
+    url, md: "/blog/index.md", active: "/blog/",
+    ld: breadcrumb([["StudyTub", SITE + "/"], ["Blog", url]]),
+    body: hero({
+      label: "Blog", h1: "Engineering guides",
+      lede: "Computer science and software engineering topics, written for students who have taken the course but not yet built the thing.",
+      stats: [[posts.length, "articles"], [[...new Set(posts.flatMap((p) => p.tags))].length, "topics"], ["Free", "no signup"]],
+      img: "icon_academic_cap.svg",
+      actions: `<a class="btn btn--outline btn--lg" href="/notes/">Browse notes</a>`,
+    }) + `
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__header"><span class="section__label">All articles</span>
+      <h2 class="section__title">${posts.length} guides</h2></div>
+    <div class="grid grid--3">${cards}</div>
+  </div>
+</section>`,
+  }));
+  urls.push([url, "weekly", "0.8"]);
+  written++;
+
+  // One page per post
+  for (const p of posts) {
+    const purl = `${SITE}/blog/${p.slug}.html`;
+    const related = posts.filter((o) => o.slug !== p.slug
+      && o.tags.some((t) => p.tags.includes(t))).slice(0, 3);
+
+    out(`blog/${p.slug}.html`, page({
+      title: `${p.title} | StudyTub`,
+      desc: p.desc,
+      url: purl, md: `/blog/${p.slug}.md`, active: "/blog/",
+      ld: breadcrumb([["StudyTub", SITE + "/"], ["Blog", SITE + "/blog/"], [p.title, purl]])
+        + `<script type="application/ld+json">${jsonScript({
+            "@context": "https://schema.org", "@type": "Article",
+            headline: p.title, description: p.desc, url: purl,
+            datePublished: p.date, dateModified: p.date,
+            author: { "@type": "Organization", name: "StudyTub" },
+            publisher: { "@type": "Organization", name: "StudyTub", url: SITE + "/" },
+            keywords: p.tags.join(", "), isAccessibleForFree: true,
+          })}</script>`,
+      body: `
+<article class="section section--hero">
+  <div class="container">
+    <div class="postwrap">
+      <p class="post__meta">${p.tags.map((t) => `<span class="badge badge--primary">${esc(t)}</span>`).join(" ")}</p>
+      <h1 class="post__title">${esc(p.title)}</h1>
+      <p class="post__sub">${esc(p.desc)}</p>
+      <p class="post__meta">${fmtDate(p.date)} · ${p.mins} min read</p>
+    </div>
+  </div>
+</article>
+<section class="section">
+  <div class="container">
+    <div class="postwrap prose">
+${renderBody(p.body)}
+    </div>
+  </div>
+</section>
+<section class="section section--alt">
+  <div class="container">
+    ${related.length ? `<div class="section__header"><span class="section__label">Related</span>
+      <h2 class="section__title">Keep reading</h2></div>
+    <div class="grid grid--3">${related.map((r) => `
+      <a class="card card--link" href="/blog/${r.slug}.html">
+        <h3 class="card__title">${esc(r.title)}</h3>
+        <p class="card__text">${esc(r.desc)}</p>
+      </a>`).join("")}</div>` : ""}
+    <p class="btnrow" style="margin-top:28px">
+      <a class="btn btn--primary btn--lg" href="/notes/">Browse free notes</a>
+      <a class="btn btn--outline btn--lg" href="/blog/">All articles</a>
+    </p>
+  </div>
+</section>`,
+    }));
+
+    // Markdown twin for the AEO edge function.
+    out(`blog/${p.slug}.md`,
+      `# ${p.title}\n\n**URL:** ${purl}\n**Published:** ${p.date}\n**Tags:** ${p.tags.join(", ")}\n\n${p.desc}\n\n${p.body.trim()}\n`);
+
+    urls.push([purl, "monthly", "0.7"]);
+    written++;
+  }
+
+  out("blog/index.md", `# StudyTub Engineering Blog\n\n**URL:** ${SITE}/blog/\n\n`
+    + posts.map((p) => `- [${p.title}](${SITE}/blog/${p.slug}.html) — ${p.desc}`).join("\n") + "\n");
 }
 
 // Sitemap

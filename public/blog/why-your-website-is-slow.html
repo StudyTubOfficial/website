@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Why Your Website Is Slow (And How to Find Out) | StudyTub</title>
+<meta name="description" content="Render-blocking resources, oversized images, third-party scripts and unused JavaScript — the four causes behind most slow pages, and how to measure rather than guess."/>
+<link rel="canonical" href="https://studytub.netlify.app/blog/why-your-website-is-slow.html"/>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
+<meta property="og:site_name" content="StudyTub"/>
+<meta property="og:title" content="Why Your Website Is Slow (And How to Find Out)"/>
+<meta property="og:description" content="Render-blocking resources, oversized images, third-party scripts and unused JavaScript — the four causes behind most slow pages, and how to measure rather than guess."/>
+<meta property="og:url" content="https://studytub.netlify.app/blog/why-your-website-is-slow.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:image" content="https://studytub.netlify.app/assets/images/logo/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why Your Website Is Slow (And How to Find Out)"/>
+<meta name="twitter:description" content="Render-blocking resources, oversized images, third-party scripts and unused JavaScript — the four causes behind most slow pages, and how to measure rather than guess."/>
+<link rel="icon" href="/assets/images/logo/logo.png"/>
+<link rel="alternate" type="text/markdown" href="/blog/why-your-website-is-slow.md"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/notes/assets/app.css"/>
+<link rel="stylesheet" href="/notes/assets/notes.css"/>
+<script src="/notes/assets/theme.js"></script>
+<script src="https://traffic-production-bba7.up.railway.app/api/sites/site_9ad371c3/script"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"StudyTub","item":"https://studytub.netlify.app/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://studytub.netlify.app/blog/"},{"@type":"ListItem","position":3,"name":"Why Your Website Is Slow (And How to Find Out)","item":"https://studytub.netlify.app/blog/why-your-website-is-slow.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why Your Website Is Slow (And How to Find Out)","description":"Render-blocking resources, oversized images, third-party scripts and unused JavaScript — the four causes behind most slow pages, and how to measure rather than guess.","url":"https://studytub.netlify.app/blog/why-your-website-is-slow.html","datePublished":"2026-08-09","dateModified":"2026-08-09","author":{"@type":"Organization","name":"StudyTub"},"publisher":{"@type":"Organization","name":"StudyTub","url":"https://studytub.netlify.app/"},"keywords":"Web, Performance","isAccessibleForFree":true}</script>
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <nav class="nav__inner">
+      <a class="nav__logo" href="/">
+        <img src="/assets/images/logo/logo.png" alt="StudyTub" class="nav__logo-img"/>
+        <span class="nav__logo-text">StudyTub</span>
+      </a>
+      <ul class="nav__links">
+        <li class="nav__item"><a class="nav__link" href="/">Home</a></li><li class="nav__item"><a class="nav__link" href="/notes/">Notes</a></li><li class="nav__item"><a class="nav__link" href="/notes/subjects/">Subjects</a></li><li class="nav__item"><a class="nav__link nav__link--active" href="/blog/">Blog</a></li><li class="nav__item"><a class="nav__link" href="/faq">FAQ</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" type="button" onclick="__toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <a class="btn btn--primary btn--sm" href="/login">Login</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+
+<article class="section section--hero">
+  <div class="container">
+    <div class="postwrap">
+      <p class="post__meta"><span class="badge badge--primary">Web</span> <span class="badge badge--primary">Performance</span></p>
+      <h1 class="post__title">Why Your Website Is Slow (And How to Find Out)</h1>
+      <p class="post__sub">Render-blocking resources, oversized images, third-party scripts and unused JavaScript — the four causes behind most slow pages, and how to measure rather than guess.</p>
+      <p class="post__meta">9 August 2026 · 8 min read</p>
+    </div>
+  </div>
+</article>
+<section class="section">
+  <div class="container">
+    <div class="postwrap prose">
+<h2>Measure first</h2>
+<p>Every performance discussion should start with a measurement, because intuition is wrong more often than not. Lighthouse in Chrome DevTools takes thirty seconds and tells you which of the following applies.</p>
+<h2>1. Render-blocking resources</h2>
+<p>A stylesheet or synchronous script in \<code>&lt;head&gt;\</code> stops the browser painting until it loads.</p>
+<pre><code>&lt;!-- blocks: parser waits for a network round trip --&gt;
+&lt;script src="https://analytics.example.com/script.js"&gt;&lt;/script&gt;
+
+&lt;!-- does not block --&gt;
+&lt;script defer src="https://analytics.example.com/script.js"&gt;&lt;/script&gt;</code></pre>
+<p>Analytics, chat widgets and ad scripts have no reason to block first paint. \<code>defer\</code> costs one word.</p>
+<p>Your own CSS *should* block — the alternative is a flash of unstyled content.</p>
+<h2>2. Images</h2>
+<p>Usually the largest single cause.</p>
+<ul><li><strong>Wrong size.</strong> A 2000px image displayed at 200px downloads 100× the pixels needed.</li><li><strong>Wrong format.</strong> WebP is typically 30% smaller than JPEG at the same quality.</li><li><strong>No dimensions.</strong> Causes layout shift, which is a separate metric and a separate penalty.</li></ul>
+<pre><code>&lt;img src="photo.webp" width="800" height="600" loading="lazy" alt="…"&gt;</code></pre>
+<p>\<code>loading=&quot;lazy&quot;\</code> on below-the-fold images defers them until needed.</p>
+<h2>3. Third-party scripts</h2>
+<p>The ones you did not write and cannot optimise. An ad script can exceed 200 KB and block the main thread for over 100 ms.</p>
+<p>The question worth asking is whether each one earns its cost. A script loading on every page and producing nothing measurable is pure overhead — and that situation is more common than it sounds, particularly with ad scripts left in place after the ad units were removed.</p>
+<h2>4. Unused JavaScript</h2>
+<p>Shipping code nobody runs. Two common sources:</p>
+<p><strong>No code splitting.</strong> Every route in one bundle means a visitor to the homepage downloads the settings page too. Lazy-load routes.</p>
+<p><strong>Heavy libraries for light tasks.</strong> An animation library for one fade-in, a date library for one format call. Check the size before adding a dependency.</p>
+<h2>Lab versus field</h2>
+<p>Lighthouse simulates one load on your machine. Real users are on slower devices and worse networks, so field data is usually worse than your lab score.</p>
+<p>Both are useful: lab to debug, field to know. Only field data tells you what people actually experienced.</p>
+<h2>The order to work in</h2>
+<ol><li>Remove what you do not need — unused scripts, dead assets.</li><li>Stop what remains from blocking — \<code>defer\</code>, \<code>async\</code>, lazy loading.</li><li>Shrink what is left — image formats, code splitting.</li></ol>
+<p>Deleting is always the biggest win, and it is the step people skip.</p>
+    </div>
+  </div>
+</section>
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__header"><span class="section__label">Related</span>
+      <h2 class="section__title">Keep reading</h2></div>
+    <div class="grid grid--3">
+      <a class="card card--link" href="/blog/http-request-lifecycle.html">
+        <h3 class="card__title">What Happens When You Type a URL and Press Enter</h3>
+        <p class="card__text">DNS, TCP, TLS, HTTP, rendering — the whole chain, at the depth a networks course expects and an interview asks for.</p>
+      </a>
+      <a class="card card--link" href="/blog/rest-api-design-basics.html">
+        <h3 class="card__title">REST API Design: The Conventions That Matter</h3>
+        <p class="card__text">Resource naming, the right status codes, idempotency, and why a consistent response envelope saves every client from special-casing your endpoints.</p>
+      </a>
+      <a class="card card--link" href="/blog/caching-strategies-explained.html">
+        <h3 class="card__title">Caching Strategies Every Developer Should Know</h3>
+        <p class="card__text">Cache-aside, write-through, TTLs and invalidation — plus the thundering herd problem and the fifteen lines that fix it.</p>
+      </a></div>
+    <p class="btnrow" style="margin-top:28px">
+      <a class="btn btn--primary btn--lg" href="/notes/">Browse free notes</a>
+      <a class="btn btn--outline btn--lg" href="/blog/">All articles</a>
+    </p>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="footer__logo" href="/">
+          <img src="/assets/images/logo/logo.png" alt="StudyTub" class="footer__logo-img"/>
+          <span class="footer__logo-text">StudyTub</span>
+        </a>
+        <p class="footer__tagline">Free study notes and previous year question papers for BTECH students.</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Notes</h4>
+        <ul class="footer__list">
+          <li><a href="/notes/">By semester</a></li>
+          <li><a href="/notes/subjects/">By subject</a></li>
+          <li><a href="/notes/first-year-engineering-notes.html">First year</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Support</h4>
+        <ul class="footer__list">
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom"><p>&copy; 2026 StudyTub &mdash; free for students, always.</p></div>
+  </div>
+</footer>
+<script src="/notes/assets/notes-auth.js" defer></script>
+<script src="/notes/assets/search.js" defer></script>
+</body>
+</html>

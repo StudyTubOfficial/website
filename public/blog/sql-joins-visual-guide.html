@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SQL Joins: INNER, LEFT, RIGHT and FULL | StudyTub</title>
+<meta name="description" content="Every join type with the same two tables and the actual output, plus the NULL trap that makes LEFT JOIN behave like INNER JOIN."/>
+<link rel="canonical" href="https://studytub.netlify.app/blog/sql-joins-visual-guide.html"/>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
+<meta property="og:site_name" content="StudyTub"/>
+<meta property="og:title" content="SQL Joins: INNER, LEFT, RIGHT and FULL"/>
+<meta property="og:description" content="Every join type with the same two tables and the actual output, plus the NULL trap that makes LEFT JOIN behave like INNER JOIN."/>
+<meta property="og:url" content="https://studytub.netlify.app/blog/sql-joins-visual-guide.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:image" content="https://studytub.netlify.app/assets/images/logo/logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL Joins: INNER, LEFT, RIGHT and FULL"/>
+<meta name="twitter:description" content="Every join type with the same two tables and the actual output, plus the NULL trap that makes LEFT JOIN behave like INNER JOIN."/>
+<link rel="icon" href="/assets/images/logo/logo.png"/>
+<link rel="alternate" type="text/markdown" href="/blog/sql-joins-visual-guide.md"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/notes/assets/app.css"/>
+<link rel="stylesheet" href="/notes/assets/notes.css"/>
+<script src="/notes/assets/theme.js"></script>
+<script src="https://traffic-production-bba7.up.railway.app/api/sites/site_9ad371c3/script"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"StudyTub","item":"https://studytub.netlify.app/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://studytub.netlify.app/blog/"},{"@type":"ListItem","position":3,"name":"SQL Joins: INNER, LEFT, RIGHT and FULL","item":"https://studytub.netlify.app/blog/sql-joins-visual-guide.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SQL Joins: INNER, LEFT, RIGHT and FULL","description":"Every join type with the same two tables and the actual output, plus the NULL trap that makes LEFT JOIN behave like INNER JOIN.","url":"https://studytub.netlify.app/blog/sql-joins-visual-guide.html","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Organization","name":"StudyTub"},"publisher":{"@type":"Organization","name":"StudyTub","url":"https://studytub.netlify.app/"},"keywords":"SQL, DBMS","isAccessibleForFree":true}</script>
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <nav class="nav__inner">
+      <a class="nav__logo" href="/">
+        <img src="/assets/images/logo/logo.png" alt="StudyTub" class="nav__logo-img"/>
+        <span class="nav__logo-text">StudyTub</span>
+      </a>
+      <ul class="nav__links">
+        <li class="nav__item"><a class="nav__link" href="/">Home</a></li><li class="nav__item"><a class="nav__link" href="/notes/">Notes</a></li><li class="nav__item"><a class="nav__link" href="/notes/subjects/">Subjects</a></li><li class="nav__item"><a class="nav__link nav__link--active" href="/blog/">Blog</a></li><li class="nav__item"><a class="nav__link" href="/faq">FAQ</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" type="button" onclick="__toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <a class="btn btn--primary btn--sm" href="/login">Login</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+
+<article class="section section--hero">
+  <div class="container">
+    <div class="postwrap">
+      <p class="post__meta"><span class="badge badge--primary">SQL</span> <span class="badge badge--primary">DBMS</span></p>
+      <h1 class="post__title">SQL Joins: INNER, LEFT, RIGHT and FULL</h1>
+      <p class="post__sub">Every join type with the same two tables and the actual output, plus the NULL trap that makes LEFT JOIN behave like INNER JOIN.</p>
+      <p class="post__meta">17 August 2026 · 6 min read</p>
+    </div>
+  </div>
+</article>
+<section class="section">
+  <div class="container">
+    <div class="postwrap prose">
+<h2>Two tables</h2>
+<p><strong>students</strong></p>
+<div class="tablewrap"><table class="table"><thead><tr><th>roll_no</th><th>name</th></tr></thead><tbody><tr><td>CS001</td><td>Ravi</td></tr><tr><td>CS002</td><td>Priya</td></tr><tr><td>CS003</td><td>Amit</td></tr></tbody></table></div>
+<p><strong>marks</strong></p>
+<div class="tablewrap"><table class="table"><thead><tr><th>roll_no</th><th>subject</th><th>score</th></tr></thead><tbody><tr><td>CS001</td><td>Maths</td><td>85</td></tr><tr><td>CS002</td><td>Maths</td><td>92</td></tr><tr><td>CS004</td><td>Maths</td><td>70</td></tr></tbody></table></div>
+<p>Note CS003 has no marks, and CS004 has marks but no student record. Those two are where join types differ.</p>
+<h2>INNER JOIN — only matches</h2>
+<pre><code>SELECT s.name, m.score
+FROM students s
+INNER JOIN marks m ON s.roll_no = m.roll_no;</code></pre>
+<div class="tablewrap"><table class="table"><thead><tr><th>name</th><th>score</th></tr></thead><tbody><tr><td>Ravi</td><td>85</td></tr><tr><td>Priya</td><td>92</td></tr></tbody></table></div>
+<p>CS003 and CS004 both disappear. Only rows present in both survive.</p>
+<h2>LEFT JOIN — keep everything on the left</h2>
+<pre><code>SELECT s.name, m.score
+FROM students s
+LEFT JOIN marks m ON s.roll_no = m.roll_no;</code></pre>
+<div class="tablewrap"><table class="table"><thead><tr><th>name</th><th>score</th></tr></thead><tbody><tr><td>Ravi</td><td>85</td></tr><tr><td>Priya</td><td>92</td></tr><tr><td>Amit</td><td>NULL</td></tr></tbody></table></div>
+<p>Amit appears with NULL. This is the join for &quot;all students, with marks if they have any&quot; — the most common real requirement.</p>
+<h2>RIGHT JOIN</h2>
+<p>The mirror: every row from the right table. Rarely used, because swapping the table order and using LEFT is clearer.</p>
+<h2>FULL OUTER JOIN</h2>
+<p>Everything from both sides, NULLs where there is no match. Useful for reconciliation — finding records that exist in one system but not the other.</p>
+<h2>The trap</h2>
+<p>This looks like a LEFT JOIN and behaves like an INNER JOIN:</p>
+<pre><code>SELECT s.name, m.score
+FROM students s
+LEFT JOIN marks m ON s.roll_no = m.roll_no
+WHERE m.score > 80;   -- silently drops Amit</code></pre>
+<p>Amit&#39;s \<code>score\</code> is NULL, and \<code>NULL &gt; 80\</code> is not true — so the WHERE clause removes the row the LEFT JOIN just preserved.</p>
+<p>Filter in the join condition instead:</p>
+<pre><code>LEFT JOIN marks m ON s.roll_no = m.roll_no AND m.score > 80</code></pre>
+<p>This catches people constantly, including in production. Any condition on the right-hand table belongs in \<code>ON\</code>, not \<code>WHERE\</code>.</p>
+    </div>
+  </div>
+</section>
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__header"><span class="section__label">Related</span>
+      <h2 class="section__title">Keep reading</h2></div>
+    <div class="grid grid--3">
+      <a class="card card--link" href="/blog/what-is-a-columnar-database.html">
+        <h3 class="card__title">What Is a Columnar Database? (And Why Analytics Uses One)</h3>
+        <p class="card__text">Row stores and column stores explained with the same query — why a database that stores columns together reads a hundredth of the data for an analytics question. Useful for DBMS courses and interviews.</p>
+      </a>
+      <a class="card card--link" href="/blog/sql-window-functions-explained.html">
+        <h3 class="card__title">SQL Window Functions Explained Simply</h3>
+        <p class="card__text">ROW_NUMBER, RANK, LAG and running totals, with examples you can follow. The part of SQL that separates a passing grade from an actually useful skill.</p>
+      </a>
+      <a class="card card--link" href="/blog/acid-properties-explained.html">
+        <h3 class="card__title">ACID Properties Explained with Real Examples</h3>
+        <p class="card__text">Atomicity, Consistency, Isolation, Durability — what each actually guarantees, what breaks without it, and the isolation levels that show up in every DBMS exam.</p>
+      </a></div>
+    <p class="btnrow" style="margin-top:28px">
+      <a class="btn btn--primary btn--lg" href="/notes/">Browse free notes</a>
+      <a class="btn btn--outline btn--lg" href="/blog/">All articles</a>
+    </p>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="footer__logo" href="/">
+          <img src="/assets/images/logo/logo.png" alt="StudyTub" class="footer__logo-img"/>
+          <span class="footer__logo-text">StudyTub</span>
+        </a>
+        <p class="footer__tagline">Free study notes and previous year question papers for BTECH students.</p>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Notes</h4>
+        <ul class="footer__list">
+          <li><a href="/notes/">By semester</a></li>
+          <li><a href="/notes/subjects/">By subject</a></li>
+          <li><a href="/notes/first-year-engineering-notes.html">First year</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__heading">Support</h4>
+        <ul class="footer__list">
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom"><p>&copy; 2026 StudyTub &mdash; free for students, always.</p></div>
+  </div>
+</footer>
+<script src="/notes/assets/notes-auth.js" defer></script>
+<script src="/notes/assets/search.js" defer></script>
+</body>
+</html>
