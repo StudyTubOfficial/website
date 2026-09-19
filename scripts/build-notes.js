@@ -25,8 +25,26 @@ const SITE = "https://studytub.netlify.app";
 const DRIVE = "https://notes.studytub.workers.dev/0:";
 const data = require("./notes-data.json");
 
+/**
+ * HTML-escape. Page content comes from Google Drive file names, so anyone able
+ * to add a file to that drive controls these strings — they are untrusted input
+ * even though the drive is ours. Single quotes are included because attribute
+ * values are not always double-quoted.
+ */
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;")
-  .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  .replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+
+/**
+ * Serialise JSON for embedding in a <script> block.
+ *
+ * JSON.stringify does not escape "</script>", so a file name containing it
+ * would close the tag early and everything after it would be parsed as HTML.
+ * Escaping the forward slash in "</" prevents that; the JSON stays valid
+ * because \/ is a legal escape.
+ */
+const jsonScript = (obj) =>
+  JSON.stringify(obj).replace(/<\//g, "<\\/").replace(/\u2028|\u2029/g, (c) =>
+    c === "\u2028" ? "\\u2028" : "\\u2029");
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 /**
@@ -168,12 +186,12 @@ const AUTHBAR = `<div class="notice" data-auth-banner>
   <span><strong>Reading is open.</strong> Opening the files asks for a free account &mdash; <a href="/login">sign in</a>, and you will be returned here.</span>
 </div>`;
 
-const breadcrumb = (items) => `<script type="application/ld+json">${JSON.stringify({
+const breadcrumb = (items) => `<script type="application/ld+json">${jsonScript({
   "@context": "https://schema.org", "@type": "BreadcrumbList",
   itemListElement: items.map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })),
 })}</script>`;
 
-const faqLd = (pairs) => `<script type="application/ld+json">${JSON.stringify({
+const faqLd = (pairs) => `<script type="application/ld+json">${jsonScript({
   "@context": "https://schema.org", "@type": "FAQPage",
   mainEntity: pairs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
 })}</script>`;
@@ -515,7 +533,7 @@ for (const s of subjects) {
     url, md: `/notes/subjects/${sl}.md`, active: "/notes/subjects/",
     ld: breadcrumb([["StudyTub", SITE + "/"], ["Notes", SITE + "/notes/"], ["Subjects", SITE + "/notes/subjects/"], [name, url]])
       + faqLd(faqs)
-      + `<script type="application/ld+json">${JSON.stringify({
+      + `<script type="application/ld+json">${jsonScript({
           "@context": "https://schema.org", "@type": "Course", name,
           description: `Free ${name} notes and previous year question papers for BTECH students.`,
           url, provider: { "@type": "Organization", name: "StudyTub", url: SITE + "/" },

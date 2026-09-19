@@ -11,3 +11,29 @@
 [[edge_functions]]
   path = "/*"
   function = "aeo"
+
+# Security headers.
+#
+# Defence in depth for the notes pages, whose content is built from Google Drive
+# file names — untrusted input even though the drive is ours. Escaping is the
+# primary control; these limit the blast radius if any of it were ever missed.
+#
+# No Content-Security-Policy yet: the app loads AdSense, Google Fonts, GitHub
+# avatars, the Railway analytics script and a Cloudflare Worker, so a policy
+# written without testing would break the site. Worth adding deliberately,
+# starting in report-only mode.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# The search index is regenerated on every build; a long cache would serve
+# stale results after notes are added.
+[[headers]]
+  for = "/notes/assets/search-index.json"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"

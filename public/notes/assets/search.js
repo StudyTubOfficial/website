@@ -47,21 +47,36 @@
 
   var KIND = { semester: "Semester", subject: "Subject", file: "File" };
 
+  /**
+   * The index is regenerated from Google Drive file names, so anyone who can
+   * add a file to that drive controls these strings. Titles already go through
+   * textContent, but `k` is interpolated into a class attribute, so it is
+   * restricted to the three values the generator emits. Anything else is
+   * treated as "file" rather than written into the markup.
+   */
+  function safeKind(k) {
+    return Object.prototype.hasOwnProperty.call(KIND, k) ? k : "file";
+  }
+
   function render() {
     var q = input.value.trim();
     if (!q) { panel.hidden = true; panel.innerHTML = ""; return; }
     hits = search(q);
     panel.hidden = false;
     if (!hits.length) {
-      panel.innerHTML = '<div class="nsearch__empty">' +
-        (index && index.length ? "No match. Try a subject name or a code like 18EC1T12." : "Loading notes\u2026") +
-        "</div>";
+      panel.textContent = "";
+      var empty = document.createElement("div");
+      empty.className = "nsearch__empty";
+      empty.textContent = index && index.length
+        ? "No match. Try a subject name or a code like 18EC1T12."
+        : "Loading notes\u2026";
+      panel.appendChild(empty);
       return;
     }
     panel.innerHTML = hits.map(function (h, i) {
       return '<button type="button" class="nsearch__hit' + (i === active ? " is-active" : "") +
         '" data-i="' + i + '">' +
-        '<span class="nsearch__kind nsearch__kind--' + h.k + '">' + KIND[h.k] + "</span>" +
+        '<span class="nsearch__kind nsearch__kind--' + safeKind(h.k) + '">' + KIND[safeKind(h.k)] + "</span>" +
         '<span class="nsearch__title"></span>' +
         '<span class="nsearch__meta"></span></button>';
     }).join("") +
