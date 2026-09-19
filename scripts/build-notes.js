@@ -20,6 +20,7 @@ const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
 const BUILD = path.join(ROOT, "build");
+const PUBLIC = path.join(ROOT, "public");
 const SITE = "https://studytub.netlify.app";
 const DRIVE = "https://notes.studytub.workers.dev/0:";
 const data = require("./notes-data.json");
@@ -28,11 +29,19 @@ const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;")
   .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
+/**
+ * The app's compiled stylesheet. CRA content-hashes the filename, so it is read
+ * from the build output rather than guessed. Before the first production build
+ * there is nothing to read; the pages then rely on notes.css alone, which is
+ * enough for the dev server to look right.
+ */
 function appCss() {
   const dir = path.join(BUILD, "static", "css");
-  const f = fs.readdirSync(dir).find((x) => /^main\..*\.css$/.test(x));
-  if (!f) throw new Error("no compiled stylesheet in build/static/css");
-  return `/static/css/${f}`;
+  try {
+    const f = fs.readdirSync(dir).find((x) => /^main\..*\.css$/.test(x));
+    if (f) return `/static/css/${f}`;
+  } catch (e) { /* no build yet */ }
+  return null;
 }
 
 const SEMS = [
@@ -157,7 +166,7 @@ function page({ title, desc, url, md, ld, active, body }) {
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="${appCss()}"/>
+${appCss() ? `<link rel="stylesheet" href="${appCss()}"/>` : ""}
 <link rel="stylesheet" href="/notes/assets/notes.css"/>
 <script src="/notes/assets/theme.js"></script>
 <script src="https://traffic-production-bba7.up.railway.app/api/sites/site_9ad371c3/script"></script>
@@ -194,10 +203,15 @@ const hero = ({ label, h1, lede, stats, img, actions }) => `
 </section>`;
 
 // ── write pages ────────────────────────────────────────────────────────────
+// Write to BOTH build/ (what Netlify serves) and public/ (what the dev server
+// serves). Without the public/ copy the pages 404 under `npm start` and the
+// SPA catch-all silently renders the homepage in their place.
 const out = (rel, html) => {
-  const p = path.join(BUILD, rel);
-  fs.mkdirSync(path.dirname(p), { recursive: true });
-  fs.writeFileSync(p, html);
+  for (const base of [BUILD, PUBLIC]) {
+    const p = path.join(base, rel);
+    fs.mkdirSync(path.dirname(p), { recursive: true });
+    fs.writeFileSync(p, html);
+  }
 };
 
 let written = 0;
@@ -501,9 +515,10 @@ for (const s of subjects) {
 urls.unshift([`${SITE}/`, "weekly", "1.0"]);
 for (const [p, pr] of [["about", "0.5"], ["faq", "0.5"], ["team", "0.4"], ["contact", "0.4"]])
   urls.push([`${SITE}/${p}`, "monthly", pr]);
-fs.writeFileSync(path.join(BUILD, "sitemap.xml"),
+const sitemap =
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`
   + urls.map(([u, c, p]) => `  <url><loc>${u}</loc><changefreq>${c}</changefreq><priority>${p}</priority></url>`).join("\n")
-  + `\n</urlset>\n`);
+  + `\n</urlset>\n`;
+for (const base of [BUILD, PUBLIC]) fs.writeFileSync(path.join(base, "sitemap.xml"), sitemap);
 
-console.log(`  ✓ ${written} notes pages generated into build/ (sitemap: ${urls.length} urls)`);
+console.log(`  ✓ ${written} notes pages generated into build/ and public/ (sitemap: ${urls.length} urls)`);
