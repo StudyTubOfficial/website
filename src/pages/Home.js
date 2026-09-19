@@ -7,6 +7,7 @@ import Footer from "../components/Footer/Footer";
 import ProductHunt from "../components/Buttons/ProductHunt/ProductHunt";
 import Heading from "../components/Heading/Heading";
 import Promotion from "../components/Promotion/Promotion";
+import Contribute from "../components/Contribute/Contribute";
 import ImageBanner from "../components/ImageBanner/ImageBanner";
 import AdBanner from "../components/AdBanner/AdBanner";
 import StickyAd from "../components/StickyAd/StickyAd";
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Jumbotron />
+        <Contribute />
         <ImageBanner />
         <AdBanner
           title="🍕 Hungry Students? Feed Them!"

@@ -120,3 +120,21 @@
   .pitch__aside { flex-direction: row; flex-wrap: wrap; }
   .pitch__stat { flex: 1 1 140px; padding: 16px 18px; }
 }
+
+/* The pitch panel is dark in both light and dark mode, so buttons inside it
+   cannot inherit the page's text colour — .btn--outline would render
+   dark-on-dark. Scope them to the panel rather than changing the global rule. */
+.pitch .btn--outline {
+  color: var(--text-white);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: transparent;
+}
+
+.pitch .btn--outline:hover {
+  color: var(--text-white);
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Same reason: a plain link in here needs the light-on-dark treatment. */
+.pitch a:not(.btn) { color: var(--primary-light); }

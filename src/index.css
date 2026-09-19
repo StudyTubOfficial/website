@@ -156,6 +156,24 @@ textarea {
   color: var(--text-white);
 }
 
+/* .btn--outline uses color: var(--text), which is dark by design. Inside a dark
+   section that renders dark-on-dark and the label disappears, so it needs the
+   light treatment here. Same for a plain link. */
+.section--dark .btn--outline {
+  color: var(--text-white);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.section--dark .btn--outline:hover {
+  color: var(--text-white);
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.section--dark a:not(.btn) {
+  color: var(--primary-light);
+}
+
 .section__desc {
   font-size: 1.05rem;
   color: var(--text-light);

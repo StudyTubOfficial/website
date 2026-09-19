@@ -23,6 +23,9 @@ const navLinks = [
   { to: "/about", label: "About" },
   { label: "Study Materials", dropdown: true },
   { to: "/faq", label: "FAQ" },
+  // Anchors to the Contribute section on the homepage — the ask for more notes
+  // needs a route from the nav, not just a card halfway down the page.
+  { to: "/#contribute", label: "Add Notes" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -90,12 +93,18 @@ export default function Navbar() {
                 </li>
               ) : (
                 <li key={link.to} className="nav__item">
-                  <Link
-                    to={link.to}
-                    className={`nav__link ${location.pathname === link.to ? "nav__link--active" : ""}`}
-                  >
-                    {link.label}
-                  </Link>
+                  {link.to.includes("#") ? (
+                    // React Router does not scroll to a hash on the current
+                    // route; a plain anchor does, and needs no router at all.
+                    <a href={link.to} className="nav__link">{link.label}</a>
+                  ) : (
+                    <Link
+                      to={link.to}
+                      className={`nav__link ${location.pathname === link.to ? "nav__link--active" : ""}`}
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               )
             )}
