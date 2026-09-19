@@ -95,12 +95,7 @@ export default function Course() {
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.4 }}
         >
-          <a
-            href="https://notes.studytub.workers.dev/0:/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn--outline"
-          >
+          <a href="/notes/" className="btn btn--outline">
             Browse All Notes <FiArrowRight size={16} />
           </a>
         </motion.div>

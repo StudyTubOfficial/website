@@ -34,12 +34,7 @@ export default function Jumbotron() {
               journey today!
             </motion.p>
             <motion.div className="hero__actions" variants={fadeUp} initial="hidden" animate="visible" custom={3}>
-              <a
-                href="https://notes.studytub.workers.dev/0:/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn--primary btn--lg"
-              >
+              <a href="/notes/" className="btn btn--primary btn--lg">
                 Browse Notes
               </a>
               <a
