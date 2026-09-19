@@ -2,6 +2,7 @@
 # exclusions the SPA catch-all below rewrites every URL to index.html, so
 # Googlebot sees an empty React shell instead of content.
 /notes/subjects/  /notes/subjects/index.html  200
+/notes/assets/*  /notes/assets/:splat  200
 /notes/*      /notes/:splat   200
 /home.html    /home.html      200
 /sitemap.xml  /sitemap.xml    200
