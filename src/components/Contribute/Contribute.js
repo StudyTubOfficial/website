@@ -59,16 +59,16 @@ export default function Contribute() {
         <div className="grid grid--3">
           {WAYS.map((w, i) => (
             <motion.div
-              className="contribute-card"
+              className="card contribute-card"
               key={w.title}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.1, duration: 0.45, ease: "easeOut" }}
             >
-              <span className="contribute-card__icon">{w.icon}</span>
-              <h3 className="contribute-card__title">{w.title}</h3>
-              <p className="contribute-card__text">{w.text}</p>
+              <span className="pitch__icon">{w.icon}</span>
+              <h3 className="pitch__card-title">{w.title}</h3>
+              <p className="pitch__card-text">{w.text}</p>
               <a
                 className="contribute-card__cta"
                 href={`mailto:${MAIL}?subject=${encodeURIComponent(w.subject)}&body=${w.body}`}

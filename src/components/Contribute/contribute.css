@@ -1,50 +1,19 @@
-/* Offset for the sticky navbar, so the heading is not hidden on an
-   in-page jump from the nav. */
+/* Contribute — only what .card and .section do not already provide. */
+
+/* Offset for the sticky navbar, so the heading is not hidden on an in-page
+   jump from the nav. */
 #contribute { scroll-margin-top: 92px; }
 
-/* Contribute section — built on the app's tokens from src/index.css. */
-
+/* .card has no vertical layout; these cards pin their CTA to the bottom so the
+   three line up regardless of how much text each carries. */
 .contribute-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 28px 26px;
   display: flex;
   flex-direction: column;
-  transition: all var(--transition);
 }
 
-.contribute-card:hover {
-  border-color: var(--primary);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-}
-
-.contribute-card__icon {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--primary) 12%, transparent);
-  color: var(--primary);
-  font-size: 1.2rem;
-  margin-bottom: 18px;
-}
-
-.contribute-card__title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text);
-  margin: 0 0 10px;
-}
-
-.contribute-card__text {
-  font-size: 0.93rem;
-  line-height: 1.65;
-  color: var(--text-light);
-  margin: 0 0 20px;
+.contribute-card .pitch__card-text {
   flex: 1;
+  margin-bottom: 20px;
 }
 
 .contribute-card__cta {
@@ -55,6 +24,7 @@
   font-weight: 600;
   color: var(--primary);
   align-self: flex-start;
+  transition: gap var(--transition);
 }
 
 .contribute-card__cta:hover { gap: 11px; }

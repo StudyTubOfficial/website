@@ -6,72 +6,84 @@ import "./imageBanner.css";
 /**
  * Nexodrive pitch.
  *
- * Replaces a large promotional JPEG that carried its message as pixels: it was
- * unreadable to search engines and screen readers, did not scale down well, and
- * cost bandwidth on every homepage load. Same offer, as real text and markup.
+ * Replaces a large promotional JPEG that carried its message as pixels:
+ * unreadable to search engines and screen readers, poor on small screens, and
+ * 90 KB on every homepage load. Same offer as real text and markup.
  *
- * Copy follows the product's own description: a library management system built
- * on top of Google Drive — structured like a real library, instantly
- * searchable, clean to browse.
+ * Built from the app's own components — .section--alt, .section__header, .card,
+ * .badge, .grid, .btn — rather than a bespoke dark panel, so it matches the
+ * rest of the site and follows any change to index.css.
+ *
+ * Copy follows the product's own description: a library management system on
+ * top of Google Drive, structured like a real library and instantly searchable.
  */
 const POINTS = [
-  { icon: <FiFolder />, text: "Structured like a real library, not a folder tree" },
-  { icon: <FiSearch />, text: "Instantly searchable across every file" },
-  { icon: <FiUploadCloud />, text: "Built on the Google Drive you already have" },
+  { icon: <FiFolder />, title: "Structured like a real library", text: "Courses, semesters and subjects — not a folder tree students have to guess their way through." },
+  { icon: <FiSearch />, title: "Instantly searchable", text: "Every file findable by subject, subject code or name, in one field." },
+  { icon: <FiUploadCloud />, title: "Built on your existing Drive", text: "No migration. Nexodrive sits on the Google Drive your college already uses." },
 ];
+
+const STATS = [
+  ["564", "files served here"],
+  ["25", "subjects indexed"],
+  ["6,000+", "students using it"],
+];
+
+const MAIL = "studytub1@gmail.com";
 
 export default function ImageBanner() {
   return (
     <section className="section section--alt">
       <div className="container">
-        <motion.div
-          className="pitch"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-        >
-          <div className="pitch__body">
-            <span className="pitch__label">Nexodrive · for colleges &amp; universities</span>
-            <h2 className="pitch__title">
-              A digital library for <span>your college</span>
-            </h2>
-            <p className="pitch__desc">
-              Nexodrive turns the Google Drive you already use into a proper library:
-              structured, instantly searchable and clean to browse — so students stop digging
-              through folders the night before an exam. It is the engine behind StudyTub, and
-              we will build it around your courses.
-            </p>
+        <div className="section__header">
+          <span className="section__label">Nexodrive</span>
+          <h2 className="section__title">A digital library for your college</h2>
+          <p className="section__desc">
+            Nexodrive turns the Google Drive you already use into a proper library, so students
+            stop digging through folders the night before an exam. It is the engine behind
+            StudyTub, and we will build it around your courses.
+          </p>
+        </div>
 
-            <ul className="pitch__points">
-              {POINTS.map((p, i) => (
-                <li key={i}>
-                  <span className="pitch__point-icon">{p.icon}</span>
-                  {p.text}
-                </li>
-              ))}
-            </ul>
+        <div className="grid grid--3">
+          {POINTS.map((p, i) => (
+            <motion.div
+              className="card"
+              key={p.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: i * 0.1, duration: 0.45, ease: "easeOut" }}
+            >
+              <span className="pitch__icon">{p.icon}</span>
+              <h3 className="pitch__card-title">{p.title}</h3>
+              <p className="pitch__card-text">{p.text}</p>
+            </motion.div>
+          ))}
+        </div>
 
-            <div className="pitch__actions">
-              <a className="btn btn--primary btn--lg" href="mailto:studytub1@gmail.com?subject=Nexodrive%20for%20our%20college">
-                <FiMail size={17} /> Talk to us
-              </a>
-              <a className="btn btn--outline btn--lg" href="/contact">
-                Contact page <FiArrowRight size={16} />
-              </a>
-            </div>
-
-            <p className="pitch__note">
-              Or email <a href="mailto:studytub1@gmail.com">studytub1@gmail.com</a> directly.
-            </p>
+        <div className="pitch__cta">
+          <div className="pitch__stats">
+            {STATS.map(([v, l]) => (
+              <div className="pitch__stat" key={l}>
+                <b>{v}</b>
+                <span>{l}</span>
+              </div>
+            ))}
           </div>
 
-          <div className="pitch__aside" aria-hidden="true">
-            <div className="pitch__stat"><b>564</b><span>files served here</span></div>
-            <div className="pitch__stat"><b>25</b><span>subjects indexed</span></div>
-            <div className="pitch__stat"><b>6,000+</b><span>students using it</span></div>
+          <div className="pitch__actions">
+            <a
+              className="btn btn--primary btn--lg"
+              href={`mailto:${MAIL}?subject=${encodeURIComponent("Nexodrive for our college")}`}
+            >
+              <FiMail size={17} /> Talk to us
+            </a>
+            <a className="btn btn--outline btn--lg" href="/contact">
+              Contact page <FiArrowRight size={16} />
+            </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
