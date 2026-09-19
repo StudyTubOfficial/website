@@ -70,7 +70,7 @@
   margin: 0 0 32px; font-size: .94rem; color: var(--text);
 }
 .notice svg { flex: none; margin-top: 2px; color: var(--accent); }
-.notice a { color: var(--primary); font-weight: 600; }
+.notice a:not(.btn) { color: var(--primary); font-weight: 600; }
 
 /* ── table ─────────────────────────────────────────────────────────────── */
 .tablewrap {
@@ -88,8 +88,8 @@
 }
 .table tr:last-child td { border-bottom: none; }
 .table tbody tr:hover { background: var(--bg-alt); }
-.table a { color: var(--primary); text-decoration: none; font-weight: 600; }
-.table a:hover { text-decoration: underline; }
+.table a:not(.btn) { color: var(--primary); text-decoration: none; font-weight: 600; }
+.table a:not(.btn):hover { text-decoration: underline; }
 
 /* ── inline bits ───────────────────────────────────────────────────────── */
 .code {
@@ -115,10 +115,16 @@
 .prose strong { color: var(--text); }
 .prose ul { padding-left: 22px; }
 .prose li { margin: 8px 0; }
-.prose a { color: var(--primary); }
+/* Exclude buttons: .prose a is more specific than .btn--primary, so without
+   this a call-to-action inside prose renders indigo-on-indigo and the label
+   disappears entirely. */
+.prose a:not(.btn) { color: var(--primary); }
+.prose .btn--primary { color: #fff; }
+.prose .btn--outline { color: var(--text); }
+.prose .btn--outline:hover { color: var(--primary); }
 .muted { font-size: .9rem; color: var(--text-light); }
-.muted a { color: var(--primary); text-decoration: none; }
-.muted a:hover { text-decoration: underline; }
+.muted a:not(.btn) { color: var(--primary); text-decoration: none; }
+.muted a:not(.btn):hover { text-decoration: underline; }
 
 /* ── FAQ (native disclosure, no JS) ────────────────────────────────────── */
 .faq {
@@ -167,4 +173,7 @@
 .footer__bottom p { margin: 0; font-size: .87rem; color: var(--text-light); }
 @media (max-width: 720px) { .footer__grid { grid-template-columns: 1fr; gap: 30px; } }
 
-a[data-gated="true"] .lock { font-size: .9em; opacity: .85; }
+a[data-gated="true"] .lock { font-size: .9em; opacity: .85; margin-left: 2px; }
+/* .btn uses gap for its flex children, so the appended lock would otherwise sit
+   a full gap away from the label. */
+.btn .lock { margin-left: -4px; }
