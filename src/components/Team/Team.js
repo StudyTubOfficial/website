@@ -57,7 +57,7 @@ export default function Team() {
               transition={{ delay: i * 0.15, duration: 0.5, ease: "easeOut" }}
             >
               <div className="team-card__avatar">
-                <img src={member.image} alt={member.name} />
+                <img src={member.image} alt={member.name} width="160" height="160" loading="lazy" />
               </div>
               <h3 className="team-card__name">{member.name}</h3>
               <p className="team-card__role">{member.designation}</p>

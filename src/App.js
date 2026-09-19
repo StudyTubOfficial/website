@@ -1,11 +1,15 @@
 import { Routes, Route } from "react-router-dom";
+import { Suspense, lazy } from "react";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Team from "./pages/Team";
-import Faq from "./pages/Faq";
-import Login from "./pages/Login";
 import PrivateRoute from "./utils/PrivateRoute";
+
+// Home stays eager — it is the landing page and the most common entry. The
+// rest are split out so a visitor who never opens them never downloads them.
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Team = lazy(() => import("./pages/Team"));
+const Faq = lazy(() => import("./pages/Faq"));
+const Login = lazy(() => import("./pages/Login"));
 /**
  * Renders the main App component.
  * @returns {JSX.Element} The App component.
@@ -13,6 +17,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 function App() {
   return (
     <>
+      <Suspense fallback={null}>
       <Routes>
         {/* Public. These pages describe what StudyTub is and are the pages
             search engines and first-time visitors land on — gating them behind
@@ -34,6 +39,7 @@ function App() {
         {/* Catch-all last, so it cannot shadow the routes above. */}
         <Route path="*" element={<Home />} />
       </Routes>
+      </Suspense>
     </>
   );
 }

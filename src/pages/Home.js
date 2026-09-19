@@ -11,7 +11,7 @@ import Contribute from "../components/Contribute/Contribute";
 import ImageBanner from "../components/ImageBanner/ImageBanner";
 import AdBanner from "../components/AdBanner/AdBanner";
 import StickyAd from "../components/StickyAd/StickyAd";
-import Seo, { faqLd } from "../components/Seo/Seo";
+import Seo from "../components/Seo/Seo";
 
 export default function Home() {
   return (

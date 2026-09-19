@@ -29,7 +29,7 @@ const CourseCards = ({ item }) => {
       className="course-card"
     >
       <div className="course-card__icon">
-        <img src={item.img} alt={item.title} />
+        <img src={item.img} alt={item.title} width="48" height="48" loading="lazy" />
       </div>
       <div className="course-card__body">
         <h3 className="course-card__title">{item.title}</h3>

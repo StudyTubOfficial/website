@@ -75,7 +75,7 @@ export default function Login() {
 <div className="login-page">
       <div className="login-card">
         <Link to="/" className="login-logo">
-          <img src="/assets/images/logo/logo.png" alt="StudyTub" />
+          <img src="/assets/images/logo/logo.png" alt="StudyTub" width="64" height="64" />
           <span>StudyTub</span>
         </Link>
         <h1 className="login-title">Welcome Back</h1>

@@ -35,7 +35,7 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <Link to="/" className="footer__logo">
-              <img src="/assets/images/logo/logo.png" alt="StudyTub" className="footer__logo-img" />
+              <img src="/assets/images/logo/logo.png" alt="StudyTub" className="footer__logo-img" width="30" height="30" />
               <span>StudyTub</span>
             </Link>
             <p className="footer__tagline">
