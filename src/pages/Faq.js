@@ -4,6 +4,7 @@ import Navbar from "../components/Header/Navbar";
 import Header from "../components/Multi_Header/Header";
 import Footer from "../components/Footer/Footer";
 import AdBanner from "../components/AdBanner/AdBanner";
+import Seo, { breadcrumb } from "../components/Seo/Seo";
 
 const headerData = {
   page_title: "FAQ",
@@ -14,7 +15,14 @@ const headerData = {
 
 export default function Faq() {
   return (
-    <div className="page-wrapper">
+    <>
+      <Seo
+        path="/faq"
+        title="FAQ — StudyTub Notes, Downloads and Accounts"
+        description="Answers about StudyTub: whether the notes are free, which university syllabus they follow, why opening files needs an account, and how to contribute your own notes."
+        jsonLd={breadcrumb([["StudyTub", "/"], ["FAQ", "/faq"]])}
+      />
+<div className="page-wrapper">
       <Navbar />
       <main>
         <Header headerData={headerData} />
@@ -30,5 +38,6 @@ export default function Faq() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

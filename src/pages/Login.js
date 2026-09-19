@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FiMail, FiArrowRight } from "react-icons/fi";
+import Seo from "../components/Seo/Seo";
 
 /**
  * Where to send the user after a successful login.
@@ -64,7 +65,14 @@ export default function Login() {
   };
 
   return (
-    <div className="login-page">
+    <>
+      <Seo
+        path="/login"
+        title="Sign in to StudyTub"
+        description="Sign in with your email to open StudyTub notes and question papers. Free, no password to remember."
+        noindex
+      />
+<div className="login-page">
       <div className="login-card">
         <Link to="/" className="login-logo">
           <img src="/assets/images/logo/logo.png" alt="StudyTub" />
@@ -185,5 +193,6 @@ export default function Login() {
         }
       `}</style>
     </div>
+    </>
   );
 }

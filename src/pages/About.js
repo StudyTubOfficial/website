@@ -6,6 +6,7 @@ import Header from "../components/Multi_Header/Header";
 import AboutUscards from "../components/Cards/AboutusCards/AboutUscards";
 import AdBanner from "../components/AdBanner/AdBanner";
 import { FiArrowRight, FiCheck, FiTrendingUp } from "react-icons/fi";
+import Seo, { breadcrumb } from "../components/Seo/Seo";
 
 const chartData = [
   { year: "2020", users: 50 },
@@ -59,7 +60,14 @@ const communityPerks = [
 
 export default function About() {
   return (
-    <div className="page-wrapper">
+    <>
+      <Seo
+        path="/about"
+        title="About StudyTub — Free Notes Built by Students"
+        description="StudyTub collects the notes that usually circulate in one WhatsApp group and disappear. Free study materials for BTECH students, shared by the students who took the subject."
+        jsonLd={breadcrumb([["StudyTub", "/"], ["About", "/about"]])}
+      />
+<div className="page-wrapper">
       <Navbar />
       <main>
         <Header headerData={headerData} />
@@ -186,5 +194,6 @@ export default function About() {
         }
       `}</style>
     </div>
+    </>
   );
 }

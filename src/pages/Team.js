@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 import TeamD from "../components/Team/Team";
 import Header from "../components/Multi_Header/Header";
 import AdBanner from "../components/AdBanner/AdBanner";
+import Seo, { breadcrumb } from "../components/Seo/Seo";
 
 const headerData = {
   page_title: "Our Team",
@@ -14,7 +15,14 @@ const headerData = {
 
 export default function Team() {
   return (
-    <div className="page-wrapper">
+    <>
+      <Seo
+        path="/team"
+        title="The StudyTub Team"
+        description="The people behind StudyTub — students building a free, searchable notes library for BTECH engineering courses."
+        jsonLd={breadcrumb([["StudyTub", "/"], ["Team", "/team"]])}
+      />
+<div className="page-wrapper">
       <Navbar />
       <main>
         <Header headerData={headerData} />
@@ -30,5 +38,6 @@ export default function Team() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

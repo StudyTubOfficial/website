@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Multi_Header/Header";
 import AdBanner from "../components/AdBanner/AdBanner";
 import { FiMail, FiMapPin } from "react-icons/fi";
+import Seo, { breadcrumb } from "../components/Seo/Seo";
 
 const headerData = {
   page_title: "Contact Us",
@@ -14,7 +15,14 @@ const headerData = {
 
 export default function Contact() {
   return (
-    <div className="page-wrapper">
+    <>
+      <Seo
+        path="/contact"
+        title="Contact StudyTub — Add Notes or Ask About Nexodrive"
+        description="Get in touch to add notes for your college, report a problem with a file, or set up Nexodrive — a searchable digital library built on your existing Google Drive."
+        jsonLd={breadcrumb([["StudyTub", "/"], ["Contact", "/contact"]])}
+      />
+<div className="page-wrapper">
       <Navbar />
       <main>
         <Header headerData={headerData} />
@@ -104,5 +112,6 @@ export default function Contact() {
         }
       `}</style>
     </div>
+    </>
   );
 }
