@@ -23,6 +23,12 @@ const BUILD = path.join(ROOT, "build");
 const PUBLIC = path.join(ROOT, "public");
 const SITE = "https://studytub.netlify.app";
 const DRIVE = "https://notes.studytub.workers.dev/0:";
+// Analytics host. Overridable so moving the backend is one env var rather than
+// an edit across every generated page; the tracking script bakes this origin in
+// as the endpoint it reports to, so a stale value sends traffic to the old
+// server and the dashboard on the new one shows nothing.
+const ANALYTICS = process.env.ANALYTICS_ORIGIN || "https://api.insightstrack.dev";
+const ANALYTICS_SITE = process.env.ANALYTICS_SITE_ID || "site_9ad371c3";
 const data = require("./notes-data.json");
 const BLOG = require("./blog-data.js");
 
@@ -310,7 +316,7 @@ function page({ title, desc, url, md, ld, active, body }) {
 <link rel="stylesheet" href="${APP_CSS}"/>
 <link rel="stylesheet" href="/notes/assets/notes.css"/>
 <script src="/notes/assets/theme.js"></script>
-<script src="https://traffic-production-bba7.up.railway.app/api/sites/site_9ad371c3/script"></script>
+<script defer src="${ANALYTICS}/api/sites/${ANALYTICS_SITE}/script"></script>
 ${ld}
 </head>
 <body>
