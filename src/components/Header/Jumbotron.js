@@ -1,5 +1,6 @@
 import React from "react";
 import NotesSearch from "../Search/NotesSearch";
+import ProductHunt from "../Buttons/ProductHunt/ProductHunt";
 import "./header.css";
 
 /**
@@ -78,6 +79,10 @@ export default function Jumbotron() {
               ))}
             </div>
             <p><strong>6,000+</strong> students already studying here</p>
+          </div>
+
+          <div className="hero__ph fade-up" style={step(6)}>
+            <ProductHunt />
           </div>
         </div>
       </div>

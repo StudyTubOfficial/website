@@ -7,15 +7,27 @@ import AdBanner from "../components/AdBanner/AdBanner";
 import { FiArrowRight, FiCheck, FiTrendingUp } from "react-icons/fi";
 import Seo, { breadcrumb } from "../components/Seo/Seo";
 
+/**
+ * Year-end student counts, with the current year running to date.
+ *
+ * The last bar is the same 6,000+ figure the homepage hero and the stats banner
+ * quote. It was left at 4,500 when those were updated, so the About page was
+ * quietly undercounting the site against itself.
+ *
+ * TOTAL drives both the "total" pill and the bar heights, so bumping the last
+ * entry is enough to keep all three in step.
+ */
 const chartData = [
   { year: "2020", users: 50 },
   { year: "2021", users: 400 },
   { year: "2022", users: 1200 },
   { year: "2023", users: 2400 },
   { year: "2024", users: 3500 },
-  { year: "2025", users: 4100 },
-  { year: "2026", users: 4500 },
+  { year: "2025", users: 4800 },
+  { year: "2026", users: 6000 },
 ];
+
+const TOTAL = chartData[chartData.length - 1].users;
 
 const headerData = {
   page_title: "Our Story",
@@ -87,18 +99,18 @@ export default function About() {
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 20 }}>
                   <FiTrendingUp size={18} style={{ color: "var(--primary)" }} />
                   <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--text)" }}>User Growth</span>
-                  <span style={{ marginLeft: "auto", fontSize: "0.75rem", fontWeight: 700, color: "var(--primary)", background: "var(--bg-alt)", padding: "4px 10px", borderRadius: "var(--radius-full)" }}>4,500 total</span>
+                  <span style={{ marginLeft: "auto", fontSize: "0.75rem", fontWeight: 700, color: "var(--primary)", background: "var(--bg-alt)", padding: "4px 10px", borderRadius: "var(--radius-full)" }}>{TOTAL.toLocaleString()}+ total</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "flex-end", gap: 8, height: 180 }}>
                   {chartData.map((d) => (
                     <div key={d.year} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
                       <span style={{ fontSize: "0.65rem", fontWeight: 600, color: "var(--primary)" }}>
-                        {d.users >= 1000 ? `${(d.users / 1000).toFixed(1)}k` : d.users}
+                        {d.users >= 1000 ? `${(d.users / 1000).toFixed(1).replace(/\.0$/, "")}k` : d.users}
                       </span>
                       <div style={{
                         width: "100%",
                         maxWidth: 40,
-                        height: `${(d.users / 4500) * 140 + 10}px`,
+                        height: `${(d.users / TOTAL) * 140 + 10}px`,
                         background: `linear-gradient(180deg, var(--primary), var(--primary-light))`,
                         borderRadius: "6px 6px 2px 2px",
                         transition: "height 0.6s ease",

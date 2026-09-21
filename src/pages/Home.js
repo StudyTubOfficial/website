@@ -4,8 +4,6 @@ import Jumbotron from "../components/Header/Jumbotron";
 import Course from "../components/course/Course";
 import Team from "../components/Team/Team";
 import Footer from "../components/Footer/Footer";
-import ProductHunt from "../components/Buttons/ProductHunt/ProductHunt";
-import Heading from "../components/Heading/Heading";
 import Contribute from "../components/Contribute/Contribute";
 import ImageBanner from "../components/ImageBanner/ImageBanner";
 import AdBanner from "../components/AdBanner/AdBanner";
@@ -48,8 +46,6 @@ export default function Home() {
           size="small"
         />
         <Team />
-        <Heading text="Discover Us on Product Hunt!" />
-        <ProductHunt />
       </main>
       <Footer />
       <StickyAd />

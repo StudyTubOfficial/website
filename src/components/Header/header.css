@@ -419,6 +419,17 @@
   color: var(--text);
 }
 
+/* Product Hunt badge, directly under the social-proof row. */
+.hero__ph {
+  margin-top: 18px;
+  line-height: 0;
+}
+
+.hero__ph img {
+  max-width: 100%;
+  height: auto;
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 108px 0 56px;
@@ -431,6 +442,10 @@
 
   .hero__quick {
     margin-bottom: 30px;
+  }
+
+  .hero__ph {
+    margin-top: 14px;
   }
 }
 
